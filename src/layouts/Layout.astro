@@ -10,9 +10,14 @@ const { title } = Astro.props;
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content="My personal website!" />
+		<meta name="keywords" content="personal, website, portfolio" />
+		<meta name="author" content="Rami Maalouf" />
+		<meta name="theme-color" media="(prefers-color-scheme: light)" content="cyan" />
+		<meta name="theme-color" media="(prefers-color-scheme: dark)" content="black" />
 		<title>{title}</title>
 	</head>
 	<body>

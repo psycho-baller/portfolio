@@ -1,10 +1,12 @@
-import Box from "../about/Box";
 import Canvas from "../Canvas";
 
 export default function HeroScene(props: any) {
   return (
     <Canvas>
-      <Box position={[0, 0, 0]} />
+      <mesh>
+        <boxGeometry args={[1, 1, 1]} />
+        <meshStandardMaterial color="hotpink" />
+      </mesh>
     </Canvas>
   );
 }

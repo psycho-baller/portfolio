@@ -54,7 +54,7 @@ export default function Ball({
       </mesh>
       <line>
         <bufferGeometry attach="geometry" {...path} />
-        <lineBasicMaterial attach="material" color="#61DBFB" />
+        <lineBasicMaterial attach="material" color="#61FFFB" />
       </line>
     </group>
   );

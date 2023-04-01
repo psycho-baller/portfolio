@@ -11,27 +11,9 @@ export default function Balls(props: any) {
   return (
     <group {...props} ref={ballGroup}>
       {/* hover only one ball at a time */}
-      <Ball
-        ballRef={ball1}
-        ballGroup={ballGroup}
-        // position={[-2, 0, 0]}
-        tiltAxis={[Math.PI / 8, 0, 0]}
-        initialAngle={[0, 0, 0]}
-      />
-      <Ball
-        ballRef={ball2}
-        ballGroup={ballGroup}
-        // position={[5, 2, 3]}
-        // tiltAxis={[0, Math.PI / 8, 0]}
-        initialAngle={[0, 0, 0]}
-      />
-      <Ball
-        ballRef={ball3}
-        ballGroup={ballGroup}
-        // position={[0, 0, 2]}
-        tiltAxis={[0, 0, Math.PI / 8]}
-        initialAngle={[0, 0, 0]}
-      />
+      <Ball ballRef={ball1} ballGroup={ballGroup} tiltAxis={[Math.PI / 15, 0, 0]} initialAngle={[0, 0, 0]} />
+      <Ball ballRef={ball2} ballGroup={ballGroup} tiltAxis={[Math.PI / 6, 0, -Math.PI / 3]} initialAngle={[0, 0, 0]} />
+      <Ball ballRef={ball3} ballGroup={ballGroup} tiltAxis={[Math.PI / 6, 0, Math.PI / 3]} initialAngle={[0, 0, 0]} />
     </group>
   );
 }

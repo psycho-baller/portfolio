@@ -5,6 +5,7 @@ import { OrbitControls } from "@react-three/drei";
 export default function About({ children }: { children: JSX.Element[] | JSX.Element }) {
   return (
     <Canvas
+      camera={{ position: [0, 0, 15] }}
       style={{
         height: "100vh",
         width: "100vw",

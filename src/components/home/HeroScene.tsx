@@ -1,7 +1,10 @@
 import Canvas from "../Canvas";
-import {} from "@react-three/drei";
-import { useFrame } from "@react-three/fiber";
+import Balls from "./Balls";
 
 export default function HeroScene(props: any) {
-  return <Canvas></Canvas>;
+  return (
+    <Canvas>
+      <Balls />
+    </Canvas>
+  );
 }

@@ -2,6 +2,7 @@ import { Line } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { useRef, useState } from "react";
 import { Quaternion, Vector3, Euler, Group, Mesh, MathUtils, BufferGeometry, Float32BufferAttribute } from "three";
+import { useControls } from "leva";
 
 export default function Ball({
   ballGroup,
@@ -18,7 +19,11 @@ export default function Ball({
 }) {
   const [hovered, setHover] = useState(false);
   const [active, setActive] = useState(false);
-  const [speed, setSpeed] = useState(500);
+  // check if page is in debug mode
+  const debug = window.location.href.includes("debug");
+  const { speed } = (debug && useControls({ speed: { value: 10, min: 0, max: 1000 } })) || { speed: 10 };
+
+  // const [speed, setSpeed] = useState(500);
 
   const sunPosition = new Vector3(0, 0, 0); // center
   const distanceFromRadius = 5;

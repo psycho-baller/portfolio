@@ -1,18 +1,23 @@
 import { Line } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
-import { useMemo, useRef, useState } from "react";
-import { Quaternion, Vector3, Euler, Group, Mesh, MathUtils, BufferGeometry, Float32BufferAttribute } from "three";
+import { useRef, useState } from "react";
+import { Vector3, Group, Mesh, BufferGeometry, Float32BufferAttribute } from "three";
 import { useControls } from "leva";
+import Mac from "./models/Mac";
+import Book from "./models/Book";
+import Pencil from "./models/Pencil";
 
 export default function Ball({
   // ballGroup,
   // ballRef,
+  area,
   tiltAxis = [0, 0, 0],
   initialAngle = 0,
   ...props
 }: {
   // ballGroup: React.MutableRefObject<Group>;
   // ballRef: React.MutableRefObject<Mesh>;
+  area: string;
   tiltAxis?: [number, number, number];
   initialAngle?: number;
   [x: string]: any;
@@ -20,7 +25,7 @@ export default function Ball({
   const [hovered, setHover] = useState(false);
   const [active, setActive] = useState(false);
   const ballGroup = useRef<Group>(null!);
-  const ballRef = useRef<Mesh>(null!);
+  const ballRef = useRef<Group>(null!);
 
   // check if page is in debug mode
   const debug = window.location.href.includes("debug");
@@ -65,7 +70,7 @@ export default function Ball({
   });
   return (
     <group rotation={tiltAxis} ref={ballGroup}>
-      <mesh
+      <group
         {...props}
         ref={ballRef}
         scale={active ? [1.5, 1.5, 1.5] : [1, 1, 1]}
@@ -81,9 +86,10 @@ export default function Ball({
           // setSpeed(5);
         }}
       >
-        <sphereGeometry args={[1, 32, 32]} />
-        <meshStandardMaterial color={hovered ? "hotpink" : "orange"} />
-      </mesh>
+        {area === "building" && <Mac />}
+        {area === "consuming" && <Book />}
+        {area === "creating" && <Pencil />}
+      </group>
 
       <line>
         <bufferGeometry attach="geometry" {...path} />

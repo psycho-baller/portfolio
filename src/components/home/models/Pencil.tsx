@@ -7,9 +7,10 @@ title: Pencil
 */
 
 import type * as THREE from "three";
-import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 import type { GLTF } from "three-stdlib";
+import { useRef } from "react";
+import { useFrame } from "@react-three/fiber";
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -37,10 +38,17 @@ type GLTFResult = GLTF & {
 
 export default function Model(props: JSX.IntrinsicElements["group"]) {
   const { nodes, materials } = useGLTF("/models/pencil.glb") as GLTFResult;
+  // const group = useRef<THREE.Group>(null!);
+
+  // useFrame((state, delta) => {
+  //   look at the camera
+  //   group.current.lookAt(state.camera.position);
+  // });
+
   return (
-    <group {...props} dispose={null} scale={1000000}>
+    <group {...props} dispose={null} scale={0.75} position={[0, 0, -9]}>
       <group rotation={[-Math.PI / 2, 0, 0]}>
-        <group rotation={[Math.PI / 2, 0, 0]} scale={0}>
+        <group rotation={[Math.PI / 2, 0, 0]} scale={0.1}>
           <group rotation={[-Math.PI / 2, 0.6, 0]} scale={100}>
             <mesh
               castShadow
@@ -71,54 +79,6 @@ export default function Model(props: JSX.IntrinsicElements["group"]) {
               receiveShadow
               geometry={nodes.Cylinder_Material002_0.geometry}
               material={materials["Material.002"]}
-            />
-          </group>
-          <group position={[-26.8, 25.7, 108.1]} rotation={[0, 0, -0.5]} scale={[8, 8, 0.5]}>
-            <mesh
-              castShadow
-              receiveShadow
-              geometry={nodes.Star_Material006_0.geometry}
-              material={materials["Material.006"]}
-            />
-          </group>
-          <group position={[-13.2, 24.5, 108.1]} rotation={[0, 0, -0.7]} scale={[4.5, 4.5, 0.4]}>
-            <mesh
-              castShadow
-              receiveShadow
-              geometry={nodes.Star001_Material006_0.geometry}
-              material={materials["Material.006"]}
-            />
-          </group>
-          <group position={[-27.8, 7.3, 108.1]} rotation={[0, 0, -0.6]} scale={[4.1, 4.1, 0.5]}>
-            <mesh
-              castShadow
-              receiveShadow
-              geometry={nodes.Star002_Material006_0.geometry}
-              material={materials["Material.006"]}
-            />
-          </group>
-          <group position={[19.8, -16.7, 125.5]} rotation={[-0.2, 0, -1.2]} scale={[8.2, 8.3, 1.1]}>
-            <mesh
-              castShadow
-              receiveShadow
-              geometry={nodes.Star003_Material006_0.geometry}
-              material={materials["Material.006"]}
-            />
-          </group>
-          <group position={[26.9, -30.1, 126]} rotation={[-0.2, 0, -1.3]} scale={[4.6, 4.7, 0.7]}>
-            <mesh
-              castShadow
-              receiveShadow
-              geometry={nodes.Star004_Material006_0.geometry}
-              material={materials["Material.006"]}
-            />
-          </group>
-          <group position={[10.2, -32.1, 126.3]} rotation={[-0.2, 0, -1.2]} scale={[4.2, 4.3, 0.8]}>
-            <mesh
-              castShadow
-              receiveShadow
-              geometry={nodes.Star005_Material006_0.geometry}
-              material={materials["Material.006"]}
             />
           </group>
         </group>

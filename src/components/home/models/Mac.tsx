@@ -9,6 +9,7 @@ import type * as THREE from "three";
 import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 import type { GLTF } from "three-stdlib";
+import { useFrame } from "@react-three/fiber";
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -25,8 +26,19 @@ type GLTFResult = GLTF & {
 
 export default function Model(props: JSX.IntrinsicElements["group"]) {
   const { nodes, materials } = useGLTF("/models/mini_macbook_pro.glb") as GLTFResult;
+
+  const group = useRef<THREE.Group>(null!);
+
+  useFrame((state, delta) => {
+    // look at the camera
+    group.current.lookAt(state.camera.position);
+    // look 90 degrees left
+    group.current.rotateY(-Math.PI / 2);
+    // tilt down a bit
+    group.current.rotateZ(-Math.PI / 10);
+  });
   return (
-    <group {...props} dispose={null} scale={0.005}>
+    <group ref={group} {...props} dispose={null} scale={0.005}>
       <group rotation={[-Math.PI / 2, 0, 0]}>
         <group rotation={[Math.PI / 2, 0, 0]}>
           <group position={[8.58, 13.85, 134]} rotation={[0, Math.PI / 2, 0]}>

@@ -10,6 +10,7 @@ import type * as THREE from "three";
 import { useRef } from "react";
 import { useGLTF, useAnimations } from "@react-three/drei";
 import type { GLTF } from "three-stdlib";
+import { useFrame } from "@react-three/fiber";
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -31,6 +32,14 @@ export default function Model(props: JSX.IntrinsicElements["group"]) {
   const { nodes, materials, animations } = useGLTF("/models/book.glb") as GLTFResult;
   //   @ts-ignore
   const { actions } = useAnimations<GLTFActions>(animations, group);
+
+  useFrame((state, delta) => {
+    // look at the camera
+    group.current.lookAt(state.camera.position);
+    // look 90 degrees down
+    group.current.rotateX(Math.PI / 2);
+  });
+
   return (
     <group ref={group} {...props} dispose={null} scale={0.4}>
       <group name="Sketchfab_Scene">

@@ -1,11 +1,12 @@
-import { Line } from "@react-three/drei";
+import { Line, Text3D, Text, Center, Trail } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Vector3, Group, Mesh, BufferGeometry, Float32BufferAttribute } from "three";
 import { useControls } from "leva";
 import Mac from "./models/Mac";
 import Book from "./models/Book";
 import Pencil from "./models/Pencil";
+import mondayFont from "../../utils/monday_font.json";
 
 export default function Ball({
   // ballGroup,
@@ -26,16 +27,12 @@ export default function Ball({
   const [active, setActive] = useState(false);
   const ballGroup = useRef<Group>(null!);
   const ballRef = useRef<Group>(null!);
+  const textRef = useRef<Mesh>(null!);
 
   // check if page is in debug mode
   const debug = window.location.href.includes("debug");
   const { speed } = (debug && useControls({ speed: { value: 10, min: 0, max: 1000 } })) || { speed: 10 };
 
-  // const [speed, setSpeed] = useState(5);
-
-  // var speed = 5;
-
-  const sunPosition = new Vector3(0, 0, 0); // center
   const distanceFromRadius = 8;
   const path = new BufferGeometry();
   const positions = [] as number[];
@@ -43,7 +40,7 @@ export default function Ball({
   let initialFastness = 0.007;
   // const speed = 5;
   // const angle = Math.PI / 8;
-  useFrame(({ clock }) => {
+  useFrame(({ clock, camera }) => {
     const elapsedTime = clock.getElapsedTime();
 
     // if user hovers on a ball, rotate the ball group the opposite direction of the ball (slows it down)
@@ -67,7 +64,19 @@ export default function Ball({
     ballRef.current.position.z = Math.sin(elapsedTime + initialAngle) * distanceFromRadius;
     positions.push(ballRef.current.position.x, ballRef.current.position.y, ballRef.current.position.z);
     path.setAttribute("position", new Float32BufferAttribute(positions, 3));
+
+    // make the text look at the camera
+    textRef?.current?.lookAt(camera.position);
+    // place the text right above the ball
+    if (textRef?.current) {
+      textRef.current.position.y = ballRef.current.position.y + 2;
+    }
   });
+
+  // useEffect(() => {
+  //
+  //   ballRef.current.material.transparent = true;
+  // }, [ballRef?.current]);
   return (
     <group rotation={tiltAxis} ref={ballGroup}>
       <group
@@ -86,15 +95,49 @@ export default function Ball({
           // setSpeed(5);
         }}
       >
-        {area === "building" && <Mac />}
-        {area === "consuming" && <Book />}
-        {area === "creating" && <Pencil />}
+        <Trail
+          width={0.2} // Width of the line
+          color={"cyan"} // Color of the line
+          length={35} // Length of the line
+          decay={0.5} // How fast the line fades away
+          stride={0} // Min distance between previous and current point
+          interval={1} // Number of frames to wait before next calculation
+          target={undefined} // Optional target. This object will produce the trail.
+          attenuation={(width) => width} // A function to define the width in each point along it.
+        >
+          {area === "building" && <Mac />}
+          {area === "consuming" && <Book />}
+          {area === "creating" && <mesh />}{" "}
+          {/* Hacky fix: Since Pencil has weird positioning, we need to replace it w an invisible mesh here */}
+        </Trail>
+        {area === "creating" && <Pencil />} {/* And put the Pencil outside of the Trail */}
+        {hovered && (
+          // place it right above the ball
+          // @ts-ignore
+          <Center top ref={textRef}>
+            <Text3D
+              // @ts-ignore
+              font={mondayFont}
+              size={0.75}
+              height={0.2}
+              curveSegments={12}
+              bevelEnabled
+              bevelThickness={0.04}
+              bevelSize={0.02}
+              bevelOffset={0}
+              bevelSegments={5}
+            >
+              {area}
+              <meshNormalMaterial />
+            </Text3D>
+          </Center>
+        )}
       </group>
 
-      <line>
+      {/* <line>
         <bufferGeometry attach="geometry" {...path} />
         <lineBasicMaterial attach="material" color="#61FFFB" />
-      </line>
+      </line> */}
     </group>
   );
 }

@@ -7,8 +7,8 @@ title: Book
 */
 
 import type * as THREE from "three";
-import { useRef } from "react";
-import { useGLTF, useAnimations } from "@react-three/drei";
+import { useEffect, useRef, useState } from "react";
+import { useGLTF, useAnimations, Text3D } from "@react-three/drei";
 import type { GLTF } from "three-stdlib";
 import { useFrame } from "@react-three/fiber";
 
@@ -31,7 +31,17 @@ export default function Model(props: JSX.IntrinsicElements["group"]) {
   const group = useRef<THREE.Group>(null!);
   const { nodes, materials, animations } = useGLTF("/models/book.glb") as GLTFResult;
   //   @ts-ignore
-  const { actions } = useAnimations<GLTFActions>(animations, group);
+  const { actions } = useAnimations<GLTFActions>(animations, group) as {
+    actions: GLTFActions;
+  };
+
+  // useEffect(() => {
+  //   actions["Book Open/Close"].play();
+
+  //   return () => {
+  //     actions["Book Open/Close"].stop();
+  //   };
+  // }, []);
 
   useFrame((state, delta) => {
     // look at the camera
@@ -41,7 +51,7 @@ export default function Model(props: JSX.IntrinsicElements["group"]) {
   });
 
   return (
-    <group ref={group} {...props} dispose={null} scale={0.4}>
+    <group {...props} ref={group} dispose={null} scale={0.4}>
       <group name="Sketchfab_Scene">
         <group name="Sketchfab_model" rotation={[-Math.PI / 2, 0, 0]} scale={0.17}>
           <group name="f8b38bc6583940feb476e7dda518f97bfbx" rotation={[Math.PI / 2, 0, 0]}>

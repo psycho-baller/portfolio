@@ -9,8 +9,6 @@ title: Pencil
 import type * as THREE from "three";
 import { useGLTF } from "@react-three/drei";
 import type { GLTF } from "three-stdlib";
-import { useRef } from "react";
-import { useFrame } from "@react-three/fiber";
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -19,12 +17,6 @@ type GLTFResult = GLTF & {
     Cylinder_Material005_0: THREE.Mesh;
     Cylinder_Material001_0: THREE.Mesh;
     Cylinder_Material002_0: THREE.Mesh;
-    Star_Material006_0: THREE.Mesh;
-    Star001_Material006_0: THREE.Mesh;
-    Star002_Material006_0: THREE.Mesh;
-    Star003_Material006_0: THREE.Mesh;
-    Star004_Material006_0: THREE.Mesh;
-    Star005_Material006_0: THREE.Mesh;
   };
   materials: {
     ["Material.004"]: THREE.MeshStandardMaterial;
@@ -32,7 +24,6 @@ type GLTFResult = GLTF & {
     ["Material.005"]: THREE.MeshStandardMaterial;
     ["Material.001"]: THREE.MeshStandardMaterial;
     ["Material.002"]: THREE.MeshStandardMaterial;
-    ["Material.006"]: THREE.MeshStandardMaterial;
   };
 };
 

@@ -38,7 +38,7 @@ export default function Model(props: JSX.IntrinsicElements["group"]) {
     group.current.rotateZ(-Math.PI / 10);
   });
   return (
-    <group ref={group} {...props} dispose={null} scale={0.005}>
+    <group ref={group} {...props} dispose={null} scale={0.0075}>
       <group rotation={[-Math.PI / 2, 0, 0]}>
         <group rotation={[Math.PI / 2, 0, 0]}>
           <group position={[8.58, 13.85, 134]} rotation={[0, Math.PI / 2, 0]}>

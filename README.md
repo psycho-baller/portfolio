@@ -53,3 +53,16 @@ All commands are run from the root of the project, from a terminal:
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+
+## TODO
+
+### Quick/general to-dos
+- [ ] Do more w hover effects on the area models. More animations
+- [ ] Change to a more suiting font
+
+
+- [ ] Add a `src/pages/404.astro` page
+- [ ] Add a `src/pages/about.astro` page
+- [ ] Add a `src/pages/blog.astro` page
+- [ ] Add a `src/pages/blog/[slug].astro` page
+- [ ] Add a `src/pages/contact.astro` page

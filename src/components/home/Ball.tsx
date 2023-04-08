@@ -68,9 +68,9 @@ export default function Ball({
     // make the text look at the camera
     textRef?.current?.lookAt(camera.position);
     // place the text right above the ball
-    if (textRef?.current) {
-      textRef.current.position.y = ballRef.current.position.y + 2;
-    }
+    // if (textRef?.current) {
+    //   textRef.current.position.y = ballRef.current.position.y + 2;
+    // }
   });
 
   // useEffect(() => {
@@ -107,37 +107,33 @@ export default function Ball({
         >
           {area === "building" && <Mac />}
           {area === "consuming" && <Book />}
-          {area === "creating" && <mesh />}{" "}
+          {area === "creating" && <mesh />}
           {/* Hacky fix: Since Pencil has weird positioning, we need to replace it w an invisible mesh here */}
         </Trail>
         {area === "creating" && <Pencil />} {/* And put the Pencil outside of the Trail */}
-        {hovered && (
-          // place it right above the ball
-          // @ts-ignore
-          <Center top ref={textRef}>
-            <Text3D
-              // @ts-ignore
-              font={mondayFont}
-              size={0.75}
-              height={0.2}
-              curveSegments={12}
-              bevelEnabled
-              bevelThickness={0.04}
-              bevelSize={0.02}
-              bevelOffset={0}
-              bevelSegments={5}
-            >
-              {area}
-              <meshNormalMaterial />
-            </Text3D>
-          </Center>
-        )}
       </group>
-
-      {/* <line>
-        <bufferGeometry attach="geometry" {...path} />
-        <lineBasicMaterial attach="material" color="#61FFFB" />
-      </line> */}
+      {hovered && (
+        // place it right above the ball
+        // @ts-ignore
+        <Center ref={textRef}>
+          <Text3D
+            // @ts-ignore
+            font={mondayFont}
+            ref={textRef}
+            // size={1}
+            height={0.3}
+            curveSegments={12}
+            bevelEnabled
+            bevelThickness={0.4}
+            bevelSize={0.02}
+            bevelOffset={0}
+            bevelSegments={5}
+          >
+            {area}
+            <meshNormalMaterial />
+          </Text3D>
+        </Center>
+      )}
     </group>
   );
 }

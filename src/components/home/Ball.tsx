@@ -1,7 +1,7 @@
-import { Line, Text3D, Text, Center, Trail } from "@react-three/drei";
+import { Text3D, Text, Center, Trail } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
-import { useEffect, useRef, useState } from "react";
-import { Vector3, Group, Mesh, BufferGeometry, Float32BufferAttribute } from "three";
+import { useRef, useState } from "react";
+import { Vector3, Group, Mesh } from "three";
 import { useControls } from "leva";
 import Mac from "./models/Mac";
 import Book from "./models/Book";
@@ -34,8 +34,6 @@ export default function Ball({
   const { speed } = (debug && useControls({ speed: { value: 10, min: 0, max: 1000 } })) || { speed: 10 };
 
   const distanceFromRadius = 8;
-  const path = new BufferGeometry();
-  const positions = [] as number[];
   let initialSlowness = 0.001;
   let initialFastness = 0.007;
   // const speed = 5;
@@ -62,8 +60,6 @@ export default function Ball({
     // rotate the ball all the time
     ballRef.current.position.x = Math.cos(elapsedTime + initialAngle) * distanceFromRadius;
     ballRef.current.position.z = Math.sin(elapsedTime + initialAngle) * distanceFromRadius;
-    positions.push(ballRef.current.position.x, ballRef.current.position.y, ballRef.current.position.z);
-    path.setAttribute("position", new Float32BufferAttribute(positions, 3));
 
     // make the text look at the camera
     textRef?.current?.lookAt(camera.position);
@@ -78,42 +74,43 @@ export default function Ball({
   //   ballRef.current.material.transparent = true;
   // }, [ballRef?.current]);
   return (
-    <group rotation={tiltAxis} ref={ballGroup}>
-      <group
-        {...props}
-        ref={ballRef}
-        scale={active ? [1.5, 1.5, 1.5] : [1, 1, 1]}
-        onClick={(_event) => {
-          setActive(!active);
-        }}
-        onPointerOver={(_event) => {
-          setHover(true);
-          // setSpeed(1);
-        }}
-        onPointerOut={(_event) => {
-          setHover(false);
-          // setSpeed(5);
-        }}
-      >
-        <Trail
-          width={0.2} // Width of the line
-          color={"cyan"} // Color of the line
-          length={35} // Length of the line
-          decay={0.5} // How fast the line fades away
-          stride={0} // Min distance between previous and current point
-          interval={1} // Number of frames to wait before next calculation
-          target={undefined} // Optional target. This object will produce the trail.
-          attenuation={(width) => width} // A function to define the width in each point along it.
+    <group>
+      <group rotation={tiltAxis} ref={ballGroup}>
+        <group
+          {...props}
+          ref={ballRef}
+          scale={active ? [1.5, 1.5, 1.5] : [1, 1, 1]}
+          onClick={(_event) => {
+            setActive(!active);
+          }}
+          onPointerOver={(_event) => {
+            setHover(true);
+            // setSpeed(1);
+          }}
+          onPointerOut={(_event) => {
+            setHover(false);
+            // setSpeed(5);
+          }}
         >
-          {area === "building" && <Mac />}
-          {area === "consuming" && <Book />}
-          {area === "creating" && <mesh />}
-          {/* Hacky fix: Since Pencil has weird positioning, we need to replace it w an invisible mesh here */}
-        </Trail>
-        {area === "creating" && <Pencil />} {/* And put the Pencil outside of the Trail */}
+          <Trail
+            width={0.2} // Width of the line
+            color={"cyan"} // Color of the line
+            length={35} // Length of the line
+            decay={0.5} // How fast the line fades away
+            stride={0} // Min distance between previous and current point
+            interval={1} // Number of frames to wait before next calculation
+            target={undefined} // Optional target. This object will produce the trail.
+            attenuation={(width) => width} // A function to define the width in each point along it.
+          >
+            {area === "building" && <Mac />}
+            {area === "consuming" && <Book />}
+            {area === "creating" && <mesh />}
+            {/* Hacky fix: Since Pencil has weird positioning, we need to replace it w an invisible mesh here */}
+          </Trail>
+          {area === "creating" && <Pencil />} {/* And put the Pencil outside of the Trail */}
+        </group>
       </group>
       {hovered && (
-        // place it right above the ball
         // @ts-ignore
         <Center ref={textRef}>
           <Text3D

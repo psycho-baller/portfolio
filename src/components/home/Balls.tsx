@@ -1,6 +1,7 @@
 import { useFrame } from "@react-three/fiber";
 import { useRef, useState } from "react";
 import Ball from "./Ball";
+import { OrbitControls } from "@react-three/drei";
 
 export default function Balls(props: any) {
   const ballGroup = useRef<THREE.Group>(null!);

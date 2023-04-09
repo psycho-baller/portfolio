@@ -6,8 +6,7 @@ export default function HeroScene(props: any) {
   return (
     <Canvas>
       <Hud renderPriority={1}>
-        <PerspectiveCamera makeDefault position={[0, -8, 30]} />
-        <OrbitControls />
+        <PerspectiveCamera makeDefault position={[0, 0, 30]} />
 
         <TopText />
       </Hud>

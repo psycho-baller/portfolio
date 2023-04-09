@@ -6,7 +6,7 @@ import { useControls } from "leva";
 import Mac from "./models/Mac";
 import Book from "./models/Book";
 import Pencil from "./models/Pencil";
-import mondayFont from "../../utils/monday_font.json";
+import mondayFont from "../../utils/blueNight_font.json";
 
 export default function Ball({
   // ballGroup,
@@ -81,7 +81,7 @@ export default function Ball({
           ref={ballRef}
           scale={active ? [1.5, 1.5, 1.5] : [1, 1, 1]}
           onClick={(_event) => {
-            setActive(!active);
+            // route to the corresponding section of the page
           }}
           onPointerOver={(_event) => {
             setHover(true);
@@ -126,7 +126,7 @@ export default function Ball({
             bevelOffset={0}
             bevelSegments={5}
           >
-            {area}
+            {area.toUpperCase()}
             <meshNormalMaterial />
           </Text3D>
         </Center>

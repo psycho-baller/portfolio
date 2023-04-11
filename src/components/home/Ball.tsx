@@ -1,3 +1,4 @@
+import React from "react";
 import { Text3D, Text, Center, Trail } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { useRef, useState } from "react";

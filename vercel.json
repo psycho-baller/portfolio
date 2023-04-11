@@ -1,9 +1,5 @@
 {
     "github": {
         "silent": true
-    },
-    "name": "portfolio",
-    "framework": "astro",
-    "public": true,
-    "trailingSlash": "false"
+    }
 }

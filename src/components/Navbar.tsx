@@ -1,16 +1,23 @@
 // import "solid-js";
 /** @jsxImportSource solid-js */
-import "../tailwind.css";
-import { createSignal } from "solid-js";
+import "../styles/tailwind.css";
+import { For, createSignal } from "solid-js";
 import { navLinks } from "../utils/constants";
+import "@styles/logo.css";
 export default function Navbar() {
   const [active, setActive] = createSignal("");
 
   return (
     <nav class="flex items-center sm:bg-transparent w-full p-6 top-0 z-10 fixed">
-      <div className="flex justify-between w-full max-w-7xl sm:opacity-100 mx-auto">
-        <div class="flex items-center flex-shrink-0">
-          <img src="favicon.svg" alt="Logo" class="h-8" />
+      <div class="flex justify-between w-full max-w-7xl sm:opacity-100 mx-auto">
+        <div
+          class="flex items-center flex-shrink-0 text-4xl text-cyan-300"
+          style={{
+            "font-family": "Modak",
+          }}
+        >
+          {/* <img src="favicon.svg" alt="Logo" class="h-8" /> */}
+          RAMI
         </div>
         <div class="block sm:hidden">
           <button class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover hover:border-white">

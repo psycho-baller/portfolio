@@ -1,31 +1,31 @@
-import { useFrame, useThree } from "@react-three/fiber";
-import { useRef } from "react";
-import { Center, Text3D } from "@react-three/drei";
+import { useThree } from "@react-three/fiber";
+import { Center, Text3D, Text } from "@react-three/drei";
 import mondayFont from "../../utils/blueNight_font.json";
 
 export default function TopText(props: any) {
-  const textRef = useRef<THREE.Mesh>(null!);
-
   const { viewport } = useThree();
-
   const { width, height } = viewport;
-  console.log("width", width);
 
-  useFrame(({ clock, camera }) => {
-    // look at the camera
-    textRef.current.lookAt(camera.position); // TODO: could alternatively replace this with manually rotating it's x-axis
-  });
+  // a list of all the characters in the text
+  // const chars = "EXPLORE MY THREE AREAS OF THE INTERNET".split("");
 
   return (
     <group>
-      {width > 27.5 ? (
+      {width > 25 ? (
         // @ts-ignore
-        <Center ref={textRef} position={[0, 10, 0]}>
+        <Center
+          // ref={textRef}
+          position={[0, 15, 0]}
+          // look at the camera
+          rotation={[0, Math.PI, 0]}
+        >
+          {/* {chars.map((char, i) => (
+            <Curvy3DText key={i} char={char} i={i} charsLen={chars.length} />
+          ))} */}
           <Text3D
             // @ts-ignore
             font={mondayFont}
-            ref={textRef}
-            // size={1}
+            size={1}
             height={0.3}
             curveSegments={12}
             bevelEnabled
@@ -34,7 +34,6 @@ export default function TopText(props: any) {
             bevelOffset={0}
             bevelSegments={5}
             lineHeight={1}
-            // make text phone friendly
           >
             EXPLORE MY THREE AREAS OF THE INTERNET
             <meshNormalMaterial />
@@ -42,13 +41,12 @@ export default function TopText(props: any) {
         </Center>
       ) : (
         // @ts-ignore
-        <Center ref={textRef} position={[0, 10, 0]}>
+        <Center position={[0, 15, 0]} rotation={[0, Math.PI, 0]}>
           <Center>
             <Text3D
               // @ts-ignore
               font={mondayFont}
-              ref={textRef}
-              size={0.6}
+              size={width < 10 ? 0.7 : width < 15 ? 0.9 : 1}
               height={0.3}
               curveSegments={12}
               bevelEnabled
@@ -67,8 +65,7 @@ export default function TopText(props: any) {
             <Text3D
               // @ts-ignore
               font={mondayFont}
-              ref={textRef}
-              size={0.6}
+              size={width < 10 ? 0.7 : width < 15 ? 0.9 : 1}
               height={0.3}
               curveSegments={12}
               bevelEnabled

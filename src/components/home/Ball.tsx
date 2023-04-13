@@ -1,4 +1,4 @@
-import React from "react";
+import { useEffect } from "react";
 import { Text3D, Text, Center, Trail } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { useRef, useState } from "react";
@@ -29,6 +29,13 @@ export default function Ball({
   const ballGroup = useRef<Group>(null!);
   const ballRef = useRef<Group>(null!);
   const textRef = useRef<Mesh>(null!);
+
+  useEffect(() => {
+    document.body.style.cursor = hovered ? "pointer" : "auto";
+    return () => {
+      document.body.style.cursor = "auto";
+    };
+  }, [hovered]);
 
   // check if page is in debug mode
   const debug = window.location.href.includes("debug");
@@ -82,7 +89,9 @@ export default function Ball({
           ref={ballRef}
           scale={active ? [1.5, 1.5, 1.5] : [1, 1, 1]}
           onClick={(_event) => {
-            // route to the corresponding section of the page
+            // TODO: route to the corresponding section of the page
+            // if (props.url) window.open(props.url, "_blank");
+            setActive(!active);
           }}
           onPointerOver={(_event) => {
             setHover(true);

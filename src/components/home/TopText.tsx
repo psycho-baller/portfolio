@@ -27,7 +27,6 @@ export default function TopText(props: any) {
   const effectOnX = 0.0075;
   const effectOnY = 0.0075;
   useFrame(({ camera }) => {
-    //
     target.x += (mouseX * effectOnX - target.x) * reactivity;
     target.y += (mouseY * effectOnY - target.y) * reactivity;
 

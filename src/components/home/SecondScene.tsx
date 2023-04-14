@@ -1,9 +1,13 @@
 import { useThree } from "@react-three/fiber";
 import TopText from "./TopText";
-import { Hud, OrbitControls, OrthographicCamera, PerspectiveCamera } from "@react-three/drei";
+import { Hud, OrbitControls, OrthographicCamera, PerspectiveCamera, useTexture } from "@react-three/drei";
+import { sRGBEncoding } from "three";
 
 export default function Title(props: any) {
-  const { viewport } = useThree();
+  // const background = useTexture("scene_bg.png");
+  // background.encoding = sRGBEncoding;
+  const { scene, viewport } = useThree();
+  // scene.background = background;
 
   return (
     <Hud renderPriority={1}>

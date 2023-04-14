@@ -9,7 +9,7 @@ export default function About({ children }: { children: JSX.Element[] | JSX.Elem
       style={{
         height: "100vh",
         width: "100vw",
-        background: "black",
+        // background: "black",
         position: "absolute",
         top: 0,
         left: 0,
@@ -20,6 +20,7 @@ export default function About({ children }: { children: JSX.Element[] | JSX.Elem
       <OrbitControls />
       <ambientLight />
       <pointLight position={[10, 10, 10]} />
+      <color args={["#030202"]} attach="background" />
       {children}
     </Canvas>
   );

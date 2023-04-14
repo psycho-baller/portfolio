@@ -1,5 +1,5 @@
 import { useFrame, useThree } from "@react-three/fiber";
-import { Center, Text3D, Text } from "@react-three/drei";
+import { Center, Text3D, Text, useTexture, useMatcapTexture } from "@react-three/drei";
 import mondayFont from "../../utils/blueNight_font.json";
 import { useRef } from "react";
 import { Vector3 } from "three";
@@ -8,6 +8,8 @@ export default function TopText(props: any) {
   const { viewport } = useThree();
   const { width, height } = viewport;
   const ref = useRef<THREE.Mesh>(null!);
+
+  const [matcap] = useMatcapTexture("346088_6ABED7_56A0C5_4E91B8", 256);
 
   var target = new Vector3();
   var mouseX = 0,
@@ -68,7 +70,7 @@ export default function TopText(props: any) {
             lineHeight={1}
           >
             EXPLORE MY THREE AREAS OF THE INTERNET
-            <meshNormalMaterial />
+            <meshMatcapMaterial matcap={matcap} />
           </Text3D>
         </Center>
       ) : (

@@ -15,20 +15,27 @@ export default function TopText(props: any) {
   var mouseX = 0,
     mouseY = 0;
 
-  const windowHalfX = window.innerWidth / 2;
-  const windowHalfY = window.innerHeight / 2;
+  const windowQuarterX = window.innerWidth / 4;
+  const windowQuarterY = window.innerHeight / 4;
 
   window.addEventListener("mousemove", (event) => {
-    mouseX = event.clientX - windowHalfX;
-    mouseY = event.clientY - windowHalfY;
+    mouseX = event.clientX - windowQuarterX;
+    mouseY = event.clientY - windowQuarterY;
   });
 
   const reactivity = 0.02;
   const effectOnX = 0.0075;
   const effectOnY = 0.0075;
   useFrame(({ camera }) => {
+    console.log("mouseX", mouseY);
     target.x += (mouseX * effectOnX - target.x) * reactivity;
-    target.y += (mouseY * effectOnY - target.y) * reactivity;
+    // if mouse is above the text
+    if (mouseY < 0) {
+      // increase the effect on the y axis (when the mouse is above the text)
+      target.y += (mouseY * 10 * effectOnY - target.y) * reactivity;
+    } else {
+      target.y += (mouseY * effectOnY - target.y) * reactivity;
+    }
 
     target.z = camera.position.z;
 

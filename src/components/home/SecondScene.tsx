@@ -1,7 +1,6 @@
 import { useThree } from "@react-three/fiber";
 import TopText from "./TopText";
-import { Hud, OrbitControls, OrthographicCamera, PerspectiveCamera, useTexture } from "@react-three/drei";
-import { sRGBEncoding } from "three";
+import { Hud, OrthographicCamera } from "@react-three/drei";
 
 export default function Title(props: any) {
   // const background = useTexture("scene_bg.png");

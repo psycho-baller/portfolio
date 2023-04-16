@@ -27,7 +27,6 @@ export default function TopText(props: any) {
   const effectOnX = 0.0075;
   const effectOnY = 0.0075;
   useFrame(({ camera }) => {
-    console.log("mouseX", mouseY);
     target.x += (mouseX * effectOnX - target.x) * reactivity;
     // if mouse is above the text
     if (mouseY < 0) {
@@ -95,7 +94,7 @@ export default function TopText(props: any) {
               bevelOffset={0}
               bevelSegments={5}
               lineHeight={1}
-              // make text phone friendly
+            // make text phone friendly
             >
               EXPLORE MY THREE AREAS
               <meshNormalMaterial />
@@ -114,7 +113,7 @@ export default function TopText(props: any) {
               bevelOffset={0}
               bevelSegments={5}
               lineHeight={1}
-              // make text phone friendly
+            // make text phone friendly
             >
               OF THE INTERNET
               <meshNormalMaterial />

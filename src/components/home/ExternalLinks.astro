@@ -1,0 +1,50 @@
+---
+import { Icon } from "astro-icon";
+import { externalLinks } from "src/utils/constants";
+---
+
+<div
+    id="external-links"
+    class="absolute bottom-1/10 right-2 flex flex-col items-center justify-center w-6 bg-transparent gap-6"
+>
+    {
+        externalLinks.map(({ name, href }) => (
+            <a
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="w-6 h-6"
+            >
+                <Icon name={name} />
+            </a>
+        ))
+    }
+</div>
+<style lang="scss">
+    .bottom-1\/10 {
+        bottom: 10%;
+    }
+
+    /* animation when page loads: move the element with id = "external-links" from behind the screen to the right delay each child's animation*/
+
+    @for $i from 1 through 5 {
+        #external-links > a:nth-child(#{$i}n) {
+            animation: moveFromBehind 0.5s ease-in-out forwards;
+            // opacity: 0;
+            visibility: hidden;
+            animation-delay: #{$i * 0.08}s;
+        }
+    }
+    @keyframes moveFromBehind {
+        0% {
+            opacity: 0;
+            transform: translateX(100%);
+        }
+
+        100% {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(0);
+        }
+    }
+</style>

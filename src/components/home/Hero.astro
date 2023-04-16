@@ -1,14 +1,11 @@
 ---
+import ExternalLinks from "./ExternalLinks.astro";
 import HeroScene from "./HeroScene";
 ---
 
 <section>
   <HeroScene client:load />
   <section class="min-h-screen">
-    <!-- <h1>Hero</h1> -->
-    <!-- have an element show for a few seconds then slide away. Place it in the bottom right corner -->
-    <!-- <div class="fixed bottom-1/4 right-0 bg-red-500 text-white px-6 py-2 rounded">
-      <p>Hero</p>
-    </div> -->
+    <ExternalLinks />
   </section>
 </section>

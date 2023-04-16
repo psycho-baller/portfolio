@@ -12,7 +12,6 @@ npm create astro@latest -- --template basics
 
 ![basics](https://user-images.githubusercontent.com/4677417/186188965-73453154-fdec-4d6b-9c34-cb35c248ae5b.png)
 
-
 ## 🚀 Project Structure
 
 Inside of your Astro project, you'll see the following folders and files:
@@ -58,13 +57,14 @@ Feel free to check [our documentation](https://docs.astro.build) or jump into ou
 
 ### Quick/general to-dos
 
-- [ ] Figure out where you wanna put yr socials at
+- [X] Figure out where you wanna put yr socials at
+- [ ] Add a favicon
+- [ ] Add suspense to the loading of the models
 - [X] Add texture to the title and possibly the area text
 - [X] A cool background
 - [ ] add myself to the center of the scene, possibly reduce the size of the areas and use react spring to animate the movement of the text of the areas, and see where else I can use react spring
 - [ ] Do more w hover effects on the area models. More animations
 - [ ] Change to a more suiting font
-
 
 - [ ] Add a `src/pages/404.astro` page
 - [ ] Add a `src/pages/about.astro` page

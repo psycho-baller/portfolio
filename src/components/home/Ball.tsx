@@ -90,8 +90,8 @@ export default function Ball({
           scale={active ? [1.5, 1.5, 1.5] : [1, 1, 1]}
           onClick={(_event) => {
             // TODO: route to the corresponding section of the page
-            // if (props.url) window.open(props.url, "_blank");
-            setActive(!active);
+            if (props.url) window.open(props.url, "_blank");
+            // setActive(!active);
           }}
           onPointerOver={(_event) => {
             setHover(true);

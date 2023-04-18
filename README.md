@@ -58,7 +58,7 @@ Feel free to check [our documentation](https://docs.astro.build) or jump into ou
 ### Quick/general to-dos
 
 - [X] Figure out where you wanna put yr socials at
-- [ ] Add a favicon
+- [X] Add a favicon
 - [ ] Add suspense to the loading of the models
 - [X] Add texture to the title and possibly the area text
 - [X] A cool background

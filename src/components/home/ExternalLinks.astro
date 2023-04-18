@@ -30,7 +30,6 @@ import { externalLinks } from "src/utils/constants";
     @for $i from 1 through 5 {
         #external-links > a:nth-child(#{$i}n) {
             animation: moveFromBehind 0.5s ease-in-out forwards;
-            // opacity: 0;
             visibility: hidden;
             animation-delay: #{$i * 0.08}s;
         }

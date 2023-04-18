@@ -11,10 +11,7 @@ export default function Navbar() {
     <nav class="flex items-center sm:bg-transparent w-full p-6 top-0 z-10 fixed">
       <div class="flex justify-between w-full max-w-7xl sm:opacity-100 mx-auto">
         <div
-          class="flex items-center flex-shrink-0 text-4xl text-cyan-300"
-          style={{
-            "font-family": "Modak",
-          }}
+          class="flex items-center flex-shrink-0 text-4xl text-cyan-300 modak"
         >
           {/* <img src="favicon.svg" alt="Logo" class="h-8" /> */}
           RAMI
@@ -36,7 +33,7 @@ export default function Navbar() {
                   class={`${
                     // TODO: reverse the hover effect
                     active() === link.title ? "text-gray-400" : "text-white"
-                  } capitalize hover:text-gray-400 text-[18px] font-medium cursor-pointer block sm:inline-block`}
+                    } capitalize hover:text-gray-400 text-[18px] font-medium cursor-pointer block sm:inline-block`}
                   onClick={() => setActive(link.title)}
                 >
                   <a href={link.href}>{link.title}</a>

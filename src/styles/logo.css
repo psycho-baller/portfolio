@@ -1,7 +1,11 @@
 @font-face {
-    font-family: 'Modak';
-    src: url('/Modak-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-  }
+  font-family: 'Modak';
+  src: url('/Modak-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.modak {
+  font-family: 'Modak', cursive;
+}

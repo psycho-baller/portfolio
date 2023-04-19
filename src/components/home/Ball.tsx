@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Text3D, Text, Center, Trail } from "@react-three/drei";
+import { Text3D, Center, Trail } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { useRef, useState } from "react";
 import { Vector3, Group, Mesh } from "three";
@@ -87,7 +87,7 @@ export default function Ball({
         <group
           {...props}
           ref={ballRef}
-          scale={active ? [1.5, 1.5, 1.5] : [1, 1, 1]}
+          scale={[1, 1, 1]}
           onClick={(_event) => {
             // TODO: route to the corresponding section of the page
             if (props.url) window.open(props.url, "_blank");

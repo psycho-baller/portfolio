@@ -8,7 +8,7 @@ export default function Navbar() {
   const [active, setActive] = createSignal("");
 
   return (
-    <nav class="flex items-center sm:bg-transparent w-full p-6 top-0 z-10 fixed">
+    <header class="flex items-center sm:bg-transparent w-full p-6 top-0 z-10 fixed">
       <div class="flex justify-between w-full max-w-7xl sm:opacity-100 mx-auto">
         <div
           class="flex items-center flex-shrink-0 text-4xl text-cyan-300 modak"
@@ -16,6 +16,7 @@ export default function Navbar() {
           {/* <img src="favicon.svg" alt="Logo" class="h-8" /> */}
           RAMI
         </div>
+
         <div class="block sm:hidden">
           <button class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover hover:border-white">
             <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -43,6 +44,6 @@ export default function Navbar() {
           </ul>
         </div>
       </div>
-    </nav>
+    </header>
   );
 }

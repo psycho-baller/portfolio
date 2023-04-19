@@ -5,8 +5,12 @@
     "jsxImportSource": "react",
     "baseUrl": ".", // This must be specified if "paths" is.
     "paths": {
-      "@components/*": ["src/components/*"],
-      "@styles/*": ["src/styles/*"]
+      "@components/*": [
+        "src/components/*"
+      ],
+      "@styles/*": [
+        "src/styles/*"
+      ]
     }
   }
 }

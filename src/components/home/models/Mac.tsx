@@ -6,10 +6,11 @@ source: https://sketchfab.com/3d-models/mini-macbook-pro-2b054523279747c8b5b2e5e
 title: Mini MacBook Pro
 */
 import type * as THREE from "three";
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 import type { GLTF } from "three-stdlib";
 import { useFrame } from "@react-three/fiber";
+import SUSpense from "../Suspense";
 
 type GLTFResult = GLTF & {
   nodes: {

@@ -6,17 +6,15 @@ import { sRGBEncoding } from "three";
 export default function About({ children }: { children: JSX.Element[] | JSX.Element }) {
   return (
     <Canvas
+      id="canvas"
       camera={{ position: [0, 0, 15] }}
       style={{
         height: "100vh",
         width: "100vw",
-        // background image
-        backgroundImage: "url('scene_bg.png')",
-        backgroundSize: "100% 100%",
         position: "absolute",
         top: 0,
         left: 0,
-        // zIndex: -1,
+        zIndex: -10,
         overflow: "hidden",
       }}
     >

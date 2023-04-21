@@ -80,7 +80,9 @@ export default function TopText(props: any) {
         </Center>
       ) : (
         // @ts-ignore
-        <Center position={[0, 15, 0]} rotation={[0, Math.PI, 0]}>
+        <Center position={[0, 15, 0]} rotation={[0, Math.PI, 0]}
+          // @ts-ignore
+          ref={ref}>
           <Center>
             <Text3D
               // @ts-ignore
@@ -97,7 +99,8 @@ export default function TopText(props: any) {
             // make text phone friendly
             >
               EXPLORE MY THREE AREAS
-              <meshNormalMaterial />
+              <meshMatcapMaterial matcap={matcap} />
+
             </Text3D>
           </Center>
           <Center position={[0, -2, 0]}>
@@ -116,7 +119,8 @@ export default function TopText(props: any) {
             // make text phone friendly
             >
               OF THE INTERNET
-              <meshNormalMaterial />
+              <meshMatcapMaterial matcap={matcap} />
+
             </Text3D>
           </Center>
         </Center>

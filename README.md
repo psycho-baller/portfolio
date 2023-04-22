@@ -62,8 +62,8 @@ Feel free to check [our documentation](https://docs.astro.build) or jump into ou
 - [X] Add suspense to the loading of the models
 - [X] Add texture to the title and possibly the area text
 - [X] A cool background
-- [ ] Make it phone compatible
-- [ ] redesign the navbar
+- [X] Make it phone compatible
+- [X] redesign the navbar
 - [ ] add myself to the center of the scene, possibly reduce the size of the areas and use react spring to animate the movement of the text of the areas, and see where else I can use react spring
 - [ ] Do more w hover effects on the area models. More animations
 - [ ] Change to a more suiting font

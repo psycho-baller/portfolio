@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Text3D, Center, Trail } from "@react-three/drei";
-import { useFrame } from "@react-three/fiber";
+import { useFrame, useThree } from "@react-three/fiber";
 import { useRef, useState } from "react";
 import { Vector3, Group, Mesh } from "three";
 import { useControls } from "leva";
@@ -25,10 +25,12 @@ export default function Ball({
   [x: string]: any;
 }) {
   const [hovered, setHover] = useState(false);
-  const [active, setActive] = useState(false);
+  // const [active, setActive] = useState(false);
   const ballGroup = useRef<Group>(null!);
   const ballRef = useRef<Group>(null!);
   const textRef = useRef<Mesh>(null!);
+
+  const { size } = useThree();
 
   useEffect(() => {
     document.body.style.cursor = hovered ? "pointer" : "auto";
@@ -41,13 +43,15 @@ export default function Ball({
   const debug = window.location.href.includes("debug");
   const { speed } = (debug && useControls({ speed: { value: 10, min: 0, max: 1000 } })) || { speed: 10 };
 
-  const distanceFromRadius = 8;
+  // if smaller screen, reduce the size of the ball
+  const distanceFromRadius = size.width > 800 ? 8 : (size.width * 8) / 800
   let initialSlowness = 0.001;
   let initialFastness = 0.007;
   // const speed = 5;
   // const angle = Math.PI / 8;
   useFrame(({ clock, camera }) => {
     const elapsedTime = clock.getElapsedTime();
+
 
     // if user hovers on a ball, rotate the ball group the opposite direction of the ball (slows it down)
     if (hovered) {
@@ -87,7 +91,7 @@ export default function Ball({
         <group
           {...props}
           ref={ballRef}
-          scale={[1, 1, 1]}
+          scale={size.width > 800 ? [1, 1, 1] : [(size.width * 1) / 800, (size.width * 1) / 800, (size.width * 1) / 800]}
           onClick={(_event) => {
             // TODO: route to the corresponding section of the page
             if (props.url) window.open(props.url, "_blank");

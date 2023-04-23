@@ -1,0 +1,24 @@
+---
+import "@styles/logo.css";
+import "@styles/tailwind.css";
+import NavLinks from "./NavLinks";
+import Hamburger from "./Hamburger.astro";
+---
+
+<header class="flex items-center sm:bg-transparent w-full p-6 top-0 z-10 fixed">
+  <div class="flex justify-between w-full max-w-7xl sm:opacity-100 mx-auto">
+    <a
+      href="/"
+      class="flex items-center flex-shrink-0 text-4xl text-cyan-300 modak"
+    >
+      {/* <img src="favicon.svg" alt="Logo" class="h-8" /> */}RAMI
+    </a>
+
+    <div class="block sm:hidden"><Hamburger /></div>
+    <div class="sm:block sm:items-center sm:w-auto relative" id="nav-links">
+      <nav class="sm:flex-grow sm:space-x-8 sm:justify-end">
+        <NavLinks />
+      </nav>
+    </div>
+  </div>
+</header>

@@ -3,23 +3,25 @@ import { Icon } from "astro-icon";
 import { externalLinks } from "src/utils/constants";
 ---
 
-<div
-    id="external-links"
-    class="absolute bottom-1/10 right-2 flex flex-col items-center justify-center w-6 bg-transparent gap-6"
->
-    {
-        externalLinks.map(({ name, href }) => (
-            <a
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="w-6 h-6"
-            >
-                <Icon name={name} />
-            </a>
-        ))
-    }
-</div>
+<footer class="bottom-0 left-0 w-full fixed flex">
+    <div
+        id="external-links"
+        class="mx-auto flex flex-row mb-2 items-center bg-transparent justify-between gap-6"
+    >
+        {
+            externalLinks.map(({ name, href }) => (
+                <a
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="w-6 h-6 flex-1"
+                >
+                    <Icon name={name} />
+                </a>
+            ))
+        }
+    </div>
+</footer>
 <style lang="scss">
     .bottom-1\/10 {
         bottom: 10%;
@@ -37,7 +39,7 @@ import { externalLinks } from "src/utils/constants";
     @keyframes moveFromBehind {
         0% {
             opacity: 0;
-            transform: translateX(100%);
+            transform: translateY(100%);
         }
 
         100% {

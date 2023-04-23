@@ -23,6 +23,8 @@ All commands are run from the root of the project, from a terminal:
 - [X] A cool background
 - [X] Make it phone compatible
 - [X] redesign the navbar
+- [ ] animate the navbar
+- [ ] add a `src/pages/consuming.astro` page
 - [ ] add myself to the center of the scene, possibly reduce the size of the areas and use react spring to animate the movement of the text of the areas, and see where else I can use react spring
 - [ ] Do more w hover effects on the area models. More animations
 - [ ] Change to a more suiting font

@@ -6,7 +6,6 @@ import { sRGBEncoding } from "three";
 export default function About({ children }: { children: JSX.Element[] | JSX.Element }) {
   return (
     <Canvas
-      id="canvas"
       camera={{ position: [0, 0, 15] }}
       style={{
         height: "100vh",
@@ -19,8 +18,8 @@ export default function About({ children }: { children: JSX.Element[] | JSX.Elem
       }}
     >
       <OrbitControls />
-      <ambientLight />
-      <pointLight position={[10, 10, 10]} />
+      {/* <ambientLight /> */}
+      <pointLight position={[0, 0, 10]} />
       {children}
     </Canvas>
   );

@@ -14,7 +14,7 @@ export default function About({ children }: { children: JSX.Element[] | JSX.Elem
         position: "absolute",
         top: 0,
         left: 0,
-        zIndex: -10,
+        // zIndex: -10,
         overflow: "hidden",
       }}
     >

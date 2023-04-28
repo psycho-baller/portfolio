@@ -5,9 +5,8 @@ import "@styles/navbar.scss";
 <script lang="ts">
   const burger = document.querySelector(".burger");
 
-  burger.addEventListener("click", () => {
+  burger?.addEventListener("click", () => {
     // toggle hamburger
-    const burger = document.querySelector(".burger");
     burger?.classList.toggle("active");
 
     // toggle nav

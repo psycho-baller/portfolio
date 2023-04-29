@@ -14,8 +14,6 @@ export default function MyModal({ message }: { message: { header: string, body: 
     setIsOpen(true)
   }
 
-
-
   return (
     <Transition appear show={isOpen} as={Fragment} >
       <Dialog as="div" className="relative z-10 container" onClose={closeModal}>
@@ -56,6 +54,7 @@ export default function MyModal({ message }: { message: { header: string, body: 
                   </p>
                 </div>
 
+                {/* TODO: add action buttons */}
                 <div className="mt-4">
                   <button
                     type="button"

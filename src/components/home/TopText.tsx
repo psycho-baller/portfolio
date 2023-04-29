@@ -15,11 +15,11 @@ export default function TopText(props: any) {
   var mouseX = 0,
     mouseY = 0;
 
-  const windowQuarterX = window.innerWidth / 4;
-  const windowQuarterY = window.innerHeight / 4;
+  const windowHalfX = window.innerWidth / 2; // coz the text is in the middle
+  const windowQuarterY = window.innerHeight / 4; // coz the text is at the top
 
   window.addEventListener("mousemove", (event) => {
-    mouseX = event.clientX - windowQuarterX;
+    mouseX = event.clientX - windowHalfX;
     mouseY = event.clientY - windowQuarterY;
   });
 

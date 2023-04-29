@@ -13,7 +13,7 @@ export const navLinks = [
     },
 
     {
-        href: "/resume",
+        href: "https://github.com/psycho-baller",
         title: "Resume",
     },
 ];
@@ -37,7 +37,7 @@ export const externalLinks = [
     },
     {
         name: "mdi:resume",
-        href: "/resume.pdf",
+        href: "https://www.linkedin.com/in/rami--maalouf/",
     },
 ];
 

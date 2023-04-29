@@ -46,7 +46,7 @@ export default function Ball({
   // if smaller screen, reduce the size of the ball
   const distanceFromRadius = size.width > 800 ? 8 : (size.width * 8) / 800
   let initialSlowness = 0.001;
-  let initialFastness = 0.007;
+  let initialFastness = 0.008;
   // const speed = 5;
   // const angle = Math.PI / 8;
   useFrame(({ clock, camera }) => {

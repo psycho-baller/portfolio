@@ -5,9 +5,11 @@ import { navLinks } from "@utils/constants";
 import "@styles/logo.css";
 export default function Navbar() {
   const [active, setActive] = createSignal("");
+  console.log(active());
 
   onMount(() => {
     setActive(window.location.pathname);
+    console.log(window.location.pathname);
   });
 
   return (
@@ -15,9 +17,9 @@ export default function Navbar() {
       {(link) => (
         <li
           // class="block capitalize sm:inline-block sm:mt-0 hover:text-gray-400"
-          class={`${
-            // TODO: reverse the hover effect
-            active() === link.title ? "text-gray-400" : "text-white"
+          // TODO: for some reason JS not working
+          // TODO: reverse the hover effect
+          class={`${active() === link.title ? "text-gray-400" : "text-white"
             } capitalize hover:text-gray-400 text-[18px] font-medium cursor-pointer block sm:inline-block`}
           onClick={() => setActive(link.title)}
         >

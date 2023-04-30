@@ -66,8 +66,6 @@ export default function MyModal({ message }: { message: message }) {
                     <ReactMarkdown children={message.body} />
                   </p>
                 </div>
-
-                {/* TODO: add action buttons */}
                 <div className="flex justify-evenly mt-4">
                   <button
                     type="button"
@@ -75,7 +73,7 @@ export default function MyModal({ message }: { message: message }) {
                     onClick={closeModal}
 
                   >
-                    <a href={message.actionButton1?.url || "https://mail.google.com/mail/u/0/?fs=1&to=farazzshaikh@gmail.com&su=About...&body=Hey%20Faraz,%20....&tf=cm"}>{message.actionButton1?.text || "Email me"}</a>
+                    <a href={message.actionButton1?.url || "https://mail.google.com/mail/u/0/?fs=1&to=rami.rami@ucalgary.ca&su=About...&body=Hey%Rami,%20....&tf=cm"}>{message.actionButton1?.text || "Email me"}</a>
                   </button>
                   <button
                     type="button"

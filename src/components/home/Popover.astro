@@ -5,11 +5,9 @@ import { messages } from "src/utils/constants";
 const url = Astro.url;
 const params = url.searchParams;
 const messageTo = params.get("message-to") || "";
-console.log("messageTo", messageTo);
 
 // check if messageTo is in constants file
 const message = messages[messageTo] || null;
-console.log("message", message);
 // get message from constants file
 ---
 

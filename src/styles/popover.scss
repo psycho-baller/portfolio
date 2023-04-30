@@ -1,17 +1,27 @@
-p {
-  font-size: 72px;
-  background: -webkit-linear-gradient(#eee, #333);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+// p,
+// h3 {
+// font-size: 7800px;
+// background: -webkit-linear-gradient(#1B262C, #0F4C75);
+// -webkit-background-clip: text;
+// background-clip: text;
+// -webkit-text-fill-color: transparent;
+// -webkit-text-stroke: 1px #0F4C75;
+// color: #0F4C75;
+// }
+
+.text-body a {
+  color: #0F4C75;
+  // underline
+  text-decoration: none;
+  border-bottom: 1.5px solid #0F4C75;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    border-bottom: 0px solid #b5ceff;
+  }
 }
 
 // TODO: Make that shit work
-.container {
-  -webkit-filter: blur(2px);
-  -moz-filter: blur(2px);
-  -o-filter: blur(2px);
-  -ms-filter: blur(2px);
-  filter: blur(2px);
-  background-color: aliceblue;
+.container-bg {
+  background: -webkit-linear-gradient(#d3acff, #b5ceff)
 }

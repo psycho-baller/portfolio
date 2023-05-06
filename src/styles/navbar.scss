@@ -72,7 +72,7 @@ path:nth-child(6) {
   transform: translateX(9px) translateY(1px) rotate(45deg);
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 640px) {
   .page {
     transition: filter 0.5s ease;
     -webkit-transition: filter 0.5s ease;

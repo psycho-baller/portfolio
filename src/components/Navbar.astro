@@ -15,10 +15,7 @@ import Hamburger from "./Hamburger.astro";
     </a>
 
     <div class="block sm:hidden"><Hamburger /></div>
-    <div class="sm:block sm:items-center sm:w-auto relative" id="nav-links">
-      <nav class="sm:flex-grow sm:space-x-8 sm:justify-end">
-        <NavLinks />
-      </nav>
-    </div>
+
+    <NavLinks client:load />
   </div>
 </header>

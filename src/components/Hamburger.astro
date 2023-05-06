@@ -2,22 +2,6 @@
 import "@styles/navbar.scss";
 ---
 
-<script lang="ts">
-  const burger = document.querySelector(".burger");
-
-  burger?.addEventListener("click", () => {
-    // toggle hamburger
-    burger?.classList.toggle("active");
-
-    // toggle nav
-    const nav = document.querySelector("#nav-links");
-    nav?.classList.toggle("toggled");
-
-    // toggle div.page
-    const page = document.querySelector(".page");
-    page?.classList.toggle("toggled");
-  });
-</script>
 <button class="burger">
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -57,3 +41,19 @@ import "@styles/navbar.scss";
     </g>
   </svg>
 </button>
+<script lang="ts">
+  const burger = document.querySelector(".burger");
+
+  burger?.addEventListener("click", () => {
+    // toggle hamburger
+    burger?.classList.toggle("active");
+
+    // toggle nav
+    const nav = document.querySelector("#nav-links");
+    nav?.classList.toggle("toggled");
+
+    // toggle div.page
+    const page = document.querySelector(".page");
+    page?.classList.toggle("toggled");
+  });
+</script>

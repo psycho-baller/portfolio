@@ -9,7 +9,17 @@ export default function TopText(props: any) {
   const { width, height } = viewport;
   const ref = useRef<THREE.Mesh>(null!);
 
+
   const [matcap] = useMatcapTexture("346088_6ABED7_56A0C5_4E91B8", 256);
+  //this errors out, possible fix:
+  // let temp;
+  // useEffect(() => {
+  //   const [matcapTexture] = useMatcapTexture("346088_6ABED7_56A0C5_4E91B8", 256);
+  //   console.log(matcapTexture);
+  //   temp = matcapTexture;
+  // }, []);
+  // const matcap = temp;
+
 
   var target = new Vector3();
   var mouseX = 0,

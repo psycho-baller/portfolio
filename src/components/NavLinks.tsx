@@ -11,23 +11,23 @@ export default function Navbar() {
   });
 
   return (
-    <div class="sm:block sm:items-center sm:w-auto relative" id="nav-links">
-      <nav class="sm:flex-grow sm:space-x-8 sm:justify-end">
+    <nav class="" id="nav-links">
+      <ul class="sm:space-x-8">
         <For each={navLinks}>
           {(link) => (
             <li
               // class="block capitalize sm:inline-block sm:mt-0 hover:text-gray-400"
               // TODO: for some reason JS not working
               // TODO: reverse the hover effect
-              class={`${active() === link.href ? "text-gray-400" : "text-white"
-                } capitalize hover:text-gray-400 text-[18px] font-medium cursor-pointer block sm:inline-block`}
-            //onClick={() => setActive(link.title)}
+              class={`${active() === link.href ? "text-cyan-400" : "text-cyan-100"
+                } capitalize hover:text-cyan-300 text-[18px] font-medium cursor-pointer block sm:inline-block`}
+            //onClick={() => setActive(link.href)}
             >
               <a href={link.href}>{link.title}</a>
             </li>
           )}
         </For>
-      </nav>
-    </div>
+      </ul>
+    </nav>
   );
 }

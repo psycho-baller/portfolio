@@ -27,7 +27,7 @@ export const externalLinks = [
     },
     {
         name: "ant-design:youtube-filled",
-        href: "https://youtube.com/@psycho-coder",
+        href: "https://youtube.com/@ramimaalouf",
     },
     {
         name: "mdi:linkedin",

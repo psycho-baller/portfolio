@@ -15,7 +15,7 @@ export const navLinks = [
     },
 
     {
-        href: "https://github.com/psycho-baller",
+        href: "/resume.pdf",
         title: "Resume",
     },
 ];

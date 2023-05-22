@@ -13,7 +13,10 @@ export const navLinks = [
         href: "/contact",
         title: "Contact",
     },
-
+    {
+        href: "/support",
+        title: "Support",
+    },
     {
         href: "/resume.pdf",
         title: "Resume",

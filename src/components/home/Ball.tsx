@@ -46,7 +46,7 @@ export default function Ball({
   // if smaller screen, reduce the size of the ball
   const distanceFromRadius = size.width > 800 ? 8 : (size.width * 8) / 800
   let initialSlowness = 0.001;
-  let initialFastness = 0.008;
+  let initialFastness = 0.015;
   // const speed = 5;
   // const angle = Math.PI / 8;
   useFrame(({ clock, camera }) => {
@@ -58,14 +58,15 @@ export default function Ball({
       ballGroup.current.rotateOnAxis(new Vector3(0, 1, 0), initialSlowness);
       // gradually increase the speed
       if (initialSlowness < initialFastness) {
-        initialSlowness += 0.00008; // gradually increase the opposing speed
+        // gradually increase the opposing speed while considering the frame rate
+        initialSlowness += 0.0005
       }
     } else {
       // if user is not hovering on a ball, slowly reduce the speed of the ball group (speed up the ball)
       // had to introduce the initialFastness variable coz when we hover, state is changed and the initialSlowness is reset to 0
       if (initialFastness > initialSlowness) {
         ballGroup.current.rotateOnAxis(new Vector3(0, 1, 0), initialFastness);
-        initialFastness -= 0.00008; // gradually decrease the opposing speed
+        initialFastness -= 0.0005; // gradually decrease the opposing speed
       }
     }
 
@@ -86,7 +87,7 @@ export default function Ball({
   //   ballRef.current.material.transparent = true;
   // }, [ballRef?.current]);
   return (
-    <group>
+    <>
       <group rotation={tiltAxis} ref={ballGroup}>
         <group
           {...props}
@@ -109,7 +110,7 @@ export default function Ball({
           <Trail
             width={0.2} // Width of the line
             color={"cyan"} // Color of the line
-            length={35} // Length of the line
+            length={15} // Length of the line
             decay={0.5} // How fast the line fades away
             stride={0} // Min distance between previous and current point
             interval={1} // Number of frames to wait before next calculation
@@ -145,6 +146,6 @@ export default function Ball({
           </Text3D>
         </Center>
       )}
-    </group>
+    </>
   );
 }

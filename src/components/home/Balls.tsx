@@ -17,7 +17,7 @@ export default function Balls(props: any) {
         tiltAxis={[Math.PI / 15, 0, (5 * Math.PI) / 4]}
         initialAngle={Math.PI / 2}
         area="creating"
-        url={"https://youtube.com/@psycho-coder"}
+        url={"https://youtube.com/@ramimaalouf"}
       />
     </group>
   );

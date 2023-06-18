@@ -1,7 +1,7 @@
 import type * as THREE from "three";
 import { Children, useRef, useState } from "react";
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls, useTexture } from "@react-three/drei";
+import { OrbitControls } from "@react-three/drei";
 import { sRGBEncoding } from "three";
 export default function About({ children }: { children: JSX.Element[] | JSX.Element }) {
   return (
@@ -18,8 +18,8 @@ export default function About({ children }: { children: JSX.Element[] | JSX.Elem
       }}
     >
       <OrbitControls />
-      {/* <ambientLight /> */}
-      <pointLight position={[0, 0, 10]} />
+      <ambientLight intensity={0.25} />
+      <pointLight position={[0, 0, 15]} />
       {children}
     </Canvas>
   );

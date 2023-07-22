@@ -30,8 +30,8 @@ const { title, description = "Welcome to Rami's website", fullScreen = false, cl
         background-color: #121212;
         color: rgb(216, 247, 249); /* tw: text-cyan-100 */
       }
-      .page {
-        position: absolute;
+      .bg-img {
+        position: fixed;
         top: 0;
         left: 0;
         right: 0;
@@ -42,7 +42,7 @@ const { title, description = "Welcome to Rami's website", fullScreen = false, cl
       main {
         margin-left: auto;
         margin-right: auto;
-        max-width: 80rem;
+        /* max-width: 80rem; */
         min-height: calc(100vh - 7.5rem);
 
         /* @media screen and (min-width: 640px) {
@@ -62,12 +62,15 @@ const { title, description = "Welcome to Rami's website", fullScreen = false, cl
     </style>
   </head>
   <body>
-    <Navbar />
-    <div class="page">
-      <main class={(fullScreen ? "h-full" : "pt-20 pb-10") + " " + _class}>
-        <slot />
-      </main>
+    <div class={"bg-img " + (fullScreen ? "" : "px-10")}>
+      {fullScreen ? null : <div class="h-full w-full opacity-70 bg-gray-900" />}
     </div>
+
+    <Navbar />
+    <main class={"pt-20 pb-10" + " " + _class}>
+      <slot />
+    </main>
     <ExternalLinks />
+    <!-- </div> -->
   </body>
 </html>

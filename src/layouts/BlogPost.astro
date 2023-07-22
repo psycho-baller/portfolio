@@ -3,12 +3,12 @@ import type { CollectionEntry } from "astro:content";
 import BaseHead from "../components/BaseHead.astro";
 import Navbar from "../components/Navbar.astro";
 // import Footer from "../components/Footer.astro";
-import FormattedDate from "../components/FormattedDate.astro";
 import BaseLayout from "./BaseLayout.astro";
+import { formatDate } from "@utils/formatDate";
 
 type Props = CollectionEntry<"blog">["data"];
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const { title, description, pubDate, image } = Astro.props;
 ---
 
 <BaseLayout
@@ -17,24 +17,18 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 >
   <article>
     {
-      heroImage && (
+      image && (
         <img
           width={720}
           height={360}
-          src={heroImage}
+          src={image}
           alt=""
         />
       )
     }
     <h1 class="title">{title}</h1>
-    <FormattedDate date={pubDate} />
-    {
-      updatedDate && (
-        <div class="last-updated-on">
-          Last updated on <FormattedDate date={updatedDate} />
-        </div>
-      )
-    }
+    <time datetime={pubDate.toISOString()}>{formatDate(pubDate)}</time>
+
     <hr />
     <slot />
   </article>

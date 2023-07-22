@@ -1,34 +1,24 @@
 ---
 import BaseHead from "../../components/BaseHead.astro";
-import { getCollection } from "astro:content";
-import FormattedDate from "../../components/FormattedDate.astro";
+import { CollectionEntry, getCollection } from "astro:content";
 import BaseLayout from "src/layouts/BaseLayout.astro";
+import ArticlePreview from "src/components/blog/ArticlePreview";
 
 const posts = (await getCollection("blog")).sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
+type Props = CollectionEntry<"blog">;
 ---
 
 <BaseLayout title="Blog">
-  <h1>Blog</h1>
-  <div class="container h-screen">
+  <div class="container h-[200vh]">
     <h1>Blog</h1>
     {
-      posts.map((post, index) => {
+      posts.map((post, index: number) => {
         // const href = post.slug ? `/blog/${post.slug.split("/").pop().split(".").shift()}` : "";
-
         return (
-          <div>
-            {index !== 0 && <hr />}
-            <div class="post-item">
-              <FormattedDate date={post.data.pubDate} />
-              <h2>
-                <a href={`/blog/${post.slug}/`}>{post.data.title}</a>
-              </h2>
-              <p>{post.data.description}</p>
-              <div class="post-item-footer">
-                <span class="post-item-date">— {post.data.publishDate}</span>
-              </div>
-            </div>
-          </div>
+          <ArticlePreview
+            client:load
+            post={post}
+          />
         );
       })
     }
@@ -42,7 +32,7 @@ const posts = (await getCollection("blog")).sort((a, b) => a.data.pubDate.valueO
       ))
     }
   </ul> -->
-  <p>
+  <!-- <p>
     You can find my writings on{" "}
     <a
       href="https://www.linkedin.com/in/rami--maalouf/recent-activity/articles/"
@@ -72,7 +62,7 @@ const posts = (await getCollection("blog")).sort((a, b) => a.data.pubDate.valueO
       GitHub
     </a>
     ).
-  </p>
+  </p> -->
 </BaseLayout>
 
 <style>

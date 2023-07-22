@@ -6,9 +6,11 @@ import BaseHead from "@components/BaseHead.astro";
 export interface Props {
   title: string;
   description?: string;
+  fullScreen?: boolean;
+  class?: string;
 }
 
-const { title, description = "Welcome to Rami's website" } = Astro.props;
+const { title, description = "Welcome to Rami's website", fullScreen = false, class: _class } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -41,6 +43,7 @@ const { title, description = "Welcome to Rami's website" } = Astro.props;
         margin-left: auto;
         margin-right: auto;
         max-width: 80rem;
+        min-height: calc(100vh - 7.5rem);
 
         /* @media screen and (min-width: 640px) {
         margin-left: 1.5rem;
@@ -61,7 +64,7 @@ const { title, description = "Welcome to Rami's website" } = Astro.props;
   <body>
     <Navbar />
     <div class="page">
-      <main>
+      <main class={(fullScreen ? "h-full" : "pt-20 pb-10") + " " + _class}>
         <slot />
       </main>
     </div>

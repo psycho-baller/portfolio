@@ -9,16 +9,39 @@ const posts = (await getCollection("blog")).sort((a, b) => a.data.pubDate.valueO
 
 <BaseLayout title="Blog">
   <h1>Blog</h1>
-  <ul>
+  <div class="container h-screen">
+    <h1>Blog</h1>
+    {
+      posts.map((post, index) => {
+        // const href = post.slug ? `/blog/${post.slug.split("/").pop().split(".").shift()}` : "";
+
+        return (
+          <div>
+            {index !== 0 && <hr />}
+            <div class="post-item">
+              <FormattedDate date={post.data.pubDate} />
+              <h2>
+                <a href={`/blog/${post.slug}/`}>{post.data.title}</a>
+              </h2>
+              <p>{post.data.description}</p>
+              <div class="post-item-footer">
+                <span class="post-item-date">— {post.data.publishDate}</span>
+              </div>
+            </div>
+          </div>
+        );
+      })
+    }
+  </div>
+  <!-- <ul>
     {
       posts.map((post) => (
         <li>
-          <FormattedDate date={post.data.pubDate} />
           <a href={`/blog/${post.slug}/`}>{post.data.title}</a>
         </li>
       ))
     }
-  </ul>
+  </ul> -->
   <p>
     You can find my writings on{" "}
     <a
@@ -67,5 +90,21 @@ const posts = (await getCollection("blog")).sort((a, b) => a.data.pubDate.valueO
   }
   ul li a:visited {
     color: #8e32dc;
+  }
+  h2,
+  .post-item-footer {
+    font-family: var(--font-family-sans);
+    font-weight: 700;
+  }
+
+  .post-item-date {
+    color: var(--text-secondary);
+    text-align: left;
+    text-transform: uppercase;
+    margin-right: 16px;
+  }
+
+  hr {
+    margin: 60px auto;
   }
 </style>

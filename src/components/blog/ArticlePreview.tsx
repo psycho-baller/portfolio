@@ -10,7 +10,6 @@ interface Props {
 const ArticlePreview: FC<Props> = (props) => {
   const { post } = props;
   const { data, slug } = post;
-  console.log(data.pubDate);
 
   return (
     <article className="md:grid md:grid-cols-4 md:items-baseline">

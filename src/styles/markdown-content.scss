@@ -1,0 +1,50 @@
+.md-content {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-family-sans);
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 0 0.5em 0;
+    color: rgb(244 244 245);
+  }
+
+  h1 {
+    font-family: var(--font-family-serif);
+    font-size: 4em;
+    margin: 0 0 1em 0;
+  }
+
+  h2 {
+    margin: 1.6em 0 0 0;
+    font-size: 1.8em;
+  }
+
+  h3 {
+    font-size: 1.5em;
+  }
+
+  h4 {
+    font-size: 1.4em;
+  }
+
+  h5 {
+    font-size: 1.3em;
+  }
+
+  h6 {
+    font-size: 1.2em;
+  }
+
+  p,
+  ul,
+  ol {
+    font-size: 1.3rem;
+    line-height: 1.75em;
+    margin: 1.2em 0;
+  }
+}

@@ -31,12 +31,7 @@ const { title, description = "Welcome to Rami's website", fullScreen = false, cl
         color: rgb(216, 247, 249); /* tw: text-cyan-100 */
       }
       .bg-img {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-image: url("/scene_bg.png");
+        background-image: url("scene_bg.png");
         background-size: 100% 100%;
       }
       main {
@@ -61,16 +56,23 @@ const { title, description = "Welcome to Rami's website", fullScreen = false, cl
       }
     </style>
   </head>
-  <body>
-    <div class={"bg-img " + (fullScreen ? "" : "px-10")}>
-      {fullScreen ? null : <div class="h-full w-full opacity-70 bg-gray-900" />}
+  <body class="">
+    <!-- fixed bg -->
+    <div class={"bg-img fixed inset-0" + (fullScreen ? "" : " opacity-50")}>
+      {fullScreen ? null : <div class="h-full w-full mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" />}
+    </div>
+    <!-- fixed components -->
+    <div class="fixed inset-0 z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col h-full w-full justify-between mx-auto max-w-2xl lg:max-w-5xl">
+        <Navbar />
+        <ExternalLinks />
+      </div>
     </div>
 
-    <Navbar />
-    <main class={"pt-20 pb-10" + " " + _class}>
-      <slot />
-    </main>
-    <ExternalLinks />
-    <!-- </div> -->
+    <div class={"pt-20 pb-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" + " " + _class}>
+      <div class="mx-auto max-w-2xl lg:max-w-5xl">
+        <slot />
+      </div>
+    </div>
   </body>
 </html>

@@ -1,49 +1,51 @@
 ---
 import type { CollectionEntry } from "astro:content";
-import BaseHead from "../components/BaseHead.astro";
-import Navbar from "../components/Navbar.astro";
-// import Footer from "../components/Footer.astro";
 import BaseLayout from "./BaseLayout.astro";
 import { formatDate } from "@utils/formatDate";
+import MdContent from "@components/MdContent.astro";
 
 type Props = CollectionEntry<"blog">["data"];
 
-const { title, description, pubDate, image } = Astro.props;
+const { title, description, pubDate, heroImage } = Astro.props;
+// TODO: add link to external sites in buttons (YT, medium, etc)
 ---
 
 <BaseLayout
   title={`Rami's Blog | ${title}`}
   description={description}
 >
-  <article>
+  <article class="flex flex-col justify-center items-start max-w-2xl mx-auto my-16 w-full">
+    <header class="flex flex-col">
+      <time
+        datetime={pubDate.toISOString()}
+        class="flex items-center text-base text-zinc-400 dark:text-zinc-500"
+      >
+        <span class="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500"></span>
+        <span class="ml-3">{formatDate(pubDate)}</span>
+      </time>
+      <h1 class="mt-6 text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
+        {title}
+      </h1>
+      <p class="mt-3 text-base text-zinc-500 dark:text-zinc-400">
+        {description}
+        <!-- check if heroImage has a source -->
+      </p>
+    </header>
     {
-      image && (
+      heroImage && (
         <img
-          width={720}
-          height={360}
-          src={image}
-          alt=""
+          src={heroImage}
+          onerror={'this.src = "/logo.png"'}
+          alt="hero image"
+          class="my-8 rounded-lg shadow-md"
         />
       )
     }
-    <h1 class="title">{title}</h1>
-    <time datetime={pubDate.toISOString()}>{formatDate(pubDate)}</time>
-
-    <hr />
-    <slot />
+    <div class="text-zinc-500 dark:text-zinc-400">
+      <MdContent>
+        <slot />
+      </MdContent>
+    </div>
+    <!-- <Prose class="mt-8">{children}</Prose> -->
   </article>
 </BaseLayout>
-
-<style>
-  .title {
-    font-size: 2em;
-    margin: 0.25em 0 0;
-  }
-  hr {
-    border-top: 1px solid #ddd;
-    margin: 1rem 0;
-  }
-  .last-updated-on {
-    font-style: italic;
-  }
-</style>

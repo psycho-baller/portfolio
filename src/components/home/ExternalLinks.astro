@@ -3,49 +3,45 @@ import { Icon } from "astro-icon";
 import { externalLinks } from "src/utils/constants";
 ---
 
-<footer class="bottom-0 left-0 w-full fixed flex">
-    <div
-        id="external-links"
-        class="mx-auto flex flex-row mb-2 items-center bg-transparent justify-between gap-6"
-    >
-        {
-            externalLinks.map(({ name, href }) => (
-                <a
-                    href={href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="w-6 h-6 flex-1"
-                >
-                    <Icon name={name} />
-                </a>
-            ))
-        }
-    </div>
+<footer class="w-full flex">
+  <div
+    id="external-links"
+    class="mx-auto flex flex-row mb-2 items-center bg-transparent justify-between gap-6"
+  >
+    {
+      externalLinks.map(({ name, href }) => (
+        <a
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="w-6 h-6 flex-1"
+        >
+          <Icon name={name} />
+        </a>
+      ))
+    }
+  </div>
 </footer>
 <style lang="scss">
-    .bottom-1\/10 {
-        bottom: 10%;
+  /* animation when page loads: move the element with id = "external-links" from behind the screen to the right delay each child's animation*/
+
+  @for $i from 1 through 5 {
+    #external-links > a:nth-child(#{$i}n) {
+      animation: moveFromBehind 0.5s ease-in-out forwards;
+      visibility: hidden;
+      animation-delay: #{$i * 0.08}s;
+    }
+  }
+  @keyframes moveFromBehind {
+    0% {
+      opacity: 0;
+      transform: translateY(100%);
     }
 
-    /* animation when page loads: move the element with id = "external-links" from behind the screen to the right delay each child's animation*/
-
-    @for $i from 1 through 5 {
-        #external-links > a:nth-child(#{$i}n) {
-            animation: moveFromBehind 0.5s ease-in-out forwards;
-            visibility: hidden;
-            animation-delay: #{$i * 0.08}s;
-        }
+    100% {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(0);
     }
-    @keyframes moveFromBehind {
-        0% {
-            opacity: 0;
-            transform: translateY(100%);
-        }
-
-        100% {
-            opacity: 1;
-            visibility: visible;
-            transform: translateX(0);
-        }
-    }
+  }
 </style>

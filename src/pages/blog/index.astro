@@ -3,27 +3,31 @@ import BaseHead from "../../components/BaseHead.astro";
 import { CollectionEntry, getCollection } from "astro:content";
 import BaseLayout from "src/layouts/BaseLayout.astro";
 import ArticlePreview from "src/components/blog/ArticlePreview";
+import PageWithTitleAndIntro from "src/layouts/PageWithTitleAndIntro.astro";
 
-const posts = (await getCollection("blog")).sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
+const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 type Props = CollectionEntry<"blog">;
+const title = "Rami's Blog";
 ---
 
-<BaseLayout title="Blog">
-  <div class="container h-[200vh]">
-    <h1>Blog</h1>
-    {
-      posts.map((post, index: number) => {
-        // const href = post.slug ? `/blog/${post.slug.split("/").pop().split(".").shift()}` : "";
-        return (
-          <ArticlePreview
-            client:load
-            post={post}
-          />
-        );
-      })
-    }
-  </div>
-  <!-- <ul>
+<BaseLayout title={title}>
+  <PageWithTitleAndIntro
+    title={title}
+    intro="I write about the things I learn through my life experiences and the things I build (like this website or other projects you can find on GitHub)."
+  >
+    <div class="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
+      <div class="flex max-w-3xl flex-col gap-y-16">
+        {
+          posts.map((post) => (
+            <ArticlePreview
+              client:load
+              post={post}
+            />
+          ))
+        }
+      </div>
+    </div>
+    <!-- <ul>
     {
       posts.map((post) => (
         <li>
@@ -32,7 +36,7 @@ type Props = CollectionEntry<"blog">;
       ))
     }
   </ul> -->
-  <!-- <p>
+    <!-- <p>
     You can find my writings on{" "}
     <a
       href="https://www.linkedin.com/in/rami--maalouf/recent-activity/articles/"
@@ -63,38 +67,39 @@ type Props = CollectionEntry<"blog">;
     </a>
     ).
   </p> -->
+  </PageWithTitleAndIntro>
+
+  <style>
+    ul {
+      list-style-type: none;
+      padding: unset;
+    }
+    ul li {
+      display: flex;
+    }
+    ul li :global(time) {
+      flex: 0 0 130px;
+      font-style: italic;
+      color: #595959;
+    }
+    ul li a:visited {
+      color: #8e32dc;
+    }
+    h2,
+    .post-item-footer {
+      font-family: var(--font-family-sans);
+      font-weight: 700;
+    }
+
+    .post-item-date {
+      color: var(--text-secondary);
+      text-align: left;
+      text-transform: uppercase;
+      margin-right: 16px;
+    }
+
+    hr {
+      margin: 60px auto;
+    }
+  </style>
 </BaseLayout>
-
-<style>
-  ul {
-    list-style-type: none;
-    padding: unset;
-  }
-  ul li {
-    display: flex;
-  }
-  ul li :global(time) {
-    flex: 0 0 130px;
-    font-style: italic;
-    color: #595959;
-  }
-  ul li a:visited {
-    color: #8e32dc;
-  }
-  h2,
-  .post-item-footer {
-    font-family: var(--font-family-sans);
-    font-weight: 700;
-  }
-
-  .post-item-date {
-    color: var(--text-secondary);
-    text-align: left;
-    text-transform: uppercase;
-    margin-right: 16px;
-  }
-
-  hr {
-    margin: 60px auto;
-  }
-</style>

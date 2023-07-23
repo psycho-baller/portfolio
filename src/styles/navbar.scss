@@ -73,7 +73,7 @@ path:nth-child(6) {
 }
 
 @media screen and (max-width: 640px) {
-  .page {
+  .blur-bg {
     transition: filter 0.5s ease;
     -webkit-transition: filter 0.5s ease;
     -moz-transition: filter 0.5s ease;

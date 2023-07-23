@@ -14,7 +14,7 @@ export default function About({ children }: { children: JSX.Element[] | JSX.Elem
         top: 0,
         left: 0,
         // zIndex: -1,
-        overflow: "hidden",
+        // overflow: "hidden",
       }}
     >
       <OrbitControls />

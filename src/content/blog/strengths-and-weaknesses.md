@@ -2,7 +2,7 @@
 title: "Harnessing Self-Awareness to Uncover Your Strengths and Weaknesses"
 description: "Discovering strengths, weaknesses, and the essence of self-awareness in a candid podcast conversation between Rami and Ali."
 pubDate: "Jul 19 2023"
-heroImage: "/strengths-n-weaknesses.png"
+heroImage: "strengths-n-weaknesses.png"
 ---
 
 In this podcast conversation between Ali and I, we decided to conduct a self-awareness test and discuss each other's strengths and weaknesses. Given our history of knowing each other in both professional and personal settings, we believed it would provide a balanced perspective for this activity. Here's what we discussed:

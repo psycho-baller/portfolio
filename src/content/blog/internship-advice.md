@@ -2,7 +2,7 @@
 title: "Making the Most of Your Internship: Advice for New Beginnings"
 description: "Exploring six valuable pieces of advice to help you navigate this new phase of your life."
 pubDate: "June 7, 2023"
-heroImage: "logo.png"
+heroImage: "internship-advice.png"
 ---
 
 Starting a new internship or junior position can be an exciting but challenging experience. I believe, just like any experience in life, it's what you make out of it, so in this article, we will explore six valuable pieces of advice to help you navigate this new phase of your life.

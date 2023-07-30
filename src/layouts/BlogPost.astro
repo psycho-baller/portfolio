@@ -34,7 +34,7 @@ const { title, description, pubDate, heroImage } = Astro.props;
     {
       heroImage && (
         <img
-          src={heroImage}
+          src={"/content-assets/" + heroImage}
           onerror={'this.src = "/logo.png"'}
           alt="hero image"
           class="my-8 rounded-lg shadow-md"

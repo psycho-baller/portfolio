@@ -1,9 +1,13 @@
 ---
 title: "Harnessing Self-Awareness to Uncover Your Strengths and Weaknesses"
-description: "Discovering strengths, weaknesses, and the essence of self-awareness in a candid podcast conversation between Rami and Ali."
+description: "Discovering strengths, weaknesses, and the essence of self-awareness in a candid podcast conversation between Ali and I"
 pubDate: "Jul 19 2023"
 heroImage: "strengths-n-weaknesses.png"
 ---
+
+### Introduction
+
+This is a summary of the podcast episode we made while going through the assigned activity for this assignment. You can find the podcast episode on [YouTube](https://youtube.com/watch?v=UF9gwDtpU_M) or [Spotify](https://podcasters.spotify.com/pod/show/rami-maalouf/episodes/Productively-roasting-each-other-for-67-minutes-straight-e276m3k)
 
 In this podcast conversation between Ali and I, we decided to conduct a self-awareness test and discuss each other's strengths and weaknesses. Given our history of knowing each other in both professional and personal settings, we believed it would provide a balanced perspective for this activity. Here's what we discussed:
 

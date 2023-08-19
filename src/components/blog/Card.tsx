@@ -1,12 +1,5 @@
 import clsx from "clsx";
-import type {
-  AnchorHTMLAttributes,
-  ComponentPropsWithoutRef,
-  ElementType,
-  HTMLAttributes,
-  ReactNode,
-  SVGProps,
-} from "react";
+import type { ComponentPropsWithoutRef, ElementType, ReactNode } from "react";
 
 function ChevronRightIcon(props: ComponentPropsWithoutRef<"svg">) {
   return (
@@ -50,12 +43,6 @@ Card.Link = function CardLink({ children, ...props }: ComponentPropsWithoutRef<"
   );
 };
 
-interface CardTitleProps {
-  as?: ElementType;
-  href?: string;
-  children: ReactNode;
-}
-
 Card.Title = function CardTitle<T extends ElementType = "h2">({
   as,
   href,
@@ -88,7 +75,7 @@ Card.Cta = function CardCta({ children }: { children: ReactNode }) {
   );
 };
 
-Card.Eyebrow = function CardEyebrow<T extends React.ElementType = "p">({
+Card.Eyebrow = function CardEyebrow<T extends ElementType = "p">({
   as,
   decorate = false,
   className,

@@ -1,9 +1,14 @@
 import clsx from "clsx";
-import type { AnchorHTMLAttributes, ElementType, HTMLAttributes, ReactNode, SVGProps } from "react";
+import type {
+  AnchorHTMLAttributes,
+  ComponentPropsWithoutRef,
+  ElementType,
+  HTMLAttributes,
+  ReactNode,
+  SVGProps,
+} from "react";
 
-interface ChevronRightIconProps extends SVGProps<SVGSVGElement> {}
-
-function ChevronRightIcon(props: ChevronRightIconProps) {
+function ChevronRightIcon(props: ComponentPropsWithoutRef<"svg">) {
   return (
     <svg
       viewBox="0 0 16 16"
@@ -21,21 +26,19 @@ function ChevronRightIcon(props: ChevronRightIconProps) {
   );
 }
 
-interface CardProps {
-  as?: ElementType;
+export function Card<T extends ElementType = "div">({
+  as,
+  className,
+  children,
+}: Omit<ComponentPropsWithoutRef<T>, "as" | "className"> & {
+  as?: T;
   className?: string;
-  children: ReactNode;
-}
-
-export function Card({ as: Component = "div", className, children }: CardProps) {
+}) {
+  let Component = as ?? "div";
   return <Component className={clsx(className, "group relative flex flex-col items-start")}>{children}</Component>;
 }
 
-interface CardLinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
-  children: ReactNode;
-}
-
-Card.Link = function CardLink({ children, ...props }: CardLinkProps) {
+Card.Link = function CardLink({ children, ...props }: ComponentPropsWithoutRef<"a">) {
   return (
     <>
       <div className="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 dark:bg-zinc-800/50 sm:-inset-x-6 sm:rounded-2xl" />
@@ -53,7 +56,15 @@ interface CardTitleProps {
   children: ReactNode;
 }
 
-Card.Title = function CardTitle({ as: Component = "h2", href, children }: CardTitleProps) {
+Card.Title = function CardTitle<T extends ElementType = "h2">({
+  as,
+  href,
+  children,
+}: Omit<ComponentPropsWithoutRef<T>, "as" | "href"> & {
+  as?: T;
+  href?: string;
+}) {
+  let Component = as ?? "h2";
   return (
     <Component className="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
       {href ? <Card.Link href={href}>{children}</Card.Link> : children}
@@ -61,19 +72,11 @@ Card.Title = function CardTitle({ as: Component = "h2", href, children }: CardTi
   );
 };
 
-interface CardDescriptionProps {
-  children: ReactNode;
-}
-
-Card.Description = function CardDescription({ children }: CardDescriptionProps) {
+Card.Description = function CardDescription({ children }: { children: ReactNode }) {
   return <p className="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">{children}</p>;
 };
 
-interface CardCtaProps {
-  children: ReactNode;
-}
-
-Card.Cta = function CardCta({ children }: CardCtaProps) {
+Card.Cta = function CardCta({ children }: { children: ReactNode }) {
   return (
     <div
       aria-hidden="true"
@@ -85,19 +88,17 @@ Card.Cta = function CardCta({ children }: CardCtaProps) {
   );
 };
 
-interface CardEyebrowProps extends HTMLAttributes<HTMLElement> {
-  as?: ElementType;
-  decorate?: boolean;
-  children: ReactNode;
-}
-
-Card.Eyebrow = function CardEyebrow({
-  as: Component = "p",
+Card.Eyebrow = function CardEyebrow<T extends React.ElementType = "p">({
+  as,
   decorate = false,
   className,
   children,
   ...props
-}: CardEyebrowProps) {
+}: Omit<React.ComponentPropsWithoutRef<T>, "as" | "decorate"> & {
+  as?: T;
+  decorate?: boolean;
+}) {
+  let Component = as ?? "p";
   return (
     <Component
       className={clsx(

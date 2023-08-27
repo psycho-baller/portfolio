@@ -11,19 +11,19 @@ export default function Balls(props: any) {
     >
       <Ball
         tiltAxis={[Math.PI / 15, 0, 0]}
-        initialAngle={-Math.PI / 2}
+        position={[5, 0, 0]}
         area="building"
         url={"https://github.com/psycho-baller"}
       />
       <Ball
         tiltAxis={[Math.PI / 15, 0, -Math.PI / 4]}
-        initialAngle={Math.PI / 2}
+        position={[0, 0, 0]}
         area="consuming"
         url={"https://www.goodreads.com/user/show/161793210-rami"}
       />
       <Ball
         tiltAxis={[Math.PI / 15, 0, (5 * Math.PI) / 4]}
-        initialAngle={Math.PI / 2}
+        position={[-5, 0, 0]}
         area="creating"
         url={"https://youtube.com/@ramimaalouf"}
       />

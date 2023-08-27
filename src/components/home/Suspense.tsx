@@ -28,17 +28,17 @@ export default function Suspense() {
   }
 
   return (
-    <Html center
+    <Html
+      center
       style={{
         height: "100vh",
         width: "100vw",
-        background: "rgba(0,0,0,.4)",
+        background: "rgba(0,0,0,.2)",
       }}
     >
       {/* @ts-ignore */}
       <div style={progressBarContainerStyle}>
-        <h1
-          className="flex items-center justify-center text-4xl sm:text-7xl text-cyan-300 modak">
+        <h1 className="flex items-center justify-center text-4xl sm:text-7xl text-cyan-300 modak">
           {/* <img src="favicon.svg" alt="Logo" class="h-8" /> */}
           Welcome to RAMI&apos;s Website
         </h1>
@@ -46,7 +46,6 @@ export default function Suspense() {
           <div style={progressBarFillStyle}></div>
         </div>
       </div>
-    </Html >
-
+    </Html>
   );
 }

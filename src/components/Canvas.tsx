@@ -1,8 +1,5 @@
-import type * as THREE from "three";
-import { Children, useRef, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
-import { sRGBEncoding } from "three";
 export default function MyCanvas({ children }: { children: JSX.Element[] | JSX.Element }) {
   return (
     <Canvas

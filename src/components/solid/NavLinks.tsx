@@ -1,3 +1,5 @@
+// import "solid-js";
+/** @jsxImportSource solid-js */
 import { For, createSignal, onMount } from "solid-js";
 import { navLinks } from "@utils/constants";
 import "@styles/logo.css";

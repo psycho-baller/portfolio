@@ -9,7 +9,7 @@ import solidJs from "@astrojs/solid-js";
 export default defineConfig({
   site: 'https://www.ramimaalouf.tech',
   integrations: [react({
-    include: ["**/react/**/*.{tsx}"],
+    include: ["**/react/*"],
   }
   ), tailwind({
     // Example: Disable injecting a basic `base.css` import on every page.
@@ -18,7 +18,7 @@ export default defineConfig({
       applyBaseStyles: false
     }
   }), solidJs({
-    include: ["**/solid/**/*.{tsx}"],
+    include: ["**/solid/*"],
   })],
   output: "server",
   adapter: vercel(),

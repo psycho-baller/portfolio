@@ -34,11 +34,11 @@ const { title, description, pubDate, heroImage } = Astro.props;
     </header>
     {
       heroImage && (
-        <Image
+        <img
           src={"/content-assets/" + heroImage}
-          // onerror={'this.src = "/logo.png"'}
+          onerror={'this.src = "/logo.png"'}
           alt="hero image"
-          // class="my-8 rounded-lg shadow-md"
+          class="my-8 rounded-lg shadow-md"
         />
       )
     }

@@ -1,4 +1,4 @@
-import type { message } from "./types";
+import type { Message } from "./types";
 
 export const navLinks = [
   {
@@ -61,4 +61,4 @@ P.S: I would love to meet up with all of you but I'm also down to meet with whoe
       url: "https://mail.google.com/mail/u/0/?fs=1&to=rami.rami@ucalgary.ca&su=Snipd meetup&body=Hey%20Rami,%0A%0AYeah sure we'd love to meet up...&tf=cm",
     },
   },
-} as { [key: string]: message };
+} as { [key: string]: Message };

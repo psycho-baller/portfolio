@@ -2,12 +2,12 @@ import { useEffect } from "react";
 import { Text3D, Center, Trail } from "@react-three/drei";
 import { useFrame, useThree } from "@react-three/fiber";
 import { useRef, useState } from "react";
-import { Vector3, Group, Mesh } from "three";
+import { Vector3, type Group, type Mesh } from "three";
 import { useControls } from "leva";
-import Mac from "./models/Mac";
-import Book from "./models/Book";
-import Pencil from "./models/Pencil";
-import mondayFont from "../../utils/blueNight_font.json";
+import Mac from "@components/react/threejs/models/Mac";
+import Book from "@components/react/threejs/models/Book";
+import Pencil from "@components/react/threejs/models/Pencil";
+import mondayFont from "@utils/blueNight_font.json";
 
 export default function Ball({
   // ballGroup,
@@ -28,7 +28,7 @@ export default function Ball({
   // const [active, setActive] = useState(false);
   const ballGroup = useRef<Group>(null!);
   const ballRef = useRef<Group>(null!);
-  const textRef = useRef<Mesh>(null!);
+  const textRef = useRef<Group>(null!);
 
   const { size } = useThree();
 
@@ -44,7 +44,7 @@ export default function Ball({
   const { speed } = (debug && useControls({ speed: { value: 10, min: 0, max: 1000 } })) || { speed: 10 };
 
   // if smaller screen, reduce the size of the ball
-  const distanceFromRadius = size.width > 800 ? 8 : (size.width * 8) / 800
+  const distanceFromRadius = size.width > 800 ? 8 : (size.width * 8) / 800;
   let initialSlowness = 0.001;
   let initialFastness = 0.015;
   // const speed = 5;
@@ -52,14 +52,13 @@ export default function Ball({
   useFrame(({ clock, camera }) => {
     const elapsedTime = clock.getElapsedTime();
 
-
     // if user hovers on a ball, rotate the ball group the opposite direction of the ball (slows it down)
     if (hovered) {
       ballGroup.current.rotateOnAxis(new Vector3(0, 1, 0), initialSlowness);
       // gradually increase the speed
       if (initialSlowness < initialFastness) {
         // gradually increase the opposing speed while considering the frame rate
-        initialSlowness += 0.0005
+        initialSlowness += 0.0005;
       }
     } else {
       // if user is not hovering on a ball, slowly reduce the speed of the ball group (speed up the ball)
@@ -77,8 +76,12 @@ export default function Ball({
     // make the text look at the camera
     textRef?.current?.lookAt(camera.position);
     // place the text right above the ball
+    // TODO: fix this
     // if (textRef?.current) {
-    //   textRef.current.position.y = ballRef.current.position.y + 2;
+    //   console.log(ballRef.current.position.y);
+    //   textRef.current.position.y = ballRef.current.position.y + 5;
+    //   textRef.current.position.x = ballRef.current.position.x;
+    //   textRef.current.position.z = ballRef.current.position.z;
     // }
   });
 
@@ -88,11 +91,16 @@ export default function Ball({
   // }, [ballRef?.current]);
   return (
     <>
-      <group rotation={tiltAxis} ref={ballGroup}>
+      <group
+        rotation={tiltAxis}
+        ref={ballGroup}
+      >
         <group
           {...props}
           ref={ballRef}
-          scale={size.width > 800 ? [1, 1, 1] : [(size.width * 1) / 800, (size.width * 1) / 800, (size.width * 1) / 800]}
+          scale={
+            size.width > 800 ? [1, 1, 1] : [(size.width * 1) / 800, (size.width * 1) / 800, (size.width * 1) / 800]
+          }
           onClick={(_event) => {
             // TODO: route to the corresponding section of the page
             if (props.url) window.open(props.url, "_blank");
@@ -127,11 +135,14 @@ export default function Ball({
       </group>
       {hovered && (
         // @ts-ignore
-        <Center ref={textRef}>
+        <Center
+          position={[0, 6, 0]}
+          ref={textRef}
+        >
           <Text3D
             // @ts-ignore
             font={mondayFont}
-            ref={textRef}
+            // children={area.toUpperCase()}
             // size={1}
             height={0.3}
             curveSegments={12}

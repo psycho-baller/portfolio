@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import Canvas from "../Canvas";
+import Canvas from "./Canvas";
 import Balls from "./Balls";
 import SecondScene from "./SecondScene";
 import SUSpense from "./Suspense";

@@ -1,6 +1,6 @@
 import { useFrame, useThree } from "@react-three/fiber";
 import { Center, Text3D, Text, useTexture, useMatcapTexture } from "@react-three/drei";
-import mondayFont from "../../utils/blueNight_font.json";
+import mondayFont from "../../../utils/blueNight_font.json";
 import { useRef } from "react";
 import { Vector3 } from "three";
 
@@ -8,7 +8,6 @@ export default function TopText(props: any) {
   const { viewport } = useThree();
   const { width, height } = viewport;
   const ref = useRef<THREE.Mesh>(null!);
-
 
   const [matcap] = useMatcapTexture("346088_6ABED7_56A0C5_4E91B8", 256);
   //this errors out, possible fix:
@@ -19,7 +18,6 @@ export default function TopText(props: any) {
   //   temp = matcapTexture;
   // }, []);
   // const matcap = temp;
-
 
   var target = new Vector3();
   var mouseX = 0,
@@ -90,9 +88,12 @@ export default function TopText(props: any) {
         </Center>
       ) : (
         // @ts-ignore
-        <Center position={[0, 15, 0]} rotation={[0, Math.PI, 0]}
+        <Center
+          position={[0, 15, 0]}
+          rotation={[0, Math.PI, 0]}
           // @ts-ignore
-          ref={ref}>
+          ref={ref}
+        >
           <Center>
             <Text3D
               // @ts-ignore
@@ -106,11 +107,10 @@ export default function TopText(props: any) {
               bevelOffset={0}
               bevelSegments={5}
               lineHeight={1}
-            // make text phone friendly
+              // make text phone friendly
             >
               EXPLORE MY THREE AREAS
               <meshMatcapMaterial matcap={matcap} />
-
             </Text3D>
           </Center>
           <Center position={[0, -2, 0]}>
@@ -126,11 +126,10 @@ export default function TopText(props: any) {
               bevelOffset={0}
               bevelSegments={5}
               lineHeight={1}
-            // make text phone friendly
+              // make text phone friendly
             >
               OF THE INTERNET
               <meshMatcapMaterial matcap={matcap} />
-
             </Text3D>
           </Center>
         </Center>

@@ -17,7 +17,6 @@ export default function MyCanvas({ children }: { children: JSX.Element[] | JSX.E
         // overflow: "hidden",
       }}
     >
-      <OrbitControls />
       <ambientLight intensity={0.15} />
       <pointLight
         position={[0, 0, 10]}

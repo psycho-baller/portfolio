@@ -1,7 +1,7 @@
 import { Text3D } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { useRef } from "react";
-import mondayFont from "../../utils/blueNight_font.json";
+import mondayFont from "@utils/blueNight_font.json";
 
 export default function Curvy3DText({ char, charsLen, i }: { char: string; charsLen: number; i: number }) {
   const textRef = useRef<THREE.Mesh>(null!);

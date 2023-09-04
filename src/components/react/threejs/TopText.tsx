@@ -89,7 +89,7 @@ export default function TopText(props: any) {
       ) : (
         // @ts-ignore
         <Center
-          position={[0, 15, 0]}
+          position={[0, 14, 0]}
           rotation={[0, Math.PI, 0]}
           // @ts-ignore
           ref={ref}

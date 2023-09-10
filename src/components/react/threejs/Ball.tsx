@@ -44,7 +44,7 @@ export default function Ball({
   const { speed } = (debug && useControls({ speed: { value: 10, min: 0, max: 1000 } })) || { speed: 10 };
 
   // if smaller screen, reduce the size of the ball
-  const distanceFromRadius = size.width > 800 ? 8 : (size.width * 8) / 800;
+  const distanceFromRadius = size.width > 700 ? 8 : (size.width * 8) / 700;
   let initialSlowness = 0.001;
   let initialFastness = 0.015;
   // const speed = 5;
@@ -99,7 +99,7 @@ export default function Ball({
           {...props}
           ref={ballRef}
           scale={
-            size.width > 800 ? [1, 1, 1] : [(size.width * 1) / 800, (size.width * 1) / 800, (size.width * 1) / 800]
+            size.width > 700 ? [1, 1, 1] : [(size.width * 1) / 700, (size.width * 1) / 700, (size.width * 1) / 700]
           }
           onClick={(_event) => {
             // TODO: route to the corresponding section of the page

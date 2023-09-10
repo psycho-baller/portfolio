@@ -8,8 +8,8 @@ export default function MyCanvas({ children }: { children: JSX.Element[] | JSX.E
     <Canvas
       camera={{ position: [0, 0, 15] }}
       style={{
-        height: "100vh",
-        width: "100vw",
+        height: "100%",
+        width: "100%",
         position: "absolute",
         top: 0,
         left: 0,

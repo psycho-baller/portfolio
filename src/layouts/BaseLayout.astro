@@ -5,13 +5,13 @@ import BaseHead from "@components/BaseHead.astro";
 import { ViewTransitions } from 'astro:transitions';
 
 export interface Props {
-  title: string;
+  title?: string;
   description?: string;
   fullScreen?: boolean;
   class?: string;
 }
 
-const { title, description = "Welcome to Rami's website", fullScreen = false, class: _class } = Astro.props;
+const { title="Rami's website", description = "Welcome to Rami's website", fullScreen = false, class: _class } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -22,10 +22,6 @@ const { title, description = "Welcome to Rami's website", fullScreen = false, cl
       description={description}
     />
     <style is:global>
-      :root {
-        --accent: 124, 58, 237;
-        --accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
-      }
       html {
         font-family: system-ui, sans-serif;
         background-color: #121212;
@@ -36,8 +32,6 @@ const { title, description = "Welcome to Rami's website", fullScreen = false, cl
         background-size: 100% 100%;
       }
       main {
-        margin-left: auto;
-        margin-right: auto;
         /* max-width: 80rem; */
         min-height: calc(100vh - 7.5rem);
 
@@ -78,7 +72,7 @@ const { title, description = "Welcome to Rami's website", fullScreen = false, cl
 
     <!-- scrollable content -->
     <div class={"pt-20 pb-10 blur-bg mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" + " " + _class}>
-      <main class="mx-auto max-w-2xl lg:max-w-5xl">
+      <main class="mx-auto max-w-2xl lg:max-w-5xl flex flex-col items-center">
         <slot />
       </main>
     </div>

@@ -17,10 +17,10 @@ export const navLinks = [
     href: "/support",
     title: "Support",
   },
-  {
-    href: "/resume.pdf",
-    title: "Resume",
-  },
+  // {
+  //   href: "/resume",
+  //   title: "Resume",
+  // },
 ];
 
 export const externalLinks = [

@@ -1,7 +1,7 @@
 ---
 import Layout from "src/layouts/BaseLayout.astro";
 import "../styles/tailwind.css";
-import HeroScene from "@components/react/threejs/HeroScene";
+import Hero from "@components/home/Hero.astro";
 ---
 
 <Layout
@@ -19,7 +19,7 @@ import HeroScene from "@components/react/threejs/HeroScene";
       <slot />
     </div>
     <div class="relative h-full w-screen">
-      <HeroScene client:load hideCallback hideTitle />
+      <Hero hideCallback hideTitle  />
     </div>
     <p class="text-center my-6">If you landed here, have a wonderful day!</p>
   </section>

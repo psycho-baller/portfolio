@@ -1,8 +1,9 @@
 ---
 import HeroScene from "@components/react/threejs/HeroScene";
+const props = Astro.props;
 ---
 
 <section>
-  <HeroScene client:load />
-  <section class="min-h-scree"></section>
+  <HeroScene client:load transition:persist {...props} />
+  <!-- <section class="min-h-screen"></section> -->
 </section>

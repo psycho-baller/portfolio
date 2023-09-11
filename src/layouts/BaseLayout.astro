@@ -2,6 +2,7 @@
 import ExternalLinks from "@components/ExternalLinks.astro";
 import Navbar from "../components/Navbar.astro";
 import BaseHead from "@components/BaseHead.astro";
+import { ViewTransitions } from 'astro:transitions';
 
 export interface Props {
   title: string;
@@ -55,6 +56,7 @@ const { title, description = "Welcome to Rami's website", fullScreen = false, cl
           Courier New, monospace;
       }
     </style>
+    <ViewTransitions />
   </head>
   <body class="">
     <!-- fixed bg -->

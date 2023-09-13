@@ -23,3 +23,5 @@ pnpm-debug.log*
 
 # editor-specific files
 .vscode
+
+resume.astro

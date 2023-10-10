@@ -26,7 +26,9 @@ type GLTFResult = GLTF & {
 };
 
 export default function Model(props: JSX.IntrinsicElements["group"]) {
-  const { nodes, materials } = useGLTF("/models/mini_macbook_pro.glb") as GLTFResult;
+  const { nodes, materials } = useGLTF("/models/mini_macbook_pro.gltf") as GLTFResult;
+
+  console.log("materials", materials["MacBook.1"]);
 
   const group = useRef<THREE.Group>(null!);
 
@@ -39,10 +41,18 @@ export default function Model(props: JSX.IntrinsicElements["group"]) {
     group.current.rotateZ(-Math.PI / 10);
   });
   return (
-    <group ref={group} {...props} dispose={null} scale={0.0075}>
+    <group
+      ref={group}
+      {...props}
+      dispose={null}
+      scale={0.0075}
+    >
       <group rotation={[-Math.PI / 2, 0, 0]}>
         <group rotation={[Math.PI / 2, 0, 0]}>
-          <group position={[8.58, 13.85, 134]} rotation={[0, Math.PI / 2, 0]}>
+          <group
+            position={[8.58, 13.85, 134]}
+            rotation={[0, Math.PI / 2, 0]}
+          >
             <mesh
               castShadow
               receiveShadow
@@ -50,9 +60,22 @@ export default function Model(props: JSX.IntrinsicElements["group"]) {
               material={materials["MacBook.1"]}
             />
           </group>
-          <group position={[-8.58, -13.85, -134]} rotation={[Math.PI, -0.28, Math.PI]}>
-            <mesh castShadow receiveShadow geometry={nodes.Muis_1_Mat_2.geometry} material={materials.material} />
-            <mesh castShadow receiveShadow geometry={nodes.Muis_1_Mat_0.geometry} material={materials.Mat_0} />
+          <group
+            position={[-8.58, -13.85, -134]}
+            rotation={[Math.PI, -0.28, Math.PI]}
+          >
+            <mesh
+              castShadow
+              receiveShadow
+              geometry={nodes.Muis_1_Mat_2.geometry}
+              material={materials.material}
+            />
+            <mesh
+              castShadow
+              receiveShadow
+              geometry={nodes.Muis_1_Mat_0.geometry}
+              material={materials.Mat_0}
+            />
           </group>
         </group>
       </group>
@@ -60,4 +83,4 @@ export default function Model(props: JSX.IntrinsicElements["group"]) {
   );
 }
 
-useGLTF.preload("/models/mini_macbook_pro.glb");
+useGLTF.preload("/models/mini_macbook_pro.gltf");

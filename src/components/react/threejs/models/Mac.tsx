@@ -28,18 +28,16 @@ type GLTFResult = GLTF & {
 export default function Model(props: JSX.IntrinsicElements["group"]) {
   const { nodes, materials } = useGLTF("/models/mini_macbook_pro.gltf") as GLTFResult;
 
-  console.log("materials", materials["MacBook.1"]);
-
   const group = useRef<THREE.Group>(null!);
 
-  useFrame((state, delta) => {
-    // look at the camera
-    group.current.lookAt(state.camera.position);
-    // look 90 degrees left
-    group.current.rotateY(-Math.PI / 2);
-    // tilt down a bit
-    group.current.rotateZ(-Math.PI / 10);
-  });
+  // useFrame((state, delta) => {
+  //   // look at the camera
+  //   group.current.lookAt(state.camera.position);
+  //   // look 90 degrees left
+  //   group.current.rotateY(-Math.PI / 2);
+  //   // tilt down a bit
+  //   group.current.rotateZ(-Math.PI / 10);
+  // });
   return (
     <group
       ref={group}

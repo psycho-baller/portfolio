@@ -43,22 +43,38 @@ export default function Model(props: JSX.IntrinsicElements["group"]) {
   //   };
   // }, []);
 
-  useFrame((state, delta) => {
-    // look at the camera
-    group.current.lookAt(state.camera.position);
-    // look 90 degrees down
-    group.current.rotateX(Math.PI / 2);
-  });
+  // useFrame((state, delta) => {
+  // look at the camera
+  // group.current.lookAt(state.camera.position);
+  // look 90 degrees down
+  // group.current.rotateX(Math.PI / 2);
+  // });
 
   return (
-    <group {...props} ref={group} dispose={null} scale={0.5}>
+    <group
+      {...props}
+      ref={group}
+      dispose={null}
+      scale={0.5}
+    >
       <group name="Sketchfab_Scene">
-        <group name="Sketchfab_model" rotation={[-Math.PI / 2, 0, 0]} scale={0.17}>
-          <group name="f8b38bc6583940feb476e7dda518f97bfbx" rotation={[Math.PI / 2, 0, 0]}>
+        <group
+          name="Sketchfab_model"
+          rotation={[-Math.PI / 6, 0, 0]}
+          scale={0.17}
+        >
+          <group
+            name="f8b38bc6583940feb476e7dda518f97bfbx"
+            rotation={[Math.PI / 2, 0, 0]}
+          >
             <group name="Object_2">
               <group name="RootNode">
                 <group name="book" />
-                <group name="armature_book" rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+                <group
+                  name="armature_book"
+                  rotation={[-Math.PI / 2, 0, 0]}
+                  scale={100}
+                >
                   <group name="Object_6">
                     <primitive object={nodes._rootJoint} />
                     <group name="Object_8" />

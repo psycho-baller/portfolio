@@ -1,6 +1,6 @@
 import { Suspense, type HTMLAttributes } from "react";
 import Canvas from "./Canvas";
-import Balls from "./Balls";
+import Balls from "./Areas";
 import SecondScene from "./SecondScene";
 import SUSpense from "./Suspense";
 interface HeroSceneProps extends HTMLAttributes<HTMLDivElement> {
@@ -8,7 +8,7 @@ interface HeroSceneProps extends HTMLAttributes<HTMLDivElement> {
   hideTitle?: boolean;
 }
 export default function HeroScene(props: HeroSceneProps) {
-  const { children, hideCallback=false, hideTitle=false, ...rest } = props;
+  const { children, hideCallback = false, hideTitle = false, ...rest } = props;
   return (
     <Canvas>
       <Suspense fallback={hideCallback ? null : <SUSpense />}>

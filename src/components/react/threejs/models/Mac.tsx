@@ -43,7 +43,8 @@ export default function Model(props: JSX.IntrinsicElements["group"]) {
       ref={group}
       {...props}
       dispose={null}
-      scale={0.0075}
+      scale={0.01}
+      position={[0, -1, 0]}
     >
       <group rotation={[-Math.PI / 2, 0, 0]}>
         <group rotation={[Math.PI / 2, 0, 0]}>

@@ -8,7 +8,7 @@ import Mac from "@components/react/threejs/models/Mac";
 import Book from "@components/react/threejs/models/Book";
 import Pencil from "@components/react/threejs/models/Pencil";
 import mondayFont from "@utils/blueNight_font.json";
-
+import { animated, useSpring } from "@react-spring/three";
 export default function Ball({
   // areaGroup,
   // areaRef,
@@ -29,6 +29,9 @@ export default function Ball({
   const textRef = useRef<Group>(null!);
 
   const { size } = useThree();
+  const { scale } = useSpring({
+    scale: hovered ? 1.08 : 1,
+  });
 
   // useEffect(() => {
   //   document.body.style.cursor = hovered ? "pointer" : "auto";
@@ -41,10 +44,7 @@ export default function Ball({
   // const debug = window.location.href.includes("debug");
   // const { speed } = (debug && useControls({ speed: { value: 10, min: 0, max: 1000 } })) || { speed: 10 };
 
-  // if smaller screen, reduce the size of the ball
-  const distanceFromRadius = size.width > 700 ? 8 : (size.width * 8) / 700;
-
-  const baseSpeed = 10;
+  const baseSpeed = 5;
   const timeToReachBaseSpeed = 0.5;
   // Set the initial extra rotation speed to a high value
   const initialExtraRotationSpeed = 1800;
@@ -70,12 +70,10 @@ export default function Ball({
   return (
     <>
       <group ref={areaGroup}>
-        <group
+        <animated.group
           {...props}
           ref={areaRef}
-          scale={
-            size.width > 700 ? [1, 1, 1] : [(size.width * 1) / 700, (size.width * 1) / 700, (size.width * 1) / 700]
-          }
+          scale={scale}
           onClick={(_event) => {
             // TODO: route to the corresponding section of the page
             if (props.url) window.open(props.url, "_blank");
@@ -96,14 +94,16 @@ export default function Ball({
           {area === "building" && <Mac />}
           {area === "consuming" && <Book />}
           {area === "creating" && <Pencil />}
-        </group>
+        </animated.group>
       </group>
       {hovered && (
         // @ts-ignore
         <Center
-          position={[0, 6, 0]}
+          position={[0, size.width > 600 ? -3 : -8, 0]}
+          rotation={[-Math.PI / 12, 0, 0]}
           ref={textRef}
         >
+          {/* @ts-ignore */}
           <Text3D
             // @ts-ignore
             font={mondayFont}

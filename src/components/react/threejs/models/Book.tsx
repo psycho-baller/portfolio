@@ -35,13 +35,13 @@ export default function Model(props: JSX.IntrinsicElements["group"]) {
     actions: GLTFActions;
   };
 
-  // useEffect(() => {
-  //   actions["Book Open/Close"].play();
+  useEffect(() => {
+    actions["Book Open/Close"].play();
 
-  //   return () => {
-  //     actions["Book Open/Close"].stop();
-  //   };
-  // }, []);
+    return () => {
+      actions["Book Open/Close"].stop();
+    };
+  }, []);
 
   // useFrame((state, delta) => {
   // look at the camera
@@ -61,7 +61,7 @@ export default function Model(props: JSX.IntrinsicElements["group"]) {
         <group
           name="Sketchfab_model"
           rotation={[-Math.PI / 6, 0, 0]}
-          scale={0.17}
+          scale={0.3}
         >
           <group
             name="f8b38bc6583940feb476e7dda518f97bfbx"

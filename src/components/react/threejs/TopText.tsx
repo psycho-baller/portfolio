@@ -62,7 +62,7 @@ export default function TopText(props: any) {
           // @ts-ignore
           ref={ref}
           // ref={textRef}
-          position={[0, 15, 0]}
+          position={[0, 10, 0]}
           // look at the camera
           rotation={[0, Math.PI, 0]}
         >
@@ -72,7 +72,7 @@ export default function TopText(props: any) {
           <Text3D
             // @ts-ignore
             font={mondayFont}
-            size={1}
+            size={width < 10 ? 0.7 : width < 15 ? 1 : 1.4}
             height={0.3}
             curveSegments={12}
             bevelEnabled
@@ -81,6 +81,13 @@ export default function TopText(props: any) {
             bevelOffset={0}
             bevelSegments={5}
             lineHeight={1}
+            // if text is overflown, put the text on a new line
+            // @ts-ignore
+            onSync={(mesh) => {
+              if (mesh.geometry.layout.lines.length > 1) {
+                mesh.position.y = 0.5;
+              }
+            }}
           >
             EXPLORE MY THREE AREAS OF THE INTERNET
             <meshMatcapMaterial matcap={matcap} />

@@ -11,9 +11,9 @@ export default function Areas(props: any) {
   let distanceYFromCenter: number = 0;
   let scale: number = 1;
   switch (true) {
-    case width > 1400:
-      distanceXFromCenter = 12;
-      scale = 1.2;
+    case width > 1500:
+      distanceXFromCenter = 11;
+      scale = 1.1;
       break;
     case width > 600:
       distanceXFromCenter = 8 * (width / 1000);

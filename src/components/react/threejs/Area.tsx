@@ -50,11 +50,17 @@ export default function Ball({
   const initialExtraRotationSpeed = 1800;
   let extraRotationSpeed = initialExtraRotationSpeed;
   let rotationSpeed: number;
-  useFrame(({ clock }) => {
+  useFrame(({ clock, camera }) => {
     const elapsedTime = clock.getElapsedTime();
 
-    if (!areaRef.current) return;
+    if (textRef.current) {
+      textRef.current.lookAt(camera.position);
+      // textRef.current.rotation.y += Math.PI;
+      // // look down
+      // textRef.current.rotation.x -= Math.PI / 4;
+    }
 
+    if (!areaRef.current) return;
     // spin the ball about the y axis when first loaded, then slow down
     // dont update the rotation speed if it has already reached the base speed (optimization)
     if (rotationSpeed !== baseSpeed) {
@@ -99,8 +105,9 @@ export default function Ball({
       {hovered && (
         // @ts-ignore
         <Center
-          position={[0, size.width > 600 ? -3 : -8, 0]}
-          rotation={[-Math.PI / 12, 0, 0]}
+          position={[areaRef.current.position.x * 0.75, size.width > 600 ? -3 : -8, 0]}
+          // rotation={[-Math.PI / 12, 0, 0]}
+
           ref={textRef}
         >
           {/* @ts-ignore */}

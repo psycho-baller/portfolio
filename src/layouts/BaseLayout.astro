@@ -2,7 +2,7 @@
 import ExternalLinks from "@components/ExternalLinks.astro";
 import Navbar from "../components/Navbar.astro";
 import BaseHead from "@components/BaseHead.astro";
-import { ViewTransitions } from 'astro:transitions';
+import { ViewTransitions } from "astro:transitions";
 
 export interface Props {
   title?: string;
@@ -11,10 +11,15 @@ export interface Props {
   class?: string;
 }
 
-const { title="Rami's website", description = "Welcome to Rami's website", fullScreen = false, class: _class } = Astro.props;
+const {
+  title = "Rami's website",
+  description = "Welcome to Rami's website",
+  fullScreen = false,
+  class: _class,
+} = Astro.props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <BaseHead
@@ -46,8 +51,15 @@ const { title="Rami's website", description = "Welcome to Rami's website", fullS
       } */
       }
       code {
-        font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono,
-          Courier New, monospace;
+        font-family:
+          Menlo,
+          Monaco,
+          Lucida Console,
+          Liberation Mono,
+          DejaVu Sans Mono,
+          Bitstream Vera Sans Mono,
+          Courier New,
+          monospace;
       }
     </style>
     <ViewTransitions />
@@ -71,8 +83,8 @@ const { title="Rami's website", description = "Welcome to Rami's website", fullS
     </div>
 
     <!-- scrollable content -->
-    <div class={"pt-20 pb-10 blur-bg mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" + " " + _class}>
-      <main class="mx-auto max-w-2xl lg:max-w-5xl flex flex-col items-center">
+    <div class={"pt-20 pb-10 blur-bg flex mx-auto justify-center max-w-7xl px-4 sm:px-6 lg:px-8" + " " + _class}>
+      <main class="flex flex-col">
         <slot />
       </main>
     </div>

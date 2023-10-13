@@ -8,18 +8,23 @@ import Hero from "@components/home/Hero.astro";
   title="Rami Maalouf"
   class="flex h-full"
 >
-<section
-  class="flex gap-y-10 flex-col items-center justify-between h-full gap-5 mx-auto max-w-xs sm:max-w-lg md:max-w-2xl lg:max-w-4xl xl:max-w-6xl"
->
-<h1 class="text-4xl sm:text-5xl xl:text-6xl font-bold text-center capitalize mb-2 sm:mb-3 md:mb-4 lg:mb-5 xl:mb-6 mt-10">
-  Page under construction 🚧
-</h1>
+  <section
+    class="flex gap-y-10 flex-col items-center justify-between h-full gap-5 mx-auto max-w-xs sm:max-w-lg md:max-w-2xl lg:max-w-4xl xl:max-w-6xl"
+  >
+    <h1
+      class="text-4xl sm:text-5xl xl:text-6xl font-bold text-center capitalize mb-2 sm:mb-3 md:mb-4 lg:mb-5 xl:mb-6 mt-10"
+    >
+      Page under construction 🚧
+    </h1>
 
-    <div class="text-lg sm:text-xl md:text-2xl xl:text-4xl flex flex-col justify-center">
+    <div class="text-lg sm:text-xl md:text-2xl xl:text-3xl flex flex-col justify-center gap-y-3">
       <slot />
     </div>
     <div class="relative h-full w-screen">
-      <Hero hideCallback hideTitle  />
+      <Hero
+        hideCallback
+        hideTitle
+      />
     </div>
     <p class="text-center my-6">If you landed here, have a wonderful day!</p>
   </section>

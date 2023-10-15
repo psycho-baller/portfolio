@@ -1,42 +1,85 @@
 ---
-import ComingSoon from "../../layouts/ComingSoon.astro";
+import { externalLinks } from "@utils/constants";
+import Layout from "src/layouts/BaseLayout.astro";
 ---
 
-<ComingSoon>
-  <p class="text-center">
-    I'm a passionate explorer who values meaningful connections formed through unique experiences. With a deep-rooted
-    belief in balance, I strive to optimize my endeavors, maximizing my experiences in everything I do and everywhere I
-    go. My journey is fueled by a diverse range of interests, including programming, socializing, reading, playing
-    various sports, performing improv and expanding my knowledge in psychology, philosophy, and the ever-evolving world
-    of technology.
-
-    <p class="text-center">
-      What truly drives me is my passion for building impactful software solutions that leverage cutting-edge
-      technologies. I'm particularly drawn to the intersection of app/web development and transformative fields like AI,
-      LLMs (Large Language Models), HCI (Human-Computer Interaction), and UX (User Experience). By connecting these
-      realms, I aim to create innovative applications that solve complex problems and enhance user experiences. I thrive
-      on the challenge of pushing the boundaries of what's possible and driving positive change through technology.
-    </p>
-    <p class="text-center flex gap-2 justify-center">
-      You can find more information about me on
-      <a
-        href="https://github.com/pyscho-baller"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="text-cyan-300
-      hover:underline"
-      >
-        GitHub
-      </a>
-       and
-      <a
-        href="https://www.linkedin.com/in/rami--maalouf/"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="text-cyan-300 hover:underline"
-      >
-        LinkedIn
-      </a>
-    </p>
-  </p>
-</ComingSoon>
+<Layout
+  title="Rami Maalouf"
+  class="flex h-full"
+>
+  <section
+    class="flex flex-col items-center h-full gap-5 mx-auto max-w-xs sm:max-w-lg md:max-w-2xl lg:max-w-4xl xl:max-w-6xl"
+  >
+    <h1
+      class="text-4xl sm:text-5xl xl:text-6xl font-extrabold text-center capitalize pb-1 md:pb-2 lg:pb-3 xl:pb-4 pt-10"
+    >
+      About Rami
+    </h1>
+    <div class="text-lg sm:text-xl md:text-2xl xl:text-3xl flex flex-col gap-y-3 flex-1 justify-start py-4">
+      <h2 class="text-center text-2xl sm:text-3xl xl:text-4xl font-bold pt-1 sm:pt-2 lg:pt-3 xl:pt-5">
+        What is your why?
+      </h2>
+      <p class="">
+        I find profound purpose in connecting with people, and this philosophy seeps into every area of my life.
+        Discovering programming a few years ago was a true blessing as it has now become the main medium I use to
+        connect with the world. I treat the code I work on as my children, because when these children grow up and
+        mature, they become a life that is capable of impacting as little as a single human or as many as the entirety
+        of mankind. Other mediums include content creation in the form of blogs or <a
+          href={externalLinks.youtube}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-cyan-300 hover:underline"
+          >videos</a
+        >. Where I share the unique knowledge I learned from going through unique experiences, whether it's traveling to
+        a new country, starting a new job, or exploring a new technology.
+      </p>
+      <h2 class="text-center text-2xl sm:text-3xl xl:text-4xl font-bold pt-1 sm:pt-2 lg:pt-3 xl:pt-5">
+        What are your hobbies?
+      </h2>
+      <p class="">
+        Obviously programming, socializing, <a
+          href={externalLinks.goodreads}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-cyan-300 hover:underline"
+          >reading</a
+        >, playing all kinds of sports, performing improv and expanding my knowledge in psychology, philosophy, and the
+        ever-evolving world of technology. I generally let my curiosity guide me to new experiences and knowledge, which
+        for example led me to start learning Golang and HTMX which I'm loving so far.
+        <!-- At the moment, I'm -->
+      </p>
+      <!-- <h2 class="text-center text-2xl sm:text-3xl xl:text-4xl font-bold pb-1 sm:pb-2 lg:pb-3 xl:pb-5">
+        What do you do
+      </h2>
+      <p class="text-center">
+        What truly drives me is my passion for building impactful software solutions that leverage cutting-edge
+        technologies. I'm particularly drawn to the intersection of app/web development and transformative fields like
+        AI, LLMs (Large Language Models), HCI (Human-Computer Interaction), and UX (User Experience). By connecting
+        these realms, I aim to create innovative applications that solve complex problems and enhance user experiences.
+        I thrive on the challenge of pushing the boundaries of what's possible and driving positive change through
+        technology.
+      </p> -->
+      <p class="text-center pt-6">
+        You can find more information about me and what I do on my
+        <a
+          href="https://github.com/pyscho-baller"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-cyan-300
+            hover:underline"
+        >
+          GitHub
+        </a>
+         and
+        <a
+          href="https://www.linkedin.com/in/rami--maalouf/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-cyan-300 hover:underline"
+        >
+          LinkedIn
+        </a>
+      </p>
+    </div>
+  </section>
+</Layout>

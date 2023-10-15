@@ -22,8 +22,16 @@ export const navLinks = [
   //   title: "Resume",
   // },
 ];
+export const externalLinks = {
+  github: "https://github.com/psycho-baller",
+  youtube: "https://youtube.com/@ramimaalouf",
+  linkedin: "https://www.linkedin.com/in/rami--maalouf/",
+  strava: "https://www.strava.com/athletes/50533842",
+  email: "mailto:ramim66809@gmail.com",
+  goodreads: "https://www.goodreads.com/user/show/161793210-rami",
+};
 
-export const externalLinks = [
+export const externalFooterLinks = [
   {
     name: "mdi:github",
     href: "https://github.com/psycho-baller",

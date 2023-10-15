@@ -21,7 +21,7 @@ All commands are run from the root of the project, from a terminal:
 - [x] Add texture to the title and possibly the area text
 - [x] A cool background
 - [x] Make it phone compatible
-- [x] redesign the navbar
+- [ ] redesign the navbar
 - [ ] animate the navbar
 - [ ] add a `src/pages/consuming.astro` page
   - [ ] add links to different places I share what I consume (goodreads, snipd, Youtube??, SnipTube??, etc...)

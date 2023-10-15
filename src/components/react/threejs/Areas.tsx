@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { Vector3, Euler } from "three";
 import Area from "./Area";
 import { useThree } from "@react-three/fiber";
+import { externalLinks } from "@utils/constants";
 
 export default function Areas(props: any) {
   const { size } = useThree();
@@ -34,7 +35,7 @@ export default function Areas(props: any) {
         // rotation={new Euler(Math.PI / 2, 0, Math.PI / 2)}
         position={new Vector3(-distanceXFromCenter, -distanceYFromCenter, 0)}
         area="consuming"
-        url={"https://www.goodreads.com/user/show/161793210-rami"}
+        url={externalLinks.goodreads}
       />
       <Area
         // rotation={new Euler(0, Math.PI / 2, 0)}

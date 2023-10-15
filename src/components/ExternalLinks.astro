@@ -1,6 +1,6 @@
 ---
 import { Icon } from "astro-icon";
-import { externalLinks } from "src/utils/constants";
+import { externalFooterLinks } from "src/utils/constants";
 ---
 
 <footer class="w-full flex">
@@ -9,7 +9,7 @@ import { externalLinks } from "src/utils/constants";
     class="mx-auto flex flex-row mb-2 items-center bg-transparent justify-between gap-6"
   >
     {
-      externalLinks.map(({ name, href }) => (
+      externalFooterLinks.map(({ name, href }) => (
         <a
           href={href}
           target="_blank"

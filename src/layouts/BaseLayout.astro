@@ -1,7 +1,8 @@
 ---
 import ExternalLinks from "@components/ExternalLinks.astro";
 import Navbar from "../components/Navbar.astro";
-import BaseHead from "@components/BaseHead.astro";
+import BaseHead from "@layouts/components/BaseHead.astro";
+// import BeautifulFog from "@layouts/components/BeautifulFog.astro";
 import { ViewTransitions } from "astro:transitions";
 
 export interface Props {
@@ -33,7 +34,26 @@ const {
         color: rgb(216, 247, 249); /* tw: text-cyan-100 */
       }
       .bg-img {
-        background-image: url("/scene_bg.png");
+        /* background-image: linear-gradient(
+          to bottom,
+          hsla(36, 31%, 90%, 0) 0%,
+          hsla(36, 31%, 90%, 0.013) 9.7%,
+          hsla(36, 31%, 90%, 0.049) 18.1%,
+          hsla(36, 31%, 90%, 0.104) 25.5%,
+          hsla(36, 31%, 90%, 0.175) 31.9%,
+          hsla(36, 31%, 90%, 0.259) 37.7%,
+          hsla(36, 31%, 90%, 0.352) 43%,
+          hsla(36, 31%, 90%, 0.45) 47.9%,
+          hsla(36, 31%, 90%, 0.55) 52.8%,
+          hsla(36, 31%, 90%, 0.648) 57.7%,
+          hsla(36, 31%, 90%, 0.741) 63%,
+          hsla(36, 31%, 90%, 0.825) 68.7%,
+          hsla(36, 31%, 90%, 0.896) 75%,
+          hsla(36, 31%, 90%, 0.951) 82.2%,
+          hsla(36, 31%, 90%, 0.987) 90.5%,
+          hsl(36, 31%, 90%) 100%
+        ); */
+        background-image: url("scene_bg.png");
         background-size: 100% 100%;
       }
       main {
@@ -66,6 +86,9 @@ const {
   </head>
   <body class="">
     <!-- fixed bg -->
+    <!-- <div class="absolute inset-0 bg-img">
+      <BeautifulFog />
+    </div> -->
     <div class={"bg-img fixed -z-10 inset-0" + (fullScreen ? "" : " opacity-10")}>
       {fullScreen ? null : <div class="h-full w-full mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" />}
     </div>

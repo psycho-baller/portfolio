@@ -10,7 +10,8 @@ export default defineConfig({
   site: 'https://www.ramimaalouf.tech',
   redirects:
   {
-    "/resume": "https://docs.google.com/document/d/1tY_v0Se3EH0pbjVZ5-hqM8I8uq0jK4ctuRLBOG4_JrI/edit?usp=sharing"
+    "/resume": "https://docs.google.com/document/d/1tY_v0Se3EH0pbjVZ5-hqM8I8uq0jK4ctuRLBOG4_JrI/edit?usp=sharing",
+    "/linkedin": "https://www.linkedin.com/in/rami--maalouf/"
   },
   integrations: [react({
     include: ["**/react/*"],

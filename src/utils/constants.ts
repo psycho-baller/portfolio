@@ -17,10 +17,10 @@ export const navLinks = [
     href: "/support",
     title: "Support",
   },
-  // {
-  //   href: "/resume",
-  //   title: "Resume",
-  // },
+  {
+    href: "/resume",
+    title: "Resume",
+  },
 ];
 export const externalLinks = {
   github: "https://github.com/psycho-baller",
@@ -29,6 +29,7 @@ export const externalLinks = {
   strava: "https://www.strava.com/athletes/50533842",
   email: "mailto:ramim66809@gmail.com",
   goodreads: "https://www.goodreads.com/user/show/161793210-rami",
+  resume: "https://docs.google.com/document/d/1tY_v0Se3EH0pbjVZ5-hqM8I8uq0jK4ctuRLBOG4_JrI/edit?usp=sharing",
 };
 
 export const externalFooterLinks = [

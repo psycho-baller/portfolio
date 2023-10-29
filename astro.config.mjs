@@ -8,6 +8,11 @@ import solidJs from "@astrojs/solid-js";
 // https://astro.build/config
 export default defineConfig({
   site: 'https://www.ramimaalouf.tech',
+  redirects: [
+    {
+      "/resume": "https://docs.google.com/document/d/1tY_v0Se3EH0pbjVZ5-hqM8I8uq0jK4ctuRLBOG4_JrI/edit?usp=sharing"
+    },
+  ],
   integrations: [react({
     include: ["**/react/*"],
   }

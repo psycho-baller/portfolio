@@ -9,7 +9,7 @@ export default function TopText(props: any) {
   const { width, height } = viewport;
   const ref = useRef<THREE.Mesh>(null!);
 
-  const [matcap] = useMatcapTexture("346088_6ABED7_56A0C5_4E91B8", 256);
+  const [matcap] = useMatcapTexture("326666_66CBC9_C0B8AE_52B3B4", 128); // 346088_6ABED7_56A0C5_4E91B8
   //this errors out, possible fix:
   // let temp;
   // useEffect(() => {
@@ -24,11 +24,11 @@ export default function TopText(props: any) {
     mouseY = 0;
 
   const windowHalfX = window.innerWidth / 2; // coz the text is in the middle
-  const windowQuarterY = window.innerHeight / 4; // coz the text is at the top
+  const windowHalfY = window.innerHeight / 2; // coz the text is at the top
 
   window.addEventListener("mousemove", (event) => {
     mouseX = event.clientX - windowHalfX;
-    mouseY = event.clientY - windowQuarterY;
+    mouseY = event.clientY - windowHalfY;
   });
 
   const reactivity = 0.02;

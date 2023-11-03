@@ -9,8 +9,6 @@ import type * as THREE from "three";
 import { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 import type { GLTF } from "three-stdlib";
-import { useFrame } from "@react-three/fiber";
-import SUSpense from "../Suspense";
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -53,8 +51,8 @@ export default function Model(props: JSX.IntrinsicElements["group"]) {
             rotation={[0, Math.PI / 2, 0]}
           >
             <mesh
-              castShadow
-              receiveShadow
+              // castShadow
+              // receiveShadow
               geometry={nodes.MacBook_1_MacBook1_0.geometry}
               material={materials["MacBook.1"]}
             />
@@ -64,14 +62,14 @@ export default function Model(props: JSX.IntrinsicElements["group"]) {
             rotation={[Math.PI, -0.28, Math.PI]}
           >
             <mesh
-              castShadow
-              receiveShadow
+              // castShadow
+              // receiveShadow
               geometry={nodes.Muis_1_Mat_2.geometry}
               material={materials.material}
             />
             <mesh
-              castShadow
-              receiveShadow
+              // castShadow
+              // receiveShadow
               geometry={nodes.Muis_1_Mat_0.geometry}
               material={materials.Mat_0}
             />

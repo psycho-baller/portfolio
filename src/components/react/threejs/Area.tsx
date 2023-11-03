@@ -1,8 +1,7 @@
-import { useEffect } from "react";
-import { Text3D, Center, Trail } from "@react-three/drei";
+import { Text3D, Center } from "@react-three/drei";
 import { useFrame, useThree } from "@react-three/fiber";
 import { useRef, useState } from "react";
-import { type Vector3, type Group, type Mesh, type Euler } from "three";
+import { type Vector3, type Group, type Euler } from "three";
 import { useControls } from "leva";
 import Mac from "@components/react/threejs/models/Mac";
 import Book from "@components/react/threejs/models/Book";

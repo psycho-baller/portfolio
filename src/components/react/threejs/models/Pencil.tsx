@@ -37,37 +37,48 @@ export default function Model(props: JSX.IntrinsicElements["group"]) {
   // });
 
   return (
-    <group {...props} dispose={null} scale={0.75} position={[0, 0, -9]}>
+    <group
+      {...props}
+      dispose={null}
+      scale={0.75}
+      position={[0, 0, -9]}
+    >
       <group rotation={[-Math.PI / 2, 0, 0]}>
-        <group rotation={[Math.PI / 2, 0, 0]} scale={0.1}>
-          <group rotation={[-Math.PI / 2, 0.6, 0]} scale={100}>
+        <group
+          rotation={[Math.PI / 2, 0, 0]}
+          scale={0.1}
+        >
+          <group
+            rotation={[-Math.PI / 2, 0.6, 0]}
+            scale={100}
+          >
             <mesh
-              castShadow
-              receiveShadow
+              // castShadow
+              // receiveShadow
               geometry={nodes.Cylinder_Material004_0.geometry}
               material={materials["Material.004"]}
             />
             <mesh
-              castShadow
-              receiveShadow
+              // castShadow
+              // receiveShadow
               geometry={nodes.Cylinder_Material003_0.geometry}
               material={materials["Material.003"]}
             />
             <mesh
-              castShadow
-              receiveShadow
+              // castShadow
+              // receiveShadow
               geometry={nodes.Cylinder_Material005_0.geometry}
               material={materials["Material.005"]}
             />
             <mesh
-              castShadow
-              receiveShadow
+              // castShadow
+              // receiveShadow
               geometry={nodes.Cylinder_Material001_0.geometry}
               material={materials["Material.001"]}
             />
             <mesh
-              castShadow
-              receiveShadow
+              // castShadow
+              // receiveShadow
               geometry={nodes.Cylinder_Material002_0.geometry}
               material={materials["Material.002"]}
             />

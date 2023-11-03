@@ -1,6 +1,7 @@
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
-import { NoToneMapping, sRGBEncoding } from "three";
+import { NoToneMapping } from "three";
+import SphereLight from "./SphereLight";
 export default function MyCanvas({ children }: { children: JSX.Element[] | JSX.Element }) {
   return (
     <Canvas
@@ -9,7 +10,6 @@ export default function MyCanvas({ children }: { children: JSX.Element[] | JSX.E
       camera={{ position: [0, 0, 15], fov: 75, near: 0.1, far: 1000 }}
       // Change the camera type to PerspectiveCamera
       // camera={PerspectiveCamera}
-
       style={{
         height: "100%",
         width: "100%",
@@ -22,18 +22,15 @@ export default function MyCanvas({ children }: { children: JSX.Element[] | JSX.E
     >
       <OrbitControls
         enableZoom={false}
+        enableRotate={false}
         // enablePan={false}
-        // enableRotate={false}
       />
-      <ambientLight intensity={0.15} />
+      {/* <ambientLight intensity={0.15} /> */}
       <pointLight
         position={[0, 0, 10]}
-        intensity={1}
+        intensity={0.25}
       />
-      <pointLight
-        position={[0, 0, 0]}
-        intensity={1}
-      />
+      <SphereLight />
       {children}
     </Canvas>
   );

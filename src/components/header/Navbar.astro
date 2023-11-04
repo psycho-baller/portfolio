@@ -1,7 +1,7 @@
 ---
 import "@styles/logo.css";
 import "@styles/tailwind.css";
-import NavLinks from "./solid/NavLinks";
+import NavLinks from "./NavLinks";
 import Hamburger from "./Hamburger.astro";
 ---
 
@@ -14,7 +14,12 @@ import Hamburger from "./Hamburger.astro";
       {/* <img src="favicon.svg" alt="Logo" class="h-8" /> */}RAMI
     </a>
 
-    <div class="block sm:hidden" transition:persist><Hamburger /></div>
+    <div
+      class="block sm:hidden"
+      transition:persist
+    >
+      <Hamburger />
+    </div>
 
     <NavLinks client:load />
   </div>

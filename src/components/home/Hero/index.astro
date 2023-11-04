@@ -1,0 +1,13 @@
+---
+import HeroScene from "@components/home/Hero/HeroScene";
+const props = Astro.props;
+---
+
+<section>
+  <HeroScene
+    client:load
+    transition:persist="hero-scene"
+    {...props}
+  />
+  <!-- <section class="min-h-screen"></section> -->
+</section>

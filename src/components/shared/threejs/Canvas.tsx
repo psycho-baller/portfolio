@@ -1,7 +1,7 @@
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import { NoToneMapping } from "three";
-import SphereLight from "./SphereLight";
+import SphereLight from "../react/threejs/SphereLightro/SphereLight";
 export default function MyCanvas({ children }: { children: JSX.Element[] | JSX.Element }) {
   return (
     <Canvas

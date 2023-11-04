@@ -13,18 +13,24 @@ export default defineConfig({
     "/resume": "https://docs.google.com/document/d/1tY_v0Se3EH0pbjVZ5-hqM8I8uq0jK4ctuRLBOG4_JrI/edit?usp=sharing",
     "/linkedin": "https://www.linkedin.com/in/rami--maalouf/"
   },
-  integrations: [react({
-    include: ["**/react/*"],
-  }
-  ), tailwind({
-    // Example: Disable injecting a basic `base.css` import on every page.
-    // Useful if you need to define and/or import your own custom `base.css`.
-    config: {
-      applyBaseStyles: false
-    }
-  }), solidJs({
-    include: ["**/solid/*"],
-  })],
+  integrations: [
+    react({
+      include: ["**/react/*"],
+    }),
+    tailwind({
+      // Example: Disable injecting a basic `base.css` import on every page.
+      // Useful if you need to define and/or import your own custom `base.css`.
+      config: {
+        applyBaseStyles: false
+      }
+    }),
+    solidJs({
+      include: ["**/solid/*"],
+    })
+  ],
+  experimental: {
+    devOverlay: true
+  },
   output: "server",
   adapter: vercel(),
   server: {

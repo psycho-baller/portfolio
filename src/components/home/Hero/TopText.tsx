@@ -1,7 +1,7 @@
 import { useFrame, useThree } from "@react-three/fiber";
 import { Center, Text3D, Text, useTexture, useMatcapTexture } from "@react-three/drei";
 import mondayFont from "../../../utils/blueNight_font.json";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import { Vector3 } from "three";
 
 export default function TopText(props: any) {
@@ -19,17 +19,23 @@ export default function TopText(props: any) {
   // }, []);
   // const matcap = temp;
 
-  var target = new Vector3();
-  var mouseX = 0,
+  let target = new Vector3();
+  let mouseX = 0,
     mouseY = 0;
 
+  // useEffect(() => {
   const windowHalfX = window.innerWidth / 2; // coz the text is in the middle
   const windowHalfY = window.innerHeight / 2; // coz the text is at the top
-
-  window.addEventListener("mousemove", (event) => {
+  function onDocumentMouseMove(event: MouseEvent) {
     mouseX = event.clientX - windowHalfX;
     mouseY = event.clientY - windowHalfY;
-  });
+  }
+
+  window.addEventListener("mousemove", onDocumentMouseMove);
+  //   return () => {
+  //     window.removeEventListener("mousemove", onDocumentMouseMove);
+  //   };
+  // }, []);
 
   const reactivity = 0.02;
   const effectOnX = 0.0075;

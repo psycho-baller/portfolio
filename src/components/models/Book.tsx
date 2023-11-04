@@ -40,10 +40,6 @@ export default function Model(props: JSX.IntrinsicElements["group"]) {
 
   useEffect(() => {
     actions["Book Open/Close"].play();
-
-    return () => {
-      actions["Book Open/Close"].stop();
-    };
   }, []);
 
   // useFrame((state, delta) => {

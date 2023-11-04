@@ -14,7 +14,7 @@ const message = messages[messageTo] || null;
 {
   message && (
     <PopoverMessage
-      client:load
+      client:visible
       message={message}
     />
   )

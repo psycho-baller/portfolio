@@ -180,10 +180,10 @@
   "extensionsUsed": ["KHR_materials_pbrSpecularGlossiness"],
   "images": [
     {
-      "uri": "textures/MacBook.1_emissive.jpeg"
+      "uri": "textures/MacBook.1_emissive.png"
     },
     {
-      "uri": "textures/MacBook.1_diffuse.jpeg"
+      "uri": "textures/MacBook.1_diffuse.png"
     }
   ],
   "materials": [

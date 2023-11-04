@@ -28,7 +28,7 @@ type GLTFResult = GLTF & {
 };
 
 export default function Model(props: JSX.IntrinsicElements["group"]) {
-  const { nodes, materials } = useGLTF("/models/pencil.glb") as GLTFResult;
+  const { nodes, materials } = useGLTF("/models/compressed-pencil.glb") as GLTFResult;
   // const group = useRef<THREE.Group>(null!);
 
   // useFrame((state, delta) => {
@@ -89,4 +89,4 @@ export default function Model(props: JSX.IntrinsicElements["group"]) {
   );
 }
 
-useGLTF.preload("/models/pencil.glb");
+useGLTF.preload("/models/compressed-pencil.glb");

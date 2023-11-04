@@ -3,9 +3,9 @@ import { useFrame, useThree } from "@react-three/fiber";
 import { useRef, useState } from "react";
 import { type Vector3, type Group, type Euler } from "three";
 import { useControls } from "leva";
-import Mac from "@components/react/threejs/models/Mac";
-import Book from "@components/react/threejs/models/Book";
-import Pencil from "@components/react/threejs/models/Pencil";
+import Mac from "@components/models/Mac";
+import Book from "@components/models/Book";
+import Pencil from "@components/models/Pencil";
 import mondayFont from "@utils/blueNight_font.json";
 import { animated, useSpring } from "@react-spring/three";
 export default function Ball({

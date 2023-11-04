@@ -11,6 +11,7 @@ import { useEffect, useRef, useState } from "react";
 import { useGLTF, useAnimations, Text3D } from "@react-three/drei";
 import type { GLTF } from "three-stdlib";
 import { useFrame } from "@react-three/fiber";
+// import { DRACOLoader } from "three/addons/loaders/DRACOLoader.js";
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -28,9 +29,11 @@ type ActionName = "Book Open/Close";
 type GLTFActions = Record<ActionName, THREE.AnimationAction>;
 
 export default function Model(props: JSX.IntrinsicElements["group"]) {
+  // const draco = new DRACOLoader();
+  // draco.setDecoderConfig({ type: "js" });
+  // draco.setDecoderPath("https://www.gstatic.com/draco/v1/decoders/");
   const group = useRef<THREE.Group>(null!);
-  const { nodes, materials, animations } = useGLTF("/models/book.glb") as GLTFResult;
-  //   @ts-ignore
+  const { nodes, materials, animations } = useGLTF("/models/compressed-book.glb") as GLTFResult;
   const { actions } = useAnimations<GLTFActions>(animations, group) as {
     actions: GLTFActions;
   };
@@ -111,4 +114,4 @@ export default function Model(props: JSX.IntrinsicElements["group"]) {
   );
 }
 
-useGLTF.preload("/models/book.glb");
+useGLTF.preload("/models/compressed-book.glb");

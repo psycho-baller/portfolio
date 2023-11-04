@@ -25,7 +25,7 @@ export default defineConfig({
       }
     }),
     solidJs({
-      include: ["**/solid/*"],
+      include: ["**/NavLinks.tsx"]
     })
   ],
   experimental: {

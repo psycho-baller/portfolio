@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { Vector3, Euler } from "three";
-import Area from "../../react/threejs/Areahome/Hero/Area";
+import Area from "./Area";
 import { useThree } from "@react-three/fiber";
 import { externalLinks } from "@utils/constants";
 

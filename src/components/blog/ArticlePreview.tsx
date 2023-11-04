@@ -1,5 +1,5 @@
 import type { FC } from "react";
-import { Card } from "../react./blog/Card";
+import { Card } from "./Card";
 import { formatDate } from "@utils/formatDate";
 import type { CollectionEntry } from "astro:content";
 

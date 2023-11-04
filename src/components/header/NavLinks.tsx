@@ -1,4 +1,4 @@
-// import "solid-js";
+import "solid-js";
 /** @jsxImportSource solid-js */
 import { For, createSignal, onMount } from "solid-js";
 import { navLinks } from "@utils/constants";
@@ -27,7 +27,7 @@ export default function Navbar() {
               } capitalize hover:text-cyan-300 text-[18px] font-medium cursor-pointer block sm:inline-block`}
               onClick={() => {
                 const burger = document.querySelector(".burger");
-                if (burger?.classList.contains("active") && window.innerWidth < 640 && active() !== link.href){
+                if (burger?.classList.contains("active") && window.innerWidth < 640 && active() !== link.href) {
                   burger.classList.remove("active");
                 }
               }}

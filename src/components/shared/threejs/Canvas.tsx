@@ -1,7 +1,5 @@
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
 import { NoToneMapping } from "three";
-import SphereLight from "../react/threejs/SphereLightro/SphereLight";
 export default function MyCanvas({ children }: { children: JSX.Element[] | JSX.Element }) {
   return (
     <Canvas
@@ -20,17 +18,6 @@ export default function MyCanvas({ children }: { children: JSX.Element[] | JSX.E
         // overflow: "hidden",
       }}
     >
-      <OrbitControls
-        enableZoom={false}
-        enableRotate={false}
-        // enablePan={false}
-      />
-      {/* <ambientLight intensity={0.15} /> */}
-      <pointLight
-        position={[0, 0, 10]}
-        intensity={0.25}
-      />
-      <SphereLight />
       {children}
     </Canvas>
   );

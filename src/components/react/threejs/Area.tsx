@@ -96,9 +96,9 @@ export default function Ball({
             // setSpeed(5);
           }}
         >
-          {area === "building" && <Mac />}
-          {area === "consuming" && <Book />}
-          {area === "creating" && <Pencil />}
+          {area === "learning" && <Book />}
+          {area === "developing" && <Mac />}
+          {area === "writing" && <Pencil />}
         </animated.group>
       </group>
       {hovered && (

@@ -34,18 +34,18 @@ export default function Areas(props: any) {
       <Area
         // rotation={new Euler(Math.PI / 2, 0, Math.PI / 2)}
         position={new Vector3(-distanceXFromCenter, -distanceYFromCenter, 0)}
-        area="consuming"
+        area="learning"
         url={externalLinks.goodreads}
       />
       <Area
         // rotation={new Euler(0, Math.PI / 2, 0)}
         // position={new Vector3(0, 0, 0)}
-        area="building"
+        area="developing"
         url={"https://github.com/psycho-baller"}
       />
       <Area
         position={new Vector3(distanceXFromCenter, distanceYFromCenter, 0)}
-        area="creating"
+        area="writing" // sharing
         url={"https://youtube.com/@ramimaalouf"}
       />
     </group>

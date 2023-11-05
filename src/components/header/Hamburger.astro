@@ -2,7 +2,7 @@
 import "@styles/navbar.scss";
 ---
 
-<button class="burger">
+<button id="burger">
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="60"
@@ -51,37 +51,37 @@ import "@styles/navbar.scss";
   </svg>
 </button>
 <script lang="ts">
-function handleBurgerClick() {
-  // toggle hamburger
-  burger?.classList.toggle("active");
+  function handleBurgerClick() {
+    // toggle hamburger
+    burger?.classList.toggle("active");
 
-  // toggle nav
-  const nav = document.querySelector("#nav-links");
-  nav?.classList.toggle("toggled");
+    // toggle nav
+    const nav = document.querySelector("#nav-links");
+    nav?.classList.toggle("toggled");
 
-  // toggle .blur-bg
-  const page = document.querySelector(".blur-bg");
-  page?.classList.toggle("toggled");
-  // const burger = document.querySelector(".burger");
-  // const nav = document.querySelector(".nav");
-  // const navLinks = document.querySelectorAll(".nav__link");
+    // toggle .blur-bg
+    const page = document.querySelector(".blur-bg");
+    page?.classList.toggle("toggled");
+    // const burger = document.querySelector("#burger");
+    // const nav = document.querySelector(".nav");
+    // const navLinks = document.querySelectorAll(".nav__link");
 
-  // burger?.addEventListener("click", () => {
-  //   nav?.classList.toggle("nav--active");
-  //   burger?.classList.toggle("burger--active");
-  //   navLinks.forEach((link, index) => {
-  //     if (link.style.animation) {
-  //       link.style.animation = "";
-  //     } else {
-  //       link.style.animation = `navLinkFade 0.5s ease forwards ${
-  //         index / 7 + 0.5
-  //       }s`;
-  //     }
-  //   });
-  // });
-}
-const burger = document.querySelector(".burger");
+    // burger?.addEventListener("click", () => {
+    //   nav?.classList.toggle("nav--active");
+    //   burger?.classList.toggle("burger--active");
+    //   navLinks.forEach((link, index) => {
+    //     if (link.style.animation) {
+    //       link.style.animation = "";
+    //     } else {
+    //       link.style.animation = `navLinkFade 0.5s ease forwards ${
+    //         index / 7 + 0.5
+    //       }s`;
+    //     }
+    //   });
+    // });
+  }
+  const burger = document.querySelector("#burger");
 
-burger?.addEventListener("click", () => handleBurgerClick());
-// burger?.addEventListener("astro:after-swap", () => handleBurgerClick());
+  burger?.addEventListener("click", () => handleBurgerClick());
+  // burger?.addEventListener("astro:after-swap", () => handleBurgerClick());
 </script>

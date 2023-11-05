@@ -9,14 +9,15 @@ import { externalFooterLinks } from "src/utils/constants";
     class="mx-auto flex flex-row mb-2 items-center bg-transparent justify-between gap-6"
   >
     {
-      externalFooterLinks.map(({ name, href }) => (
+      externalFooterLinks.map(({ name, iconName, href }) => (
         <a
           href={href}
           target="_blank"
+          aria-label={name}
           rel="noopener noreferrer"
           class="w-6 h-6 flex-1"
         >
-          <Icon name={name} />
+          <Icon name={iconName} />
         </a>
       ))
     }

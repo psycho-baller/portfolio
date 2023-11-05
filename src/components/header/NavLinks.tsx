@@ -26,7 +26,7 @@ export default function Navbar() {
                 active() === link.href ? "text-cyan-400" : "text-cyan-100"
               } capitalize hover:text-cyan-300 text-[18px] font-medium cursor-pointer block sm:inline-block`}
               onClick={() => {
-                const burger = document.querySelector(".burger");
+                const burger = document.querySelector("#burger");
                 if (burger?.classList.contains("active") && window.innerWidth < 640 && active() !== link.href) {
                   burger.classList.remove("active");
                 }

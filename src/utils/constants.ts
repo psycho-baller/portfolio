@@ -34,24 +34,29 @@ export const externalLinks = {
 
 export const externalFooterLinks = [
   {
-    name: "mdi:github",
+    iconName: "mdi:github",
     href: "https://github.com/psycho-baller",
+    name: "Link to my Github",
   },
   {
-    name: "ant-design:youtube-filled",
+    iconName: "ant-design:youtube-filled",
     href: "https://youtube.com/@ramimaalouf",
+    name: "Link to my Youtube",
   },
   {
-    name: "mdi:linkedin",
+    iconName: "mdi:linkedin",
     href: "https://www.linkedin.com/in/rami--maalouf/",
+    name: "Link to my LinkedIn",
   },
   {
-    name: "ic:round-email",
+    iconName: "ic:round-email",
     href: "https://mail.google.com/mail/u/0/?fs=1&to=rami.rami@ucalgary.ca&su=About...&body=Hey%20Rami,%20....&tf=cm",
+    name: "Link to Email me",
   },
   {
-    name: "simple-icons:strava",
+    iconName: "simple-icons:strava",
     href: "https://www.strava.com/athletes/50533842",
+    name: "Link to my Strava",
   },
 ];
 

@@ -1,13 +1,14 @@
 import { Text3D, Center } from "@react-three/drei";
 import { useFrame, useThree } from "@react-three/fiber";
 import { useRef, useState } from "react";
-import { type Vector3, type Group, type Euler } from "three";
+import { type Vector3, type Group, type Euler, MeshNormalMaterial, MeshBasicMaterial } from "three";
 import { useControls } from "leva";
 import Mac from "@components/models/Mac";
 import Book from "@components/models/Book";
 import Pencil from "@components/models/Pencil";
 import mondayFont from "@utils/blueNight_font.json";
 import { animated, useSpring } from "@react-spring/three";
+import { useStore } from "@store";
 export default function Ball({
   // areaGroup,
   // areaRef,
@@ -21,11 +22,13 @@ export default function Ball({
   area: string;
   [x: string]: any;
 }) {
+  const [areaHovered, setAreaHovered] = useStore((state) => [state.areaHovered, state.setAreaHovered]);
   const [hovered, setHover] = useState(false);
   // const [active, setActive] = useState(false);
   const areaGroup = useRef<Group>(null!);
   const areaRef = useRef<Group>(null!);
   const textRef = useRef<Group>(null!);
+  const heroSphereCursor = useStore((state) => state.heroSphereCursor);
 
   const { size } = useThree();
   const { scale } = useSpring({
@@ -86,13 +89,15 @@ export default function Ball({
           }}
           onPointerOver={(_event) => {
             setHover(true);
-            document.body.style.cursor = "pointer";
+            setAreaHovered(true);
 
             // setSpeed(1);
           }}
           onPointerOut={(_event) => {
             document.body.style.cursor = "auto";
             setHover(false);
+            setAreaHovered(false);
+            if (heroSphereCursor.current) heroSphereCursor.current.scale.set(1, 1, 1);
             // setSpeed(5);
           }}
         >

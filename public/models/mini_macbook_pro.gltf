@@ -189,7 +189,7 @@
   "materials": [
     {
       "doubleSided": true,
-      "emissiveFactor": [1.0, 1.0, 1.0],
+      "emissiveFactor": [0.4, 0.4, 0.4],
       "emissiveTexture": {
         "index": 1
       },
@@ -207,6 +207,7 @@
     },
     {
       "doubleSided": true,
+      "emissiveFactor": [0.4, 0.4, 0.4],
       "extensions": {
         "KHR_materials_pbrSpecularGlossiness": {
           "diffuseFactor": [1.0, 1.0, 1.0, 1.0],
@@ -218,6 +219,7 @@
     },
     {
       "doubleSided": true,
+      "emissiveFactor": [0.4, 0.4, 0.4],
       "extensions": {
         "KHR_materials_pbrSpecularGlossiness": {
           "diffuseFactor": [0.603, 0.8405999999999997, 0.8999999999999999, 1.0],

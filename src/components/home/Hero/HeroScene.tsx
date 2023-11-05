@@ -10,7 +10,7 @@ interface HeroSceneProps extends HTMLAttributes<HTMLDivElement> {
 export default function HeroScene(props: HeroSceneProps) {
   const { children, hideCallback = false, hideTitle = false, ...rest } = props;
   return (
-    <Canvas>
+    <Canvas {...rest}>
       <Fragment>
         {/* <OrbitControls
           enableZoom={false}

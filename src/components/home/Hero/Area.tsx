@@ -46,7 +46,7 @@ export default function Ball({
   // const debug = window.location.href.includes("debug");
   // const { speed } = (debug && useControls({ speed: { value: 10, min: 0, max: 1000 } })) || { speed: 10 };
 
-  const baseSpeed = 5;
+  const [baseSpeed, setBaseSpeed] = useState(5);
   const timeToReachBaseSpeed = 0.5;
   // Set the initial extra rotation speed to a high value
   const initialExtraRotationSpeed = 1800;
@@ -91,14 +91,14 @@ export default function Ball({
             setHover(true);
             setAreaHovered(true);
 
-            // setSpeed(1);
+            setBaseSpeed(10);
           }}
           onPointerOut={(_event) => {
             document.body.style.cursor = "auto";
             setHover(false);
             setAreaHovered(false);
             if (heroSphereCursor.current) heroSphereCursor.current.scale.set(1, 1, 1);
-            // setSpeed(5);
+            setBaseSpeed(5);
           }}
         >
           {area === "learning" && <Book />}

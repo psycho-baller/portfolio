@@ -46,7 +46,8 @@ export default function Ball({
   // const debug = window.location.href.includes("debug");
   // const { speed } = (debug && useControls({ speed: { value: 10, min: 0, max: 1000 } })) || { speed: 10 };
 
-  const [baseSpeed, setBaseSpeed] = useState(5);
+  const baseSpeed = 5;
+  const speedMultiplierOnHover = 2;
   const timeToReachBaseSpeed = 0.5;
   // Set the initial extra rotation speed to a high value
   const initialExtraRotationSpeed = 1800;
@@ -71,6 +72,11 @@ export default function Ball({
     }
     rotationSpeed = Math.max(baseSpeed, extraRotationSpeed);
 
+    if (areaHovered) {
+      // if the area is hovered, increase the rotation speed
+      rotationSpeed = baseSpeed * speedMultiplierOnHover;
+    }
+
     // Update the rotation of the areaRef mesh
     areaRef.current.rotation.y += rotationSpeed * 0.001;
   });
@@ -90,15 +96,12 @@ export default function Ball({
           onPointerOver={(_event) => {
             setHover(true);
             setAreaHovered(true);
-
-            setBaseSpeed(10);
           }}
           onPointerOut={(_event) => {
             document.body.style.cursor = "auto";
             setHover(false);
             setAreaHovered(false);
             if (heroSphereCursor.current) heroSphereCursor.current.scale.set(1, 1, 1);
-            setBaseSpeed(5);
           }}
         >
           {area === "learning" && <Book />}

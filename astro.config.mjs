@@ -31,8 +31,8 @@ export default defineConfig({
   experimental: {
     devOverlay: true
   },
-  output: "server",
-  adapter: vercel(),
+  // output: "server",
+  // adapter: vercel(),
   server: {
     port: 3000
   },

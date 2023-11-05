@@ -20,7 +20,7 @@ const SphereLight: FC<Props> = (props) => {
     <pointLight
       ref={ref}
       position={[0, 0, 2]}
-      intensity={2}
+      intensity={5}
     >
       {/* <Sphere args={[0.1, 16, 8]} /> */}
     </pointLight>

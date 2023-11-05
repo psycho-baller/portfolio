@@ -1,7 +1,7 @@
 ---
 import Layout from "src/layouts/BaseLayout.astro";
 import "../styles/tailwind.css";
-import Hero from "@components/home/Hero/index.astro";
+import HeroScene from "@components/home/Hero/HeroScene";
 ---
 
 <Layout
@@ -21,9 +21,11 @@ import Hero from "@components/home/Hero/index.astro";
       <slot />
     </div>
     <div class="relative h-full w-screen">
-      <Hero
-        hideCallback
-        hideTitle
+      <HeroScene
+        hideCallback={true}
+        hideTitle={true}
+        client:media="(min-width: 1024px)"
+        transition:persist="hero-scene"
       />
     </div>
     <p class="text-center my-6">If you landed here, have a wonderful day!</p>

@@ -4,10 +4,52 @@ const props = Astro.props;
 ---
 
 <section>
-  <HeroScene
-    client:load
-    transition:persist="hero-scene"
-    {...props}
-  />
-  <!-- <section class="min-h-screen"></section> -->
+  <div class="scene">
+    <HeroScene
+      client:load
+      transition:persist="hero-scene"
+      {...props}
+    />
+  </div>
+
+  <!-- <div class="spinner">
+    <div class="flex justify-center items-center h-screen">
+      <div class="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-gray-900"></div>
+    </div>
+  </div> -->
 </section>
+<!-- <section class="min-h-screen"></section> -->
+
+<!-- <style>
+  .spinner {
+    display: block;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+  }
+  .scene {
+    display: none;
+  }
+</style> 
+<script>
+  const scene = document.querySelector(".scene") as HTMLDivElement;
+  const spinner = document.querySelector(".spinner") as HTMLDivElement;
+  if (!scene || !spinner) {
+    throw new Error("Missing scene or spinner");
+  }
+  // console.log("pageMounted", sessionStorage.getItem("pageMounted"));
+  // if (sessionStorage.getItem("pageMounted") === "true") {
+  import("@components/home/Hero/HeroScene").then((module) => {
+    if (sessionStorage.getItem("alreadyMounted") === "true") {
+      return;
+    }
+    // const HeroScene = module.default;
+    scene.style.display = "block";
+    spinner.style.opacity = "0";
+    // spinner.style.display = "none";
+    sessionStorage.setItem("alreadyMounted", "true");
+    // when use leave the page, we need to reset the sessionStorage
+    window.addEventListener("beforeunload", () => {
+      sessionStorage.clear();
+    });
+  });
+</script>-->

@@ -1,8 +1,8 @@
-// import { Html, useProgress } from "@react-three/drei";
+import { Html, useProgress } from "@react-three/drei";
 import "@styles/logo.css";
 import { useState, type CSSProperties, useEffect } from "react";
 export default function Suspense() {
-  // const { progress, active } = useProgress();
+  const { progress, active } = useProgress();
   const progressBarContainerStyle = {
     position: "fixed",
     top: "50%",
@@ -24,7 +24,7 @@ export default function Suspense() {
 
   const progressBarFillStyle = {
     height: "100%",
-    width: `${50}%`,
+    width: `${progress}%`,
     backgroundColor: "turquoise",
   };
 
@@ -38,11 +38,11 @@ export default function Suspense() {
 
   return (
     <section
-      // center
+      center
       style={{
         height: "100vh",
         width: "100vw",
-        opacity: mounted ? 1 : 0,
+        // opacity: mounted ? 1 : 0,
         transition: "opacity 0.5s ease-in-out",
         // background: "rgba(0,0,0,.4)",
       }}

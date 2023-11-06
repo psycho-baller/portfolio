@@ -176,8 +176,6 @@
       "uri": "mini_macbook_pro.bin"
     }
   ],
-  "extensionsRequired": ["KHR_materials_pbrSpecularGlossiness"],
-  "extensionsUsed": ["KHR_materials_pbrSpecularGlossiness"],
   "images": [
     {
       "uri": "textures/MacBook.1_emissive.png"
@@ -192,16 +190,6 @@
       "emissiveFactor": [0.4, 0.4, 0.4],
       "emissiveTexture": {
         "index": 1
-      },
-      "extensions": {
-        "KHR_materials_pbrSpecularGlossiness": {
-          "diffuseFactor": [1.0, 1.0, 1.0, 1.0],
-          "diffuseTexture": {
-            "index": 0
-          },
-          "glossinessFactor": 0.4799923780487805,
-          "specularFactor": [0.0, 0.0, 0.0]
-        }
       },
       "name": "MacBook.1"
     },

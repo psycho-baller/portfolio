@@ -1,4 +1,4 @@
-import { Html, useProgress } from "@react-three/drei";
+import { useProgress } from "@react-three/drei";
 import "@styles/logo.css";
 import { useState, type CSSProperties, useEffect } from "react";
 export default function Suspense() {
@@ -38,7 +38,7 @@ export default function Suspense() {
 
   return (
     <section
-      center
+      // center
       style={
         {
           // opacity: mounted ? 1 : 0,

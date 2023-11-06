@@ -7,7 +7,6 @@ import { externalLinks } from "@lib/constants";
 export default function Areas(props: any) {
   const { size } = useThree();
   const { width } = size;
-  console.log(width);
   let distanceXFromCenter: number;
   let distanceYFromCenter: number = 0;
   let scale: number = 1;

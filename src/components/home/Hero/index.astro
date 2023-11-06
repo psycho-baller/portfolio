@@ -13,46 +13,21 @@ const props = Astro.props;
     />
   </div>
 
-  <div class="spinner hidden">
-    <Loading />
-    <div class="flex justify-center items-center h-screen">
-      <div class="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-gray-900"></div>
-    </div>
-  </div>
+  <Loading class="loadingPage hidden" />
 </section>
-<!-- <section class="min-h-screen"></section> -->
 
 <script>
   const scene = document.querySelector(".scene") as HTMLDivElement;
-  const spinner = document.querySelector(".spinner") as HTMLDivElement;
-  if (!scene || !spinner) {
-    throw new Error("Missing scene or spinner");
+  const loadingPage = document.querySelector(".loadingPage") as HTMLDivElement;
+  if (!scene || !loadingPage) {
+    throw new Error("Missing scene or loadingPage");
   }
-  spinner.style.opacity = "1";
-  spinner.style.display = "block";
-  // scene.style.display = "none";
-  // scene.style.opacity = "0";
-  // console.log("pageMounted", sessionStorage.getItem("pageMounted"));
-  // if (sessionStorage.getItem("pageMounted") === "true") {
+  loadingPage.style.opacity = "1";
+  loadingPage.style.display = "block";
   import("@components/home/Hero/SceneSuspenseWrapper").then((module) => {
-    // if (sessionStorage.getItem("alreadyMounted") === "true") {
-    //   return;
-    // }
-    // const HeroScene = module.default;
     scene.style.display = "block";
     setTimeout(() => {
-      spinner.style.display = "none";
+      loadingPage.style.display = "none";
     }, 250);
-    // sessionStorage.setItem("alreadyMounted", "true");
-    // // when use leave the page, we need to reset the sessionStorage
-    // window.addEventListener("beforeunload", () => {
-    //   sessionStorage.clear();
-    // });
-  });
-  document.addEventListener("astro:after-swap", () => {
-    // console.log("astro:after-swap");
-    // scene.style.display = "block";
-    // spinner.style.opacity = "0";
-    // spinner.style.display = "none";
   });
 </script>

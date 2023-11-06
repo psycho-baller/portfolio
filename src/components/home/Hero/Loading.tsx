@@ -39,13 +39,14 @@ export default function Suspense() {
   return (
     <section
       center
-      style={{
-        height: "100vh",
-        width: "100vw",
-        // opacity: mounted ? 1 : 0,
-        transition: "opacity 0.5s ease-in-out",
-        // background: "rgba(0,0,0,.4)",
-      }}
+      style={
+        {
+          // opacity: mounted ? 1 : 0,
+          // transition: "opacity 0.5s ease-in-out",
+          // background: "rgba(0,0,0,.4)",
+        }
+      }
+      className={"h-full w-full"}
     >
       <div
         style={progressBarContainerStyle}

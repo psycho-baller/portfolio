@@ -1,0 +1,27 @@
+---
+const { class: _class } = Astro.props;
+---
+
+<a
+  id="logo"
+  href="/"
+  class={"flex text-4xl text-cyan-300 modak sm:hidden md:block " + _class}
+>
+  {/* <img src="favicon.svg" alt="Logo" class="h-8" /> */}RAMI
+</a>
+<script>
+  import { handleNavClick } from "@lib/utils";
+
+  const logo = document.querySelector("#logo");
+  logo?.addEventListener("click", () => {
+    // if (window.location.pathname === "/") {
+    //   window.scrollTo(0, 0);
+    // }
+    // check if the nav is open
+    const nav = document.querySelector("#nav-links");
+    if (nav?.classList.contains("toggled")) {
+      // if so, close all the things nav toggles by treating it as a nav click
+      handleNavClick();
+    }
+  });
+</script>

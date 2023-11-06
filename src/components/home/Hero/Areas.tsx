@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { Vector3, Euler } from "three";
 import Area from "./Area";
 import { useThree } from "@react-three/fiber";
-import { externalLinks } from "@utils/constants";
+import { externalLinks } from "@lib/constants";
 
 export default function Areas(props: any) {
   const { size } = useThree();

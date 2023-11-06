@@ -1,7 +1,7 @@
 import { Dialog, Transition } from "@headlessui/react";
 import ReactMarkdown from "react-markdown";
 import { Fragment, useState } from "react";
-import type { Message } from "@utils/types";
+import type { Message } from "@lib/types";
 import "@styles/popover.scss";
 
 export default function MyModal({ message }: { message: Message }) {

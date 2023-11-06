@@ -1,26 +1,10 @@
 ---
-import "@styles/logo.css";
 import "@styles/tailwind.css";
 import NavLinks from "./NavLinks";
 import Hamburger from "./Hamburger.astro";
 ---
 
-<header class="flex items-center sm:bg-transparent w-full py-6">
-  <div class="flex justify-between w-full sm:opacity-100 mx-auto items-center">
-    <a
-      href="/"
-      class="flex text-4xl text-cyan-300 modak"
-    >
-      {/* <img src="favicon.svg" alt="Logo" class="h-8" /> */}RAMI
-    </a>
-
-    <div
-      class="block sm:hidden"
-      transition:persist
-    >
-      <Hamburger />
-    </div>
-
-    <NavLinks client:idle />
-  </div>
-</header>
+<!-- <header class="flex items-center sm:bg-transparent w-full py-6">
+  <div class="flex justify-between w-full sm:opacity-100 mx-auto pl-5 sm:pl-0 items-center z-50"> --><!-- </div> -->
+<NavLinks client:idle />
+<!-- </header> -->

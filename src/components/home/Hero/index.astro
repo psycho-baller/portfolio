@@ -26,7 +26,6 @@ const props = Astro.props;
   if (!scene || !spinner) {
     throw new Error("Missing scene or spinner");
   }
-  console.log("scene", scene);
   spinner.style.opacity = "1";
   spinner.style.display = "block";
   // scene.style.display = "none";
@@ -47,10 +46,10 @@ const props = Astro.props;
     //   sessionStorage.clear();
     // });
   });
-  // document.addEventListener("astro:after-swap", () => {
-  //   console.log("astro:after-swap");
-  //   scene.style.display = "block";
-  //   spinner.style.opacity = "0";
-  //   spinner.style.display = "none";
-  // });
+  document.addEventListener("astro:after-swap", () => {
+    // console.log("astro:after-swap");
+    // scene.style.display = "block";
+    // spinner.style.opacity = "0";
+    // spinner.style.display = "none";
+  });
 </script>

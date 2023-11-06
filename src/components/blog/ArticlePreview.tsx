@@ -1,6 +1,6 @@
 import type { FC } from "react";
 import { Card } from "./Card";
-import { formatDate } from "@utils/formatDate";
+import { formatDate } from "@lib/formatDate";
 import type { CollectionEntry } from "astro:content";
 
 interface Props {

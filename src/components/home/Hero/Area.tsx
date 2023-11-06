@@ -6,7 +6,7 @@ import { useControls } from "leva";
 import Mac from "@components/models/Mac";
 import Book from "@components/models/Book";
 import Pencil from "@components/models/Pencil";
-import mondayFont from "@utils/blueNight_font.json";
+import mondayFont from "/blueNight_font.json?url";
 import { animated, useSpring } from "@react-spring/three";
 import { useStore } from "@store";
 export default function Ball({
@@ -101,7 +101,7 @@ export default function Ball({
             document.body.style.cursor = "auto";
             setHover(false);
             setAreaHovered(false);
-            if (heroSphereCursor.current) heroSphereCursor.current.scale.set(1, 1, 1);
+            // if (heroSphereCursor.current) heroSphereCursor.current.scale.set(1, 1, 1);
           }}
         >
           {area === "learning" && <Book />}

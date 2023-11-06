@@ -1,6 +1,6 @@
 import { useFrame, useThree } from "@react-three/fiber";
 import { Center, Text3D, Text, useTexture, useMatcapTexture } from "@react-three/drei";
-import mondayFont from "../../../utils/blueNight_font.json";
+import mondayFont from "/blueNight_font.json?url";
 import { useRef, useEffect } from "react";
 import { Vector3 } from "three";
 

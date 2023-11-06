@@ -80,7 +80,7 @@ export default function MyModal({ message }: { message: Message }) {
                   {/* gradient text */}
                   <p className="text-lg text-indigo-900 whitespace-pre-wrap text-body">
                     {/* read message.body as html */}
-                    <ReactMarkdown children={message.body} />
+                    <ReactMarkdown>{message.body}</ReactMarkdown>
                   </p>
                 </div>
                 <div className="flex justify-evenly mt-4">

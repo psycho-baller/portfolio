@@ -6,7 +6,7 @@ import { type Vector3, type Group, type Euler, MeshNormalMaterial, MeshBasicMate
 import Mac from "@components/models/Mac";
 import Book from "@components/models/Book";
 import Pencil from "@components/models/Pencil";
-import mondayFont from "fonts/blueNight_font.json?url";
+import mondayFont from "/fonts/blueNight_font.json?url";
 import { animated, useSpring } from "@react-spring/three";
 import { useStore } from "@store";
 export default function Ball({

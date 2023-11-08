@@ -24,8 +24,8 @@ export default function Navbar() {
               // TODO: for some reason JS not working
               // TODO: reverse the hover effect
               class={`${
-                active() === link.href ? "sm:bg-cyan-300/10" : ""
-              } capitalize text-cyan-100 sm:rounded-full text-[18px] font-medium cursor-pointer transition ease-in-out sm:px-3 md:px-4 lg:px-5 sm:py-1 md:py-1.5 sm:hover:bg-cyan-300/5`}
+                active() === link.href ? "sm:bg-cyan-400/10" : ""
+              } capitalize text-cyan-100 sm:rounded-full cursor-pointer transition duration-200 ease-in-out sm:px-3 md:px-4 lg:px-5 sm:py-1 md:py-1.5 sm:hover:bg-cyan-400/5`}
               onClick={() => {
                 // if clicked on the active link, close the menu
                 // if (active() === link.href) {

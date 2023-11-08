@@ -2,11 +2,11 @@ import { Text3D, Center } from "@react-three/drei";
 import { useFrame, useThree } from "@react-three/fiber";
 import { useRef, useState } from "react";
 import { type Vector3, type Group, type Euler, MeshNormalMaterial, MeshBasicMaterial } from "three";
-import { useControls } from "leva";
+// import { useControls } from "leva";
 import Mac from "@components/models/Mac";
 import Book from "@components/models/Book";
 import Pencil from "@components/models/Pencil";
-import mondayFont from "/blueNight_font.json?url";
+import mondayFont from "fonts/blueNight_font.json?url";
 import { animated, useSpring } from "@react-spring/three";
 import { useStore } from "@store";
 export default function Ball({

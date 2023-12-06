@@ -30,12 +30,12 @@ export const externalLinks = {
   email: "mailto:ramim66809@gmail.com",
   goodreads: "https://www.goodreads.com/user/show/161793210-rami",
   resume: "https://docs.google.com/document/d/1tY_v0Se3EH0pbjVZ5-hqM8I8uq0jK4ctuRLBOG4_JrI/edit?usp=sharing",
-};
+} as const;
 
 export const externalFooterLinks = [
   {
     iconName: "mdi:github",
-    href: "https://github.com/psycho-baller",
+    href: externalLinks.github,
     name: "Link to my Github",
   },
   {

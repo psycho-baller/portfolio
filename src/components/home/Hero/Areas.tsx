@@ -40,7 +40,7 @@ export default function Areas(props: any) {
         // rotation={new Euler(0, Math.PI / 2, 0)}
         // position={new Vector3(0, 0, 0)}
         area="developing"
-        url={"https://github.com/psycho-baller"}
+        url={externalLinks.github}
       />
       <Area
         position={new Vector3(distanceXFromCenter, distanceYFromCenter, 0)}

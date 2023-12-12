@@ -1,9 +1,9 @@
 ---
-title: "Another near death experience while biking"
-description: "A cool story about how indecisiveness almost got me killed"
-pubDate: "Sept 12, 2023"
-tags: ["story", "life", "biking", "indecisiveness"]
-heroImage: "indecisiveness.jpg"
+title: "The sense of belonging"
+description: "An exploration of the profound impact of belonging, its significance in our lives, and how you can cultivate it"
+pubDate: "Dec 12, 2023"
+tags: ["belongingness"]
+heroImage: ""
 ---
 
 

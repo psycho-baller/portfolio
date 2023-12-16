@@ -6,7 +6,7 @@ tags: ["belongingness", "belonging", "friendship", "lonliness", "self-value", "a
 heroImage: "belongingness.png"
 ---
 
-You can find this post on as a [Youtube video](https://youtu.be/pIV7OeY_eg4) as well
+You can find this post as a [Youtube video](https://youtu.be/pIV7OeY_eg4) or a [podcast episode](https://podcasters.spotify.com/pod/show/rami-maalouf/episodes/The-Surprising-Truth-About-Belonging-e2db87d)
 
 In our journey through life, there's an often overlooked but crucial aspect that shapes our experiences - the sense of belonging. Today, we'll delve into the profound impact of belonging, its significance in our lives, and how you can cultivate it.
 

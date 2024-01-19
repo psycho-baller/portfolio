@@ -29,4 +29,7 @@ My sister, my mom, and I lived in the same room for a few days
 
 - After what felt like an eternity, I was able to escape the dream. The first thing I did was remove my earphones (which was playing "you're the only good thing in my life"... Never thought I would have a nightmare listening to this song) to confirm that I am actually awake. I then go to my phone to check how long have I been sleeping for... 1 hour, not hundreds as I thought for a split second
 	- I'm never going to know if I actually managed to actually say "I'm here" or not. You know these few seconds you spend waiting to enter the nether in Minecraft? That's where I felt I was in as I tried to wake up from my dream.
+
+# Post post-dream
+
 - Few days later I was in a plane, where I finally decided to watch Waking Life (Life changing kind of movie) where they discuss lucid dreaming.

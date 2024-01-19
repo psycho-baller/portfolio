@@ -1,6 +1,6 @@
 ---
-title: "
-description: "
+title: "Lucid Nightmare"
+description: "This is what happens when you sleep with your earphones on"
 pubDate: "Jan 16, 2024"
 ---
 

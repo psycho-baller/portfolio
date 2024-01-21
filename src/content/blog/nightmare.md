@@ -34,3 +34,7 @@ My sister, my mom, and I lived in the same room for a few days
 ## Post post-dream
 
 - Few days later I was in a plane, where I finally decided to watch Waking Life (Life changing kind of movie) where they discuss lucid dreaming.
+
+## Post Waking Life
+
+- Made me notice that I do truly belong to the world and what I decide to do in my time in it does have an effect on the people around me and the world. I'm extremely grateful to be in a position where I'm able to make a positive impact on the world.

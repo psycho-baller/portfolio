@@ -16,7 +16,7 @@ My sister, my mom, and I lived in the same room for a few days
 
 ## Dream
 
-- I peacefully fall asleep and started to dream of being in a high school reunion in the middle of the road.
+- I peacefully fell asleep and started to dream of being in a high school reunion in the middle of the road.
 - in there, I had my earphones on, listening to music, and as a result, I couldn't listen to anyone. I removed my earphones in the dream but the music wouldn't stop. I was very confused
 - I suddenly felt something suddenly hit my left chest for a second I thought I was being stabbed so I wake up immediately out of fear, just to see that it was just my hand so I immediately closed my eyes scared I wouldn't be able to fall back asleep if I kept them open for longer. One thing that I always try to do but fail when I wake up in the middle of my dream is to try to continue the dream. I usually fail but it surprisingly worked this time.
 - Ironically, the event eventually came to an end when a car with wings drove past us.

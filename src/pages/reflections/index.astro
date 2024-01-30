@@ -1,0 +1,30 @@
+---
+import { type CollectionEntry, getCollection } from "astro:content";
+import BaseLayout from "src/layouts/BaseLayout.astro";
+import ArticlePreview from "@components/blog/ArticlePreview";
+import PageWithTitleAndIntro from "src/layouts/PageWithTitleAndIntro.astro";
+
+const posts = (await getCollection("reflections")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+type Props = CollectionEntry<"reflections">;
+const title = "Rami's SENG 300 Reflections";
+---
+
+<BaseLayout title={title}>
+  <PageWithTitleAndIntro
+    title={title}
+    intro="Delve into my thoughts, experiences, and learnings in the world of software development, and technology."
+  >
+    <div class="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
+      <div class="flex max-w-3xl flex-col gap-y-16">
+        {
+          posts.map((post) => (
+            <ArticlePreview
+              client:visible
+              post={post}
+            />
+          ))
+        }
+      </div>
+    </div>
+  </PageWithTitleAndIntro>
+</BaseLayout>

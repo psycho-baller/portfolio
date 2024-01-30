@@ -20,4 +20,20 @@ const blog = defineCollection({
   }),
 });
 
-export const collections = { blog };
+const reflections = defineCollection({
+  type: "content",
+  schema: z.object({
+    title: z.string(),
+    tags: z.array(z.string()).optional(),
+    pubDate: z
+      .string()
+      .or(z.date())
+      .transform((val) => new Date(val)),
+    updatedDate: z
+      .string()
+      .optional()
+      .transform((str) => (str ? new Date(str) : undefined)),
+  }),
+});
+
+export const collections = { blog, reflections };

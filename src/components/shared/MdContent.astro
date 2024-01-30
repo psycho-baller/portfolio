@@ -1,7 +1,8 @@
 ---
 import "@styles/markdown-content.scss";
+const { class: _class } = Astro.props;
 ---
 
-<div class="md-content">
+<div class=`md-content ${_class}`>
   <slot />
 </div>

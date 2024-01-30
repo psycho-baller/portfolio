@@ -14,7 +14,7 @@ In our journey through life, there's an often overlooked but crucial aspect that
 
 - One thing that people don't realize about the sense of belonging is that it begins within us. And that is something that I did not understand few years ago. I didn't feel like I belonged and I  believed the issue was the people when in reality it was me.
   - Many of us, at times, feel the need to wear a mask, concealing our true selves. This act undermines the essence of belonging, signaling to our subconscious that we don't truly fit in and that we feel the need to wear a mask to feel safe and valued
-  - Going through life is a war and fighting it out all by yourself is not how you win a war. And putting a mask on is even worse because that is like going on a war against yourself
+  - Going through life is a war and fighting it out all by yourself is not how you win a war. And putting a mask on is even worse because that is like going on a war against yourself
 - after reflecting on my past experiences and why I felt the need to put on a mask. I came up with a very profound realization.
   - the root cause of me feeling like I didn't belong anywhere was in the fact that I did not value myself
   - You see when you don't value yourself, how do you expect other people to value you?

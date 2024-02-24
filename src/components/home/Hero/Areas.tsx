@@ -1,8 +1,8 @@
-import { useRef } from "react";
-import { Vector3, Euler } from "three";
-import Area from "./Area";
-import { useThree } from "@react-three/fiber";
-import { externalLinks } from "@lib/constants";
+import { useRef } from 'react';
+import { Vector3, Euler } from 'three';
+import Area from './Area';
+import { useThree } from '@react-three/fiber';
+import { externalLinks } from '@lib/constants';
 
 export default function Areas(props: any) {
   const { size } = useThree();
@@ -34,7 +34,7 @@ export default function Areas(props: any) {
         // rotation={new Euler(Math.PI / 2, 0, Math.PI / 2)}
         position={new Vector3(-distanceXFromCenter, -distanceYFromCenter, 0)}
         area="learning"
-        url={externalLinks.goodreads}
+        url={externalLinks.storygraph}
       />
       <Area
         // rotation={new Euler(0, Math.PI / 2, 0)}
@@ -45,7 +45,7 @@ export default function Areas(props: any) {
       <Area
         position={new Vector3(distanceXFromCenter, distanceYFromCenter, 0)}
         area="writing" // sharing
-        url={"https://youtube.com/@ramimaalouf"}
+        url={'https://youtube.com/@ramimaalouf'}
       />
     </group>
   );

@@ -31,6 +31,7 @@ export const externalLinks = {
   strava: 'https://www.strava.com/athletes/50533842',
   email: 'https://mail.google.com/mail/u/0/?fs=1&to=ramim66809@gmail.com&su=About...&body=Hey%20Rami,%20....&tf=cm',
   goodreads: 'https://www.goodreads.com/user/show/161793210-rami',
+  storygraph: 'https://app.thestorygraph.com/profile/ramimaalouf',
   resume: 'https://docs.google.com/document/d/1tY_v0Se3EH0pbjVZ5-hqM8I8uq0jK4ctuRLBOG4_JrI/edit?usp=sharing',
 } as const;
 

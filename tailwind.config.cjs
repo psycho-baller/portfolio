@@ -18,6 +18,6 @@ module.exports = {
 		colors: {
 			accent: colors.cyan[300],
 		},
-		plugins: [],
-	}
+	},
+	plugins: [],
 }

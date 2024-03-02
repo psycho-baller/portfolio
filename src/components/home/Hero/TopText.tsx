@@ -1,15 +1,16 @@
-import { useFrame, useThree } from "@react-three/fiber";
-import { Center, Text3D, Text, useTexture, useMatcapTexture } from "@react-three/drei";
-import mondayFont from "/fonts/blueNight_font.json?url";
-import { useRef, useEffect } from "react";
-import { Vector3 } from "three";
+import { useFrame, useThree } from '@react-three/fiber';
+import { Center, Text3D, Text, useTexture, useMatcapTexture } from '@react-three/drei';
+import mondayFont from '/fonts/blueNight_font.json?url';
+import { useRef, useEffect, useState } from 'react';
+import { Vector3 } from 'three';
 
 export default function TopText(props: any) {
+  const TEXT_Y_POS = -19;
   const { viewport } = useThree();
   const { width, height } = viewport;
   const ref = useRef<THREE.Mesh>(null!);
 
-  const [matcap] = useMatcapTexture("326666_66CBC9_C0B8AE_52B3B4", 128); // 346088_6ABED7_56A0C5_4E91B8
+  const [matcap] = useMatcapTexture('326666_66CBC9_C0B8AE_52B3B4', 128); // 346088_6ABED7_56A0C5_4E91B8
   //this errors out, possible fix:
   // let temp;
   // useEffect(() => {
@@ -19,7 +20,21 @@ export default function TopText(props: any) {
   // }, []);
   // const matcap = temp;
 
-  let target = new Vector3();
+  const [isCursorActive, setIsCursorActive] = useState(false);
+
+  useEffect(() => {
+    const handleMouseMove = () => {
+      setIsCursorActive(true);
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
+
+  let target = new Vector3(0, TEXT_Y_POS, 0);
   let mouseX = 0,
     mouseY = 0;
 
@@ -31,7 +46,7 @@ export default function TopText(props: any) {
     mouseY = event.clientY - windowHalfY;
   }
 
-  window.addEventListener("mousemove", onDocumentMouseMove);
+  window.addEventListener('mousemove', onDocumentMouseMove);
   //   return () => {
   //     window.removeEventListener("mousemove", onDocumentMouseMove);
   //   };
@@ -41,13 +56,22 @@ export default function TopText(props: any) {
   const effectOnX = 0.0075;
   const effectOnY = 0.0075;
   useFrame(({ camera }) => {
+    //   target.x = 0;
+    //   target.z = camera.position.z;
+    //   ref.current.lookAt(target);
+    //   return;
+    // }
     target.x += (mouseX * effectOnX - target.x) * reactivity;
-    // if mouse is above the text
-    if (mouseY < 0) {
-      // increase the effect on the y axis (when the mouse is above the text)
-      target.y += (mouseY * 10 * effectOnY - target.y) * reactivity;
+    if (!isCursorActive) {
+      target.y = TEXT_Y_POS;
     } else {
-      target.y += (mouseY * effectOnY - target.y) * reactivity;
+      // if mouse is above the text
+      if (mouseY < 0) {
+        // increase the effect on the y axis (when the mouse is above the text)
+        target.y += (mouseY * 10 * effectOnY - target.y) * reactivity;
+      } else {
+        target.y += (mouseY * effectOnY - target.y) * reactivity;
+      }
     }
 
     target.z = camera.position.z;

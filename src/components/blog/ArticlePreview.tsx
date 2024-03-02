@@ -4,7 +4,7 @@ import { formatDate } from "@lib/formatDate";
 import type { CollectionEntry } from "astro:content";
 
 interface Props {
-  post: CollectionEntry<"blog"> | CollectionEntry<"reflections">;
+  post: CollectionEntry<"blog"> | CollectionEntry<"reflections"> | CollectionEntry<"portfolio">;
 }
 
 const ArticlePreview: FC<Props> = (props) => {

@@ -4,9 +4,9 @@ import BaseLayout from 'src/layouts/BaseLayout.astro';
 import ArticlePreview from '@components/blog/ArticlePreview';
 import PageWithTitleAndIntro from 'src/layouts/PageWithTitleAndIntro.astro';
 
-const posts = (await getCollection('portfolio')).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
-type Props = CollectionEntry<'portfolio'>;
-const title = "Rami's SENG 300 Portfolio";
+const posts = (await getCollection('reflections')).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+type Props = CollectionEntry<'reflections'>;
+const title = "Rami's reflections";
 ---
 
 <BaseLayout title={title}>

@@ -1,6 +1,6 @@
 ---
 title: "SENG 300 A2"
-pubDate: "Feb 29, 2024"
+pubDate: "Feb 28, 2024"
 tags: ["university"]
 ---
 

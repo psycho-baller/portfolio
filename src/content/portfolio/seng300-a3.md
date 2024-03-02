@@ -4,7 +4,7 @@ pubDate: "Feb 29, 2024"
 tags: ["university"]
 ---
 
-For this project, I decided to take lead on setting up the environment so that it would be easier for my teammates to get started
+For this assignment, I decided to take lead on setting up the environment so that it would be easier for my teammates to get started
 
 To my surprise, I was the only person who had experience with using git and github, so I took the time to teach my teammates how to start using these tools.
 

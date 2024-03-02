@@ -1,12 +1,12 @@
 ---
-import type { CollectionEntry } from "astro:content";
-import BaseLayout from "./BaseLayout.astro";
-import { formatDate } from "@lib/formatDate";
-import MdContent from "@components/shared/MdContent.astro";
-import { Image } from "astro:assets";
+import type { CollectionEntry } from 'astro:content';
+import BaseLayout from './BaseLayout.astro';
+import { formatDate } from '@lib/formatDate';
+import MdContent from '@components/shared/MdContent.astro';
+import { Image } from 'astro:assets';
 
 type Props = {
-  data: CollectionEntry<"reflections">["data"];
+  data: CollectionEntry<'reflections'>['data'];
   body: string;
 };
 const { data, body } = Astro.props;

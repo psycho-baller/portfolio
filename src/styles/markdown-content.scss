@@ -47,4 +47,13 @@
     line-height: 1.75em;
     margin: 1.2em 0;
   }
+
+  a {
+    color: var(--color-accent);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }

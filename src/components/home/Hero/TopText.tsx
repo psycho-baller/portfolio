@@ -56,11 +56,6 @@ export default function TopText(props: any) {
   const effectOnX = 0.0075;
   const effectOnY = 0.0075;
   useFrame(({ camera }) => {
-    //   target.x = 0;
-    //   target.z = camera.position.z;
-    //   ref.current.lookAt(target);
-    //   return;
-    // }
     target.x += (mouseX * effectOnX - target.x) * reactivity;
     if (!isCursorActive) {
       target.y = TEXT_Y_POS;

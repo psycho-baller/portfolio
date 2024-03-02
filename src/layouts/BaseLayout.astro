@@ -1,12 +1,12 @@
 ---
-import ExternalLinks from "@components/ExternalLinks.astro";
-import Navbar from "../components/header/Navbar.astro";
-import BaseHead from "@layouts/components/BaseHead.astro";
+import ExternalLinks from '@components/ExternalLinks.astro';
+import Navbar from '../components/header/Navbar.astro';
+import BaseHead from '@layouts/components/BaseHead.astro';
 // import BeautifulFog from "@layouts/components/BeautifulFog.astro";
-import { ViewTransitions } from "astro:transitions";
-import Logo from "@components/Logo.astro";
-import Hamburger from "@components/header/Hamburger.astro";
-import NavLinks from "@components/header/NavLinks";
+import { ViewTransitions } from 'astro:transitions';
+import Logo from '@components/Logo.astro';
+import Hamburger from '@components/header/Hamburger.astro';
+import NavLinks from '@components/header/NavLinks';
 
 export interface Props {
   title?: string;
@@ -56,7 +56,11 @@ const {
           hsla(36, 31%, 90%, 0.987) 90.5%,
           hsl(36, 31%, 90%) 100%
         ); */
-        background-image: url("/scene_bg.png");
+        /* 
+        https://ui.aceternity.com/components/wavy-background
+        https://ui.aceternity.com/components/background-gradient-animation
+        */
+        background-image: url('/scene_bg.png');
         background-size: 100% 100%;
         opacity: 0.5;
         /* filter: blur(100px); */
@@ -94,7 +98,7 @@ const {
     <!-- <div class="absolute inset-0 bg-img">
       <BeautifulFog />
     </div> -->
-    <div class={"bg-img fixed -z-10 inset-0" + (fullScreen ? "" : " opacity-10")}>
+    <div class={'bg-img fixed -z-10 inset-0' + (fullScreen ? '' : ' opacity-10')}>
       {fullScreen ? null : <div class="h-full w-full mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" />}
     </div>
 
@@ -124,7 +128,7 @@ const {
       </div>
     </header>
     <!-- scrollable content -->
-    <div class={"pt-20 pb-10 blur-bg flex mx-auto justify-center max-w-7xl px-4 sm:px-6 lg:px-8" + " " + _class}>
+    <div class={'pt-20 pb-10 blur-bg flex mx-auto justify-center max-w-7xl px-4 sm:px-6 lg:px-8' + ' ' + _class}>
       <main class="flex flex-col">
         <slot />
       </main>

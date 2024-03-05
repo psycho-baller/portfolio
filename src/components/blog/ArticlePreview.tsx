@@ -1,10 +1,10 @@
-import type { FC } from "react";
-import { Card } from "./Card";
-import { formatDate } from "@lib/formatDate";
-import type { CollectionEntry } from "astro:content";
+import type { FC } from 'react';
+import { Card } from './Card';
+import { formatDate } from '@lib/formatDate';
+import type { CollectionEntry } from 'astro:content';
 
 interface Props {
-  post: CollectionEntry<"blog"> | CollectionEntry<"reflections"> | CollectionEntry<"portfolio">;
+  post: CollectionEntry<'blog'> | CollectionEntry<'reflections'> | CollectionEntry<'portfolio'>;
 }
 
 const ArticlePreview: FC<Props> = (props) => {

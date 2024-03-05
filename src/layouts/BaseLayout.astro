@@ -38,6 +38,9 @@ const {
         background-color: #121212;
         color: rgb(216, 247, 249); /* tw: text-cyan-100 */
       }
+      p {
+        @apply text-zinc-400;
+      }
       .bg-img {
         /* background-image: linear-gradient(
           to bottom,
@@ -130,7 +133,7 @@ const {
       </div>
     </header>
     <!-- scrollable content -->
-    <div class={'pt-20 pb-10 blur-bg flex mx-auto justify-center max-w-7xl px-5 sm:px-6 lg:px-8' + ' ' + _class}>
+    <div class={'pt-20 mb-10 blur-bg flex mx-auto justify-center max-w-7xl px-5 sm:px-6 lg:px-8' + ' ' + _class}>
       <main class="flex flex-col">
         <slot />
       </main>

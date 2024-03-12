@@ -4,6 +4,8 @@ pubDate: "Feb 29, 2024"
 tags: ["essay"]
 ---
 
+Side note: This is an essay I wrote for my scholarship application to study abroad in Berlin. I thought it was a good reflection on how I've changed over the years, so I decided to share it here.
+
 I believe there is no better time to learn something new than being in an environment that's new. There's something about us where if we change one aspect of our external world, we become less resistant to change and growth within ourselves.
 
 I experienced this firsthand when I first traveled to Calgary. Before arriving, I was a shy and socially awkward person who valued everyone over myself. Some people even considered me a people pleaser. In all honesty, I didn't like the person I was back then. I attempted to change, but unfortunately when an environment expects you to act a certain way, you tend to subconsciously conform to those expectations, especially as a people pleaser.

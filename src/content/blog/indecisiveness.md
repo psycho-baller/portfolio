@@ -29,6 +29,6 @@ Indecisiveness is sometimes that I've struggled with a lot recently. And today i
 ## Purpose of this post
 
 This is my first time I ever share a personal story from my life to the world. I'm hoping it would serve as a reminder for me to strive to become someone who's decisive. I guess a call for help to anyone who overcame their indecisiveness. Please let me know what helped you. And the final reason is I also wanted to get better at storytelling so if you've got any feedback on how my storytelling could be better in any way please contact me through any of the links below:
-- my personal website(all links): [ramimaalouf.tech](https://www.ramimaalouf.tech/)
+- my personal website(all links): [rami-maalouf.tech](https://www.rami-maalouf.tech/)
 - email: rami.rami@ucalgary.ca | rami.pb8@gmail.com
 - instagram: [psycho.baller](https://www.instagram.com/psycho.baller/)

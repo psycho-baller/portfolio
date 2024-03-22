@@ -45,7 +45,7 @@ export default function Areas(props: any) {
       <Area
         position={new Vector3(distanceXFromCenter, distanceYFromCenter, 0)}
         area="writing" // sharing
-        url={'https://youtube.com/@ramimaalouf'}
+        url={externalLinks.youtubeSub}
       />
     </group>
   );

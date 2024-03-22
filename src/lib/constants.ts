@@ -25,13 +25,16 @@ export const navLinks = [
   },
 ];
 export const externalLinks = {
+  portfolio: 'https://rami-maalouf.com',
   github: 'https://github.com/psycho-baller',
-  youtube: 'https://youtube.com/@ramimaalouf?sub_confirmation=1',
+  youtube: 'https://youtube.com/@ramimaalouf',
+  youtubeSub: '/youtube',
   linkedin: 'https://www.linkedin.com/in/rami--maalouf/',
   strava: 'https://www.strava.com/athletes/50533842',
   email: 'https://mail.google.com/mail/u/0/?fs=1&to=ramim66809@gmail.com&su=About...&body=Hey%20Rami,%20....&tf=cm',
   goodreads: 'https://www.goodreads.com/user/show/161793210-rami',
   storygraph: 'https://app.thestorygraph.com/profile/ramimaalouf',
+  medium: 'https://medium.com/@ramimaalouf',
   resume: 'https://docs.google.com/document/d/1tY_v0Se3EH0pbjVZ5-hqM8I8uq0jK4ctuRLBOG4_JrI/edit?usp=sharing',
 } as const;
 

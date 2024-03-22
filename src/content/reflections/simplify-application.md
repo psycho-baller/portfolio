@@ -23,6 +23,8 @@ In terms of personal projects, I've worked with LLMs to solve unique problems I,
 
 ## Q: What is one improvement you'd make to Simplify?
 
+I got 3 😏
+
 1. Leveraging the data the user shares with us and (with their permission) make their experience more personalized
 2. More automations and integrations with other task managers like todoist or example to track our applications
 3. These days it is becoming very important to apply ASAP before everyone else fills their application. So it would be a good strategy to be known as a company that gets the "LATEST job applications straight to your fingertips"

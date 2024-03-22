@@ -12,7 +12,8 @@ export default defineConfig({
   {
     "/resume": "https://docs.google.com/document/d/1tY_v0Se3EH0pbjVZ5-hqM8I8uq0jK4ctuRLBOG4_JrI/edit?usp=sharing",
     "/linkedin": "https://www.linkedin.com/in/rami--maalouf/",
-    "/youtube": "https://youtube.com/@ramimaalouf?sub_confirmation=1"
+    "/youtube": "https://youtube.com/@ramimaalouf?sub_confirmation=1",
+    "/simplify": "/reflections/simplify-application"
   },
   integrations: [
     react(),

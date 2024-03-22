@@ -41,12 +41,41 @@
   }
 
   p,
-  li,
   ul,
   ol {
     font-size: 1.3rem;
     line-height: 2.1rem;
     margin: 1.2em 0;
+  }
+
+  ol {
+    list-style-type: decimal;
+
+    li {
+      padding-left: 0.5rem;
+    }
+  }
+
+  ul {
+    li {
+      padding-left: 0.5rem;
+
+      &::before {
+        content: "🚀";
+        margin-left: -3rem;
+        padding: 0 0.75rem;
+      }
+    }
+
+    ul {
+      li {
+        &::before {
+          content: "🔥";
+          margin-left: -2rem;
+          padding: 0 0.75rem;
+        }
+      }
+    }
   }
 
   a {

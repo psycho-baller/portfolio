@@ -29,8 +29,10 @@ export default defineConfig({
     })
   ],
   devOverlay: true,
-  // output: "server",
-  // adapter: vercel(),
+  output: 'server',
+  adapter: vercel({
+    webAnalytics: { enabled: true }
+  }),
   server: {
     port: 3000
   },

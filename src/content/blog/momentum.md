@@ -7,7 +7,7 @@ pubDate: "Dec 21, 2023"
 
 ## Why should you care about momentum?
 
-- Do you struggle to always get started on things you wanna work on? Do you find it hard to continue after getting started on something? Well today I'll be telling you about the power of momentum and how you can leverage it to propel you towards the life you wanna live
+Do you struggle to always get started on things you wanna work on? Do you find it hard to continue after getting started on something? Well today I'll be telling you about the power of momentum and how you can leverage it to propel you towards the life you wanna live
 
 ### What is momentum?
 

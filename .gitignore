@@ -26,3 +26,4 @@ pnpm-debug.log*
 
 # temp
 resume.astro
+.vercel

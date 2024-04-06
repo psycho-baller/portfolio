@@ -7,7 +7,7 @@ import solidJs from "@astrojs/solid-js";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://www.rami-maalouf.tech/',
+  site: 'https://www.rami-maalouf.tech',
   redirects:
   {
     "/simplify": "/reflections/simplify-application"

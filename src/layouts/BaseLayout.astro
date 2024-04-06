@@ -7,6 +7,7 @@ import { ViewTransitions } from 'astro:transitions';
 import Logo from '@components/Logo.astro';
 import Hamburger from '@components/header/Hamburger.astro';
 import NavLinks from '@components/header/NavLinks';
+import SpeedInsights from '@vercel/speed-insights/astro';
 
 export interface Props {
   title?: string;
@@ -139,5 +140,6 @@ const {
         <slot />
       </main>
     </div>
+    <SpeedInsights />
   </body>
 </html>

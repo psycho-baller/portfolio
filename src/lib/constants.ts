@@ -69,7 +69,7 @@ export const externalFooterLinks = [
 		name: "Link to my Strava",
 	},
 	{
-		iconName: "mdi:tiktok",
+		iconName: "ic:baseline-tiktok",
 		href: externalLinks.tiktok,
 		name: "Link to my TikTok",
 	},

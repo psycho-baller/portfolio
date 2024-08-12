@@ -39,6 +39,7 @@ export const externalLinks = {
 	resume:
 		"https://docs.google.com/document/d/1tY_v0Se3EH0pbjVZ5-hqM8I8uq0jK4ctuRLBOG4_JrI/edit?usp=sharing",
 	notes: "https://notes.rami-maalouf.tech",
+	tiktok: "https://www.tiktok.com/@meditations_of_rami",
 } as const;
 
 export const externalFooterLinks = [
@@ -66,6 +67,11 @@ export const externalFooterLinks = [
 		iconName: "simple-icons:strava",
 		href: externalLinks.strava,
 		name: "Link to my Strava",
+	},
+	{
+		iconName: "mdi:tiktok",
+		href: externalLinks.tiktok,
+		name: "Link to my TikTok",
 	},
 ];
 

@@ -33,8 +33,8 @@ export default function Areas(props: any) {
       <Area
         // rotation={new Euler(Math.PI / 2, 0, Math.PI / 2)}
         position={new Vector3(-distanceXFromCenter, -distanceYFromCenter, 0)}
-        area="learning"
-        url={externalLinks.storygraph}
+        area="teaching"
+        url={externalLinks.youtube}
       />
       <Area
         // rotation={new Euler(0, Math.PI / 2, 0)}

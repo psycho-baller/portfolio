@@ -54,7 +54,7 @@ export default function Suspense() {
       >
         <h1 className="flex items-center justify-center text-4xl sm:text-7xl text-cyan-300 modak">
           {/* <img src="favicon.svg" alt="Logo" class="h-8" /> */}
-          Welcome to RAMI&apos;s Website
+          Welcome to RAMI&apos;s Universe
         </h1>
         <div style={progressBarStyle}>
           <div style={progressBarFillStyle}></div>

@@ -104,7 +104,7 @@ export default function Ball({
             // if (heroSphereCursor.current) heroSphereCursor.current.scale.set(1, 1, 1);
           }}
         >
-          {area === "learning" && <Book />}
+          {area === "teaching" && <Book />}
           {area === "developing" && <Mac />}
           {area === "writing" && <Pencil />}
         </animated.group>

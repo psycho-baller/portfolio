@@ -48,7 +48,7 @@ export default function Ball({
 
   const baseSpeed = 5;
   const speedMultiplierOnHover = 2;
-  const timeToReachBaseSpeed = 0.5;
+  const timeToReachBaseSpeed = 0.75;
   // Set the initial extra rotation speed to a high value
   const initialExtraRotationSpeed = 1800;
   let extraRotationSpeed = initialExtraRotationSpeed;

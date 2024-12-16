@@ -29,7 +29,7 @@ export const externalLinks = {
 	github: "https://github.com/psycho-baller",
 	youtube: "https://youtube.com/@ramimaalouf",
 	youtubeSub: "/youtube",
-	linkedin: "https://www.linkedin.com/in/rami--maalouf/",
+	linkedin: "https://www.linkedin.com/in/rami-m/",
 	strava: "https://www.strava.com/athletes/50533842",
 	email:
 		"https://mail.google.com/mail/u/0/?fs=1&to=ramim66809@gmail.com&su=About...&body=Hey%20Rami,%20....&tf=cm",

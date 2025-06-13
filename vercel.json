@@ -27,6 +27,16 @@
             "source": "/livewire",
             "destination": "https://livewirecalgary.com/2025/04/18/ucalgarys-qr-code-wearing-superhero-to-launch-his-loneliness-solution-in-fall-2025",
             "permanent": true
+        },
+        {
+            "source": "/uc-orbit-vid",
+            "destination": "https://www.linkedin.com/posts/ucalgary_ucalgary-ugcPost-7330605912832782337-0ggb",
+            "permanent": true
+        },
+        {
+            "source": "/uc-orbit-article",
+            "destination": "https://news.ucalgary.ca/news/ucalgary-student-developing-app-help-foster-student-friendships",
+            "permanent": true
         }
     ]
 }

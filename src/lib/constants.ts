@@ -75,7 +75,7 @@ export const externalFooterLinks = [
 		name: "Link to my TikTok",
 	},
 	{
-		iconName: "mdi:x",
+		iconName: "mdi:twitter-x",
 		href: externalLinks.x,
 		name: "Link to my X",
 	},

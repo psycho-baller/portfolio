@@ -40,7 +40,8 @@ export const externalLinks = {
 		"https://docs.google.com/document/d/1tY_v0Se3EH0pbjVZ5-hqM8I8uq0jK4ctuRLBOG4_JrI/edit?usp=sharing",
 	notes: "https://notes.rami-maalouf.tech",
 	tiktok: "https://www.tiktok.com/@meditations_of_rami",
-	x: "https://x.com/rami__maalouf"
+	x: "https://x.com/rami__maalouf",
+	substack: "https://ramimaalouf.substack.com/",
 } as const;
 
 export const externalFooterLinks = [
@@ -75,9 +76,14 @@ export const externalFooterLinks = [
 		name: "Link to my TikTok",
 	},
 	{
-		iconName: "mdi:twitter-x",
+		iconName: "mdi:twitter",
 		href: externalLinks.x,
 		name: "Link to my X",
+	},
+	{
+		iconName: "simple-icons:substack",
+		href: externalLinks.substack,
+		name: "Link to my Substack",
 	},
 ];
 

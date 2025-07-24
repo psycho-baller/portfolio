@@ -7,11 +7,6 @@ import Layout from 'src/layouts/BaseLayout.astro';
   title="Rami Maalouf"
   class="flex h-full pb-20"
 >
-  <style>
-    p {
-      line-height: 2.5rem;
-    }
-  </style>
   <section
     class="flex flex-col items-center h-full gap-5 mx-auto max-w-sm sm:max-w-lg md:max-w-2xl lg:max-w-3xl xl:max-w-4xl"
   >
@@ -20,7 +15,20 @@ import Layout from 'src/layouts/BaseLayout.astro';
     >
       About Rami
     </h1>
-    <div class="text-lg sm:text-xl lg:text-2xl xl:text-3xl flex flex-col gap-y-8 flex-1 justify-start">
+    <div class="text-base sm:text-lg lg:text-xl xl:text-2xl flex flex-col gap-y-8 flex-1 justify-start">
+      <p>TL;DR: I love people... That's all you need to know about me. I love building useful softwares for humans who face the same problem as me and making content that help them grow. You can learn more about me through the content I make on
+        <a
+          href={externalLinks.youtubeSub}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-accent hover:underline"
+          >YouTube</a> and <a
+          href={externalLinks.instagram}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-accent hover:underline"
+          >Instagram</a>
+      </p>
       <h2 class="text-center text-2xl sm:text-3xl xl:text-4xl font-bold pt-1 sm:pt-2 lg:pt-3 xl:pt-5">
         What is your why?
       </h2>
@@ -49,8 +57,7 @@ import Layout from 'src/layouts/BaseLayout.astro';
           class="text-accent hover:underline"
           >reading</a
         >, playing all kinds of sports, performing improv and expanding my knowledge in psychology, philosophy, and the
-        ever-evolving world of technology. I generally let my curiosity guide me to new experiences and knowledge,
-        which, for example, led me to start learning Go and HTMX which I'm lovin so far.
+        ever-evolving world of technology. I generally let my curiosity guide me to new experiences and knowledge.
       </p>
       <h2 class="text-center text-2xl sm:text-3xl xl:text-4xl font-bold pt-1 sm:pt-2 lg:pt-3 xl:pt-5">
         What do you enjoy building?

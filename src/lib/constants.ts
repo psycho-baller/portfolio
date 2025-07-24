@@ -42,6 +42,7 @@ export const externalLinks = {
 	tiktok: "https://www.tiktok.com/@meditations_of_rami",
 	x: "https://x.com/rami__maalouf",
 	substack: "https://ramimaalouf.substack.com/",
+	instagram: "https://www.instagram.com/psycho.baller/",
 } as const;
 
 export const externalFooterLinks = [

@@ -82,6 +82,11 @@ export const externalFooterLinks = [
 		name: "Link to my X",
 	},
 	{
+		iconName: "mdi:instagram",
+		href: externalLinks.instagram,
+		name: "Link to my Instagram",
+	},
+	{
 		iconName: "simple-icons:substack",
 		href: externalLinks.substack,
 		name: "Link to my Substack",

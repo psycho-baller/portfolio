@@ -15,7 +15,7 @@ import { externalFooterLinks } from "@lib/constants";
           target="_blank"
           aria-label={name}
           rel="noopener noreferrer"
-          class="w-6 h-6 flex-1"
+          class={`w-6 h-6 ${name.toLowerCase().includes("substack") && "p-0.5"}`}
         >
           <Icon name={iconName} />
         </a>

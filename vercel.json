@@ -20,7 +20,7 @@
         },
         {
             "source": "/blog",
-            "destination": "https://notes.rami-maalouf.tech",
+            "destination": "https://notes.ramimaalouf.com",
             "permanent": false
         },
         {

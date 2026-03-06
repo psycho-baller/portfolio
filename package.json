@@ -1,7 +1,7 @@
 {
-  "name": "rami-maalouf.tech",
+  "name": "ramimaalouf.com",
   "description": "Rami's personal website",
-  "author": "Rami Maalouf <rami.rami@ucalgary.ca> (rami-maalouf.tech)",
+  "author": "Rami Maalouf <rami.rami@ucalgary.ca> (ramimaalouf.com)",
   "type": "module",
   "version": "0.0.1",
   "scripts": {

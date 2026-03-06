@@ -38,7 +38,7 @@ export const externalLinks = {
 	medium: "https://medium.com/@ramimaalouf",
 	resume:
 		"https://docs.google.com/document/d/1tY_v0Se3EH0pbjVZ5-hqM8I8uq0jK4ctuRLBOG4_JrI/edit?usp=sharing",
-	notes: "https://notes.rami-maalouf.tech",
+	notes: "https://notes.ramimaalouf.com",
 	tiktok: "https://www.tiktok.com/@meditations_of_rami",
 	x: "https://x.com/rami__maalouf",
 	substack: "https://ramimaalouf.substack.com/",

@@ -1,21 +1,5 @@
 ---
 import PopoverMessage from "./PopoverMessage";
-import { messages } from "src/lib/constants";
-// get url params
-const url = Astro.url;
-const params = url.searchParams;
-const messageTo = params.get("message-to") || "";
-
-// check if messageTo is in constants file
-const message = messages[messageTo] || null;
-// get message from constants file
 ---
 
-{
-  message && (
-    <PopoverMessage
-      client:visible
-      message={message}
-    />
-  )
-}
+<PopoverMessage client:only="react" />

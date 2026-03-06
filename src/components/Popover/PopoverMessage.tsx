@@ -1,11 +1,22 @@
 import { Dialog, Transition } from "@headlessui/react";
 import ReactMarkdown from "react-markdown";
-import { Fragment, useState } from "react";
+import { Fragment, useState, useEffect } from "react";
 import type { Message } from "@lib/types";
+import { messages } from "src/lib/constants";
 import "@styles/popover.scss";
 
-export default function MyModal({ message }: { message: Message }) {
-  let [isOpen, setIsOpen] = useState(true);
+export default function MyModal() {
+  let [isOpen, setIsOpen] = useState(false);
+  let [message, setMessage] = useState<Message | null>(null);
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const messageTo = params.get("message-to");
+    if (messageTo && messages[messageTo]) {
+      setMessage(messages[messageTo]);
+      setIsOpen(true);
+    }
+  }, []);
 
   function closeModal() {
     setIsOpen(false);
@@ -14,6 +25,8 @@ export default function MyModal({ message }: { message: Message }) {
   function openModal() {
     setIsOpen(true);
   }
+
+  if (!message) return null;
 
   return (
     <Transition

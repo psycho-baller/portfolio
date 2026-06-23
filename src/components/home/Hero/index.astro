@@ -4,14 +4,11 @@ import Loading from "./Loading.astro";
 const props = Astro.props;
 ---
 
-<section>
+<section class="w-full">
   <link rel="preload" href="/draco/draco_decoder.wasm" as="fetch" crossorigin />
-  <div class="scene cursor-none">
-    <SceneSuspenseWrapper
-      client:load
-      transition:persist="hero-scene"
-      {...props}
-    />
+  <link rel="preload" href="/models/compressed-book.glb" as="fetch" crossorigin />
+  <div class="scene cursor-none relative h-[calc(100vh-5rem)] w-full">
+    <SceneSuspenseWrapper client:idle {...props} />
   </div>
 
   <Loading class="loadingPage hidden" />
@@ -23,9 +20,11 @@ const props = Astro.props;
   if (!scene || !loadingPage) {
     throw new Error("Missing scene or loadingPage");
   }
+
   loadingPage.style.opacity = "1";
   loadingPage.style.display = "block";
-  import("@components/home/Hero/SceneSuspenseWrapper").then((module) => {
+
+  import("@components/home/Hero/SceneSuspenseWrapper").then(() => {
     scene.style.display = "block";
     setTimeout(() => {
       loadingPage.style.display = "none";

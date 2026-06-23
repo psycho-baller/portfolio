@@ -14,6 +14,7 @@ export default function MyCanvas({ children }: { children: JSX.Element[] | JSX.E
         position: "absolute",
         top: 0,
         left: 0,
+        inset: 0,
         // zIndex: -1,
         // overflow: "hidden",
       }}

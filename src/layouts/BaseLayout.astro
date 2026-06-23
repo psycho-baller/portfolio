@@ -100,7 +100,7 @@ const {
     </style>
     <ViewTransitions />
   </head>
-  <body class="relative">
+  <body class="relative overflow-x-hidden">
     <!-- fixed bg -->
     <!-- <div class="absolute inset-0 bg-img">
       <BeautifulFog />
@@ -116,7 +116,7 @@ const {
     <!-- </div>
     </div> -->
     <NavLinks client:idle />
-    <div class="fixed z-30 bottom-0 w-full px-4 sm:px-6 lg:px-8">
+    <div class="fixed z-30 bottom-0 w-full px-4 sm:px-6 lg:px-8 pb-[env(safe-area-inset-bottom)]">
       <div class="mx-auto max-w-2xl lg:max-w-5xl">
         <ExternalLinks />
       </div>
@@ -135,11 +135,11 @@ const {
       </div>
     </header>
     <!-- scrollable content -->
-    <div class={'pt-20 mb-10 blur-bg flex mx-auto justify-center max-w-7xl px-5 sm:px-6 lg:px-8' + ' ' + _class}>
-      <main class="flex flex-col">
+    <div class={'pt-20 mb-10 blur-bg flex mx-auto justify-center max-w-7xl px-5 sm:px-6 lg:px-8 w-full' + ' ' + _class}>
+      <main class={'flex flex-col' + (fullScreen ? ' w-full' : '')}>
         <slot />
       </main>
     </div>
-    <SpeedInsights />
+    {import.meta.env.PROD && <SpeedInsights />}
   </body>
 </html>

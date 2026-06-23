@@ -1,8 +1,45 @@
 import { useFrame, useThree } from '@react-three/fiber';
-import { Center, Text3D, Text, useTexture, useMatcapTexture } from '@react-three/drei';
+import { Center, Text3D, useTexture } from '@react-three/drei';
 import mondayFont from '/fonts/blueNight_font.json?url';
 import { useRef, useEffect, useState } from 'react';
-import { Vector3 } from 'three';
+import { Vector3, type Texture } from 'three';
+
+const MATCAP_URL = '/matcaps/hero-matcap-128.png';
+
+function brightenMatcapTexture(texture: Texture, baseLift = 0.14, leftExtraLift = 0.12) {
+  const source = texture.image as HTMLImageElement | HTMLCanvasElement;
+  if (!source?.width || !source?.height) return texture;
+
+  const canvas = document.createElement('canvas');
+  canvas.width = source.width;
+  canvas.height = source.height;
+  const ctx = canvas.getContext('2d');
+  if (!ctx) return texture;
+
+  ctx.drawImage(source, 0, 0);
+  const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+  const { width, data } = imageData;
+  const midpoint = width / 2;
+
+  for (let px = 0; px < width; px++) {
+    const isLeftHalf = px < midpoint;
+    const boost = (baseLift + (isLeftHalf ? leftExtraLift : 0)) * 255;
+
+    for (let py = 0; py < canvas.height; py++) {
+      const i = (py * width + px) * 4;
+      data[i] = Math.min(255, data[i] + boost);
+      data[i + 1] = Math.min(255, data[i + 1] + boost);
+      data[i + 2] = Math.min(255, data[i + 2] + boost);
+    }
+  }
+
+  ctx.putImageData(imageData, 0, 0);
+
+  const brightened = texture.clone();
+  brightened.image = canvas;
+  brightened.needsUpdate = true;
+  return brightened;
+}
 
 export default function TopText(props: any) {
   const TEXT_Y_POS = -19;
@@ -10,15 +47,13 @@ export default function TopText(props: any) {
   const { width, height } = viewport;
   const ref = useRef<THREE.Mesh>(null!);
 
-  const [matcap] = useMatcapTexture('326666_66CBC9_C0B8AE_52B3B4', 128); // 346088_6ABED7_56A0C5_4E91B8
-  //this errors out, possible fix:
-  // let temp;
-  // useEffect(() => {
-  //   const [matcapTexture] = useMatcapTexture("346088_6ABED7_56A0C5_4E91B8", 256);
-  //   console.log(matcapTexture);
-  //   temp = matcapTexture;
-  // }, []);
-  // const matcap = temp;
+  const [matcap] = useTexture([MATCAP_URL]);
+  const [brightMatcap, setBrightMatcap] = useState<Texture | null>(null);
+
+  useEffect(() => {
+    if (!matcap || brightMatcap) return;
+    setBrightMatcap(brightenMatcapTexture(matcap));
+  }, [matcap, brightMatcap]);
 
   const [isCursorActive, setIsCursorActive] = useState(false);
 
@@ -115,7 +150,7 @@ export default function TopText(props: any) {
             }}
           >
             EXPLORE MY THREE AREAS OF THE INTERNET
-            <meshMatcapMaterial matcap={matcap} />
+            <meshMatcapMaterial matcap={brightMatcap ?? matcap} />
           </Text3D>
         </Center>
       ) : (
@@ -142,7 +177,7 @@ export default function TopText(props: any) {
               // make text phone friendly
             >
               EXPLORE MY THREE AREAS
-              <meshMatcapMaterial matcap={matcap} />
+              <meshMatcapMaterial matcap={brightMatcap ?? matcap} />
             </Text3D>
           </Center>
           <Center position={[0, -2, 0]}>
@@ -161,7 +196,7 @@ export default function TopText(props: any) {
               // make text phone friendly
             >
               OF THE INTERNET
-              <meshMatcapMaterial matcap={matcap} />
+              <meshMatcapMaterial matcap={brightMatcap ?? matcap} />
             </Text3D>
           </Center>
         </Center>

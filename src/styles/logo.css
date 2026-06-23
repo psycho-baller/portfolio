@@ -7,6 +7,12 @@
 }
 
 .modak {
-  /* thick cute */
-  font-family: 'Modak', wingdings, fantasy, 'comic sans ms', papyrus, cursive;
+  font-family:
+    'Modak',
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    sans-serif;
 }

@@ -1,4 +1,5 @@
 import { Suspense, type HTMLAttributes } from "react";
+import "@lib/setupThree";
 import HeroScene from "./HeroScene";
 import Loading from "./Loading";
 
